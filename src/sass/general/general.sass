@@ -1,6 +1,7 @@
 *
 	&:focus, &:active
 		outline: none !important
+	box-sizing: border-box
 
 html
 	//overflow: hidden
@@ -8,18 +9,24 @@ html
 
 body
 	font:
-		//family: $font-Roboto-Regular
+		family: $font_MontAlt_Light
 		size: 1rem
-		weight: 400
-	color: $fontColorMain
+		weight: 300
+	color: $col_main
 	line-height: 1
 	min-width: $phone-width-min
 	margin: 0
 	padding: 0
 	height: 100vh
-	background-color: $body_bg
-	+phone-down
-		font-size: 12px
+	background-color: $bg_body
+
+a
+	display: inline-block
+	text-decoration: none
+	color: inherit
+	&:hover, &:active
+		text-decoration: none
+		color: inherit
 
 h1, h2, h3, h4, p, ul
 	margin: 0px
@@ -29,57 +36,23 @@ h1
 	font-size: $fontSize_h1
 	line-height: $lineHeight_h1
 	font-weight: normal
-	+phone-down
-    	font-size: 26px
-
-h2
-	font-size: $fontSize_h2
-	line-height: $lineHeight_h2
-	+phone-down
-		font-size: 20px
-
-h3
-	font-size: $fontSize_h3
-	line-height: $lineHeight_h3
-	+phone-down
-		font-size: 16px
-
-h4
-	font-size: $fontSize_h4
-	line-height: $lineHeight_h4
-	+phone-down
-		font-size: 16px
-
 
 .container
-	+laptop
-		max-width: 1230px
-		padding-left: 30px
-		padding-right: 30px
+	height: 100%
+	padding: 40px
+	display: flex
+	flex-direction: column
 
 .title
-	color: $fontColorMain
-	//font-family: $font-Gilroy-ExtraBold
+	color: $col_acsent
 
-.green
-	color: $green
-
-.bg--grey
-	background-color: $grey
-
-.blue-text
-	color: $blue-text
-
-.red-text
-	color: $red-text
+.link
+	color: $col_acsent
+	font-family: $font_MontAlt_Regular
+	font-weight: normal
 
 .bold-text
-	//font-family: $font-Gilroy-ExtraBold
 	font-weight: bold
-
-.red-text
-	color: $red-text
-
 
 .text-upper
 	text-transform: uppercase
@@ -88,3 +61,32 @@ h4
 	position: relative
 	&:hover
 		color: inherit
+
+.ic
+	position: relative
+	padding-left: 30px
+	&:before
+		content: ""
+		display: inline-block
+		position: absolute
+		top: 0px
+		left: 0px
+		width: 25px
+		height: 25px
+		background:
+			color: transparent
+			size: contain
+			position: center
+			repeat: no-repeat
+
+.email
+	&:before
+		background-image: url("../images/icons/ic-email.svg")
+
+.phone
+	&:before
+		background-image: url("../images/icons/ic-phone.svg")
+
+.location
+	&:before
+		background-image: url("../images/icons/ic-location.svg")
