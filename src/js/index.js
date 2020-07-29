@@ -16,7 +16,7 @@
                 const classList = left_side.classList.value;
                 //str.match(/menu-\w*/g)
                 const menuClass = classList.match(/m-\w*/g);
-                console.log(menuClass);
+
                 if (menuClass) menuClass.forEach(cl => left_side.classList.remove(cl));
 
                 if (menuType) {
@@ -31,6 +31,14 @@
                 itemParent.closest('.menu-item').classList.add('active');
             }
         }));
+    }
+
+    function foldMenu() {
+        const windowInnerHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+        if (windowInnerHeight <= 900) {
+            const servicesLi = document.querySelector('.services');
+            const productsLi = document.querySelector('.products');
+        }
     }
 
 
