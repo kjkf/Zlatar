@@ -62,8 +62,6 @@
 
 .nav-wrap
   display: flex
-  min-height: 750px
-  overflow-y: scroll
   margin-left: -40px
   height: calc(100% - #{$h_logo} - #{$mb_logo})
 
@@ -106,10 +104,20 @@
         width: calc(#{$w_menu_it_before} + 3px)
         height: calc(#{$h_menu_it_before} + 3px)
         left: calc(-10px - #{$w_menu_it_before} - 3px)
+
+  &>.menu-item.folded
+    .submenu
+      display: none
+
+  &>.menu-item.folded.active
+    .submenu
+      display: block
+
   .menu-item.active, .menu-item:active, .menu-item:hover
     &>a
       color: $col_acsent
       font-weight: 600
+
   .menu-item
     a
       margin-top: $mt_menu_it
@@ -130,7 +138,6 @@
       position: absolute
       left: calc(-5px - #{$w_menu_it_sub})
       top: 15px
-
 
 .banner
   flex-grow: 1
