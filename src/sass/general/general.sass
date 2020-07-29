@@ -13,7 +13,7 @@ body
 		size: 1rem
 		weight: 300
 	color: $col_main
-	line-height: 1
+	line-height: 1.2
 	min-width: $phone-width-min
 	margin: 0
 	padding: 0
@@ -45,11 +45,38 @@ h1
 
 .title
 	color: $col_acsent
+	font-family: $font_MontAlt_SemiBold
+	text-align: center
+	&-main
+		position: relative
+		padding-bottom: 15px
+		margin-bottom: 27px
+		&:before, &:after
+			content: ""
+			position: absolute
+			bottom: -1px
+			width: $w_title_border
+			border-bottom: 0.3px solid $col_acsent
+		&:before
+			left: calc(50% - calc(#{$w_title_border - 15px}))
+		&:after
+			right: calc(50% - calc(#{$w_title_border - 15px}))
+		.ic-rhomb
+			position: absolute
+			bottom: calc(-#{$h_rhomb} / 2)
+			left: calc(50% - #{$w_rhomb} / 2)
+
+.ic-rhomb
+	width: $w_rhomb
+	height: $h_rhomb
+	background: $col_acsent
+	transform: rotate(-45deg)
 
 .link
 	color: $col_acsent
 	font-family: $font_MontAlt_Regular
 	font-weight: normal
+	text-decoration: underline
 
 .bold-text
 	font-weight: bold

@@ -1,3 +1,49 @@
 .content
-  //background-color: #fc5b1f
   flex-grow: 1
+  padding: $p_content
+  &.m-collapsed
+    padding: $p_content_m_collapsed
+
+  &-in
+    background-color: #fc5b1f
+    margin-left: $w_left_side_m_sm
+    display: flex
+    flex-direction: column
+
+  &.main
+    .content-in
+      z-index: 2
+      width: $w_content_in_main
+      min-height: $h_content_in_main
+      position: absolute
+      left: 67%
+      top: 250px
+      margin-left: calc(-#{$w_content_in_main} / 2)
+      padding: 30px 40px 40px
+      border-radius: $rad_main
+      background: $bg_body
+      border: 0.5px solid $bg_menu
+
+      +laptop_1024-down
+        width: $w_content_in_main_laptop
+        padding: 15px 20px 15px
+        margin-left: calc(-#{$w_content_in_main_laptop} / 2)
+
+    .content__center
+      p
+        text-align: justify
+        margin-bottom: 20px
+    .content__footer
+      text-align: center
+
+
+  &__center
+    flex-grow: 1
+
+  &__footer
+    display: flex
+    justify-content: space-around
+    align-items: center
+    margin-top: auto
+
+
