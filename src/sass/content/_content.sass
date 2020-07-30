@@ -22,24 +22,27 @@
       padding: 30px 40px 40px
       border-radius: $rad_about
       background: $bg_body
-      &:after
+      border-right: 0.5px solid $bg_menu
+      &:after, &:before
         content: ""
         position: absolute
         top: 0px
         right: 0px
-        width: calc(100% / 2)
+        width: calc(100% / 2 + #{$pr_left_side})
         height: 100%
+      &:before
+        border-top: 0.5px solid $bg_menu
         border-top-right-radius: $rad_about
+        +media-w1024_h900
+          width: calc(100% / 2 + #{$pr_left_side} + 95px)
+      &:after
         border-bottom-right-radius: $rad_about
-        border: 0.5px solid $bg_menu
-        border-left-width: 0px
-        +laptop_1024-down
-          //width: calc(#{$w_content_in_about_laptop} / 2)
+        border-bottom: 0.5px solid $bg_menu
+
+
 
       +laptop_1024-down
-        //width: $w_content_in_about_laptop
         padding: 15px 20px 15px
-        //margin-left: calc(-#{$w_content_in_about_laptop} / 2)
 
     .content__center
       p

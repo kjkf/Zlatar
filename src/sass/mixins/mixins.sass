@@ -64,6 +64,11 @@ $min-height: 900px
 	@media screen and (max-height: $min-height)
 		@content
 
+=media-w1024_h900
+	@media screen and (min-width: $laptop-width_1024) and (max-height: $min-height)
+		@content
+
+
 
 =scrolled($height)
 	max-height: $height
