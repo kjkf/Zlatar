@@ -1,7 +1,9 @@
 $(function() {
     const menu = document.querySelector('.menu');
     const servicesLi = document.querySelector('.services');
-    const productsLi = document.querySelector('.products');
+    const productsLi = document.querySelectorAll('.products');
+
+    const submenus = document.querySelectorAll('.submenu');
 
     const maxHeight900 = window.matchMedia("(max-height: 900px)");
 
@@ -17,22 +19,26 @@ $(function() {
     }
 
     function foldMenuItem() {
-        const folded = productsLi.classList.contains('active') ? servicesLi : productsLi;
+        /*const folded = productsLi.classList.contains('active') ? servicesLi : productsLi;
         folded.classList.add('folded');
         productsLi.addEventListener('click', clickHandler);
-        servicesLi.addEventListener('click', clickHandler);
+        servicesLi.addEventListener('click', clickHandler);*/
+        submenus.forEach(submenu => {
+            const submenuParent = submenu.closest('.menu-item');
+            submenuParent.classList.add('folded');
+        })
     }
 
     function unfoldMenuItems() {
         const foldedItems = document.querySelectorAll('.menu-item.folded');
         foldedItems.forEach(item => item.classList.remove('folded'));
-        productsLi.removeEventListener('click', clickHandler);
-        servicesLi.removeEventListener('click', clickHandler);
+       /* productsLi.removeEventListener('click', clickHandler);
+        servicesLi.removeEventListener('click', clickHandler);*/
     }
 
-    function clickHandler(e) {
+/*    function clickHandler(e) {
         e.currentTarget.classList.add('folded');
-    };
+    };*/
 
     //===========================================
     const windowInnerHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
