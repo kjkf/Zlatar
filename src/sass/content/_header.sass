@@ -45,9 +45,9 @@
     margin-bottom: $mb_logo
 
   &.m-collapsed
-    width: 360px
+    width: calc(#{$w_nav} + 30px)
     border-radius: 0px 150px 50px 0px
-    padding-top: 50px
+    padding-top: 45px
     .logo
       width: $w_logo_collapsed
       height: $h_logo_collapsed
@@ -60,7 +60,7 @@
 
 .nav-wrap
   display: flex
-  margin-left: -40px
+  margin-left: -#{$pl_left_side}
   height: calc(100% - #{$h_logo} - #{$mb_logo})
 
 .nav
@@ -71,7 +71,7 @@
   display: flex
   align-items: center
   justify-content: center
-  padding: 0px 30px 0px 40px
+  padding: 0px 40px 0px 35px
 
 .menu
   list-style: none
