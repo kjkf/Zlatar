@@ -6,6 +6,12 @@
   left: 50%
   top: 23.5%
   z-index: 99999
+  visibility: hidden
+  opacity: 0
+  &.active
+    visibility: visible
+    opacity: 1
+    transition: .2s visibility linear, .2s opacity linear
 
   &-title
     text-align: center
