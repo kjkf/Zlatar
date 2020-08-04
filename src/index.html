@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../public/css/normalize.css">
     <link rel="stylesheet" href="../public/css/styles.min.css">
 </head>
-<body>
+<body class="modal-bg">
 <div class="container">
     <header class="header">
         <div class="contacts header__contacts">
@@ -63,7 +63,7 @@
     </header>
     <div class="content about"> <!--m-collapsed или m-sm -->
         <div class="content-in">
-            <h1 class="content__header title title-main"><span class="ic-rhomb"></span>О компании</h1>
+            <h2 class="content__header title title-main"><span class="ic-rhomb"></span>О компании</h2>
             <div class="content__center">
                 <p>ТОО «ЗЛАТАРЬ» создано в 2012 году и является современным, динамично развивающимся предприятием, занявшим за время своего существования прочные позиции надежного партнера в сфере резки, рубки и гибки материалов.</p>
                 <p>Специализацией компании «ЗЛАТАРЬ» является обработка листового материала методом гидроабразивной, плазменной, лазерной резки, а также услуги гильотины и листогиба. </p>
@@ -85,6 +85,35 @@
             </span>
         </div>
 </footer>
+
+    <div class="modal modal-order">
+        <div class="modal__in">
+            <form action="">
+                <h2 class="title modal-title">Заявка на звонок</h2>
+                <div class="modal-content">
+                    <div class="field-group">
+                        <label class="field-label">Ваше имя:</label>
+                        <input type="text" class="field">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Ваш e-mail:</label>
+                        <input type="email" class="field">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Номер Вашего телефона:</label>
+                        <input type="text" class="field">
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Сообщение:</label>
+                        <textarea class="field" cols="5" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 <script src="../public/main.min.js"></script>
 </body>
