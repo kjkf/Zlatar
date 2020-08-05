@@ -37,6 +37,11 @@ h2
 	line-height: $lineHeight_h2
 	font-weight: normal
 
+h3
+	font-size: $fontSize_h3
+	line-height: $lineHeight_h3
+	font-weight: normal
+
 .container
 	height: 100%
 	padding: 40px
@@ -156,3 +161,56 @@ h2
 	&:active
 		box-shadow: none
 //end-form
+
+//components
+.content-item
+	background: $col_acsent
+	border-radius: $rad_content_item
+	padding: $p_content_item
+	display: flex
+	flex-direction: column
+	width: 432px
+	overflow: hidden
+
+	&__img
+		overflow: hidden
+		border-radius: $rad_content_item
+		height: 195px
+		img
+			width: 100%
+			height: auto
+
+	&__descr
+		padding-bottom: 8px
+		font-family: $font_MontAlt_Medium
+		font-weight: 500
+		color: #FFFFFF
+
+	.title
+		font-family: $font_MontAlt_Medium
+		color: #FFFFFF
+
+.content-item--catalog
+	position: relative
+	width: 450px
+	height: 300px
+	min-height: 300px
+
+	.content-item__img
+		height: 100%
+		img
+			height: 100%
+
+	.content-item__descr
+		position: absolute
+		bottom: $p_content_item
+		left: $p_content_item
+		width: calc(100% - #{$p_content_item}*2)
+		padding: 7px 15px 7px
+		display: flex
+		justify-content: space-between
+		background-color: $col_acsent_blur_06
+		font-size: 18px
+		line-height: 1.3
+		.d-vendorCode
+			font-size: 14px
