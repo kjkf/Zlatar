@@ -69,9 +69,11 @@
   width: $w_nav
   height: 100%
   display: flex
-  align-items: center
+  align-items: flex-start
   justify-content: center
-  padding: 0px 40px 0px 35px
+  padding: 50px 40px 0px 35px
+  +tablet-down
+    padding-top: 40px
 
 .menu
   list-style: none
