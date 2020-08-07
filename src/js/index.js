@@ -49,7 +49,7 @@
         }
     }
 
-    content_in_mt();
+    setTimeout(() => content_in_mt(), 100);
 
     $(window).resize(function() {
         content_in_mt();
