@@ -65,12 +65,11 @@
   background: transparent no-repeat center center
   background-size: 100% 100%
 
-.slider__control_prev::before
+.slider__control_prev::before, .slider__control_next::before
   background-image: url("../images/icons/ic-triangle.svg")
-  transform: scale(-1, 1)
 
-.slider__control_next::before
-  background-image: url("../images/icons/ic-triangle.svg")
+.slider__control_prev::before
+  transform: scale(-1, 1)
 
 /* стили для индикаторов
 
