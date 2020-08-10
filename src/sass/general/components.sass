@@ -28,6 +28,8 @@
     display: flex
     align-items: flex-start
     justify-content: center
+    +tablet-down
+      font-size: 14px
 
   .title
     font-family: $font_MontAlt_Medium
@@ -58,6 +60,8 @@
     line-height: 1.3
     .descr-vendorCode
       font-size: 14px
+      +tablet-down
+        font-size: 12px
 
 .content-item--managment
   .content-item__in
@@ -130,4 +134,65 @@
       margin-left: 20px
       li
         margin-bottom: 10px
+
+.content-item--dark
+  padding: $p_content_item_dark
+  max-width: 915px
+  width: 100%
+  min-height: 773px
+  height: 100%
+  .content-item__in
+    padding: 20px
+    background-color: $bg_dark
+    font-size: 18px
+    color: #ffffff
+    +tablet-down
+      font-size: 14px
+    +phone-down
+      font-size: 12px
+    .title
+      margin-bottom: 20px
+      +tablet-down
+        font-size: 18px
+      +phone-down
+        font-size: 12px
+    p
+      margin-bottom: 20px
+
+
+.dev-company
+  font-size: 18px
+  color: #FFFFFF
+  width: 410px
+  .logo
+    width: 100%
+    height: 57px
+    margin-bottom: 5px
+  .title
+    color: #FFFFFF
+    margin-bottom: 10px
+  &__in
+    background-color: $bg_dark
+  &__head
+    font-family: $font_MontAlt_Regular
+    background-color: $col_acsent
+    padding: 20px 10px
+
+  &__list
+    padding: 20px 20px 20px 40px
+    list-style: none
+    li
+      margin-bottom: 15px
+      position: relative
+      &:before
+        content: ""
+        width: 11px
+        height: 11px
+        position: absolute
+        left: calc(-12px - 11px)
+        top: 3px
+        background-color: #FFFFFF
+        transform: rotate(-45deg)
+      &:last-child
+        margin-bottom: 0px
 
