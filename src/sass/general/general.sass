@@ -1,170 +1,200 @@
 *
-	&:focus, &:active
-		outline: none !important
-	box-sizing: border-box
+  &:focus, &:active
+    outline: none !important
+  box-sizing: border-box
 
 html
-	//overflow: hidden
-	font-size: $fontSize_body
+  //overflow: hidden
+  font-size: $fontSize_body
 
 body
-	font:
-		family: $font_MontAlt_Light
-		size: 1rem
-		weight: 300
-	color: $col_main
-	line-height: 1.2
-	min-width: $phone-width-min
-	margin: 0
-	padding: 0
-	height: 100vh
-	background-color: $bg_body
+  font:
+    family: $font_MontAlt_Light
+    size: 1rem
+    weight: 300
+  color: $col_main
+  line-height: 1.2
+  min-width: $phone-width-min
+  margin: 0
+  padding: 0
+  height: 100vh
+  background-color: $bg_body
 
 a
-	display: inline-block
-	text-decoration: none
-	color: inherit
-	&:hover, &:active
-		text-decoration: none
-		color: inherit
+  display: inline-block
+  text-decoration: none
+  color: inherit
+  &:hover, &:active
+    text-decoration: none
+    color: inherit
 
-h1, h2, h3, h4, p, ul, ol
-	margin: 0px
-	padding: 0px
+h1, h2, h3, h4, h5, p, ul, ol
+  margin: 0px
+  padding: 0px
 
 h2
-	font-size: $fontSize_h2
-	line-height: $lineHeight_h2
-	font-weight: normal
+  font-size: $fontSize_h2
+  line-height: $lineHeight_h2
+  font-weight: normal
 
 h3
-	font-size: $fontSize_h3
-	line-height: $lineHeight_h3
-	font-weight: normal
+  font-size: $fontSize_h3
+  line-height: $lineHeight_h3
+  font-weight: normal
+  +tablet-down
+    font-size: $fontSize_h3_tablet
+  +phone-down
+    font-size: $fontSize_h3_mob
 
 h4
-	font-size: $fontSize_h4
-	line-height: $lineHeight_h4
-	font-weight: normal
+  font-size: $fontSize_h4
+  line-height: $lineHeight_h4
+  font-weight: normal
+
+h5
+  font-size: $fontSize_h5
+  line-height: $lineHeight_h5
+  font-weight: normal
 
 .container
-	height: 100%
-	padding: 40px
-	display: flex
-	flex-direction: column
+  height: 100%
+  padding: 40px
+  display: flex
+  flex-direction: column
 
 .title
-	color: $col_acsent
-	font-family: $font_MontAlt_SemiBold
-	text-align: center
-	&-main
-		position: relative
-		padding-bottom: 15px
-		margin-bottom: 27px
-		&:before, &:after
-			content: ""
-			position: absolute
-			bottom: -1px
-			width: $w_title_border
-			border-bottom: 0.3px solid $col_acsent
-		&:before
-			left: calc(50% - calc(#{$w_title_border + 15px}))
-		&:after
-			right: calc(50% - calc(#{$w_title_border + 15px}))
-		.ic-rhomb
-			position: absolute
-			bottom: calc(-#{$h_rhomb} / 2)
-			left: calc(50% - #{$w_rhomb} / 2)
+  color: $col_acsent
+  font-family: $font_MontAlt_SemiBold
+  text-align: center
+  &-main
+    position: relative
+    padding-bottom: 15px
+    margin-bottom: 27px
+    &:before, &:after
+      content: ""
+      position: absolute
+      bottom: -1px
+      width: $w_title_border
+      border-bottom: 0.3px solid $col_acsent
+    &:before
+      left: calc(50% - calc(#{$w_title_border + 15px}))
+    &:after
+      right: calc(50% - calc(#{$w_title_border + 15px}))
+    .ic-rhomb
+      position: absolute
+      bottom: calc(-#{$h_rhomb} / 2)
+      left: calc(50% - #{$w_rhomb} / 2)
 
 .ic-rhomb
-	width: $w_rhomb
-	height: $h_rhomb
-	background: $col_acsent
-	transform: rotate(-45deg)
+  width: $w_rhomb
+  height: $h_rhomb
+  background: $col_acsent
+  transform: rotate(-45deg)
 
 .link
-	color: $col_acsent
-	font-family: $font_MontAlt_Regular
-	font-weight: normal
-	text-decoration: underline
+  display: inline-block
+  color: $col_acsent
+  font-family: $font_MontAlt_Regular
+  font-weight: normal
+  text-decoration: underline
+  &--footer
+    font-size: 23px
 
 .bold-text
-	font-weight: bold
+  font-weight: bold
 
 .text-upper
-	text-transform: uppercase
+  text-transform: uppercase
+
+.text-center
+  text-align: center
 
 .ic
-	position: relative
-	padding-left: 30px
-	&:before
-		content: ""
-		display: inline-block
-		position: absolute
-		top: 0px
-		left: 0px
-		width: 25px
-		height: 25px
-		background:
-			color: transparent
-			size: contain
-			position: center
-			repeat: no-repeat
+  position: relative
+  padding-left: 30px
+  &:before
+    content: ""
+    display: inline-block
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 25px
+    height: 25px
+    background:
+      color: transparent
+      size: contain
+      position: center
+      repeat: no-repeat
 
 .email
-	&:before
-		background-image: url("../images/icons/ic-email.svg")
+  &:before
+    background-image: url("../images/icons/ic-email.svg")
 
 .phone
-	&:before
-		background-image: url("../images/icons/ic-phone.svg")
+  &:before
+    background-image: url("../images/icons/ic-phone.svg")
 
 .location
-	&:before
-		background-image: url("../images/icons/ic-location.svg")
+  &:before
+    background-image: url("../images/icons/ic-location.svg")
 
 
 //form
 
 .field
-	display: block
-	width: 100%
-	height: calc(20px + 13px*2 + 4px)
-	padding: 13px
-	font-size: 20px
-	font-weight: normal
-	line-height: 1.2
-	color: $bg_dark
-	background-color: #fff
-	background-clip: padding-box
-	border: none
-	border-radius: 10px
+  display: block
+  width: 100%
+  height: calc(20px + 13px*2 + 4px)
+  padding: 13px
+  font-size: 20px
+  font-weight: normal
+  line-height: 1.2
+  color: $bg_dark
+  background-color: #fff
+  background-clip: padding-box
+  border: none
+  border-radius: 10px
 
 .field-label
-	font-size: 20px
-	line-height: 1.2
-	font-weight: normal
-	color: #FFFFFF
+  font-size: 20px
+  line-height: 1.2
+  font-weight: normal
+  color: #FFFFFF
 
 .btn
-	display: inline-block
-	font-weight: normal
-	color: #FFFFFF
-	text-align: center
-	vertical-align: middle
-	-webkit-user-select: none
-	-moz-user-select: none
-	-ms-user-select: none
-	user-select: none
-	background-color: $bg_dark
-	border: none
-	padding: 10px
-	font-size: 20px
-	line-height: 1.2
-	border-radius: 10px
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.25)
-	&:active
-		box-shadow: none
+  display: inline-block
+  font-weight: normal
+  color: #FFFFFF
+  text-align: center
+  vertical-align: middle
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  background-color: $bg_dark
+  border: none
+  padding: 10px
+  font-size: 20px
+  line-height: 1.2
+  border-radius: 10px
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.25)
+  &:active
+    box-shadow: none
 //end-form
 
 
+.ic-back
+  position: relative
+  padding-left: calc(#{$w_ic_back} + 5px)
+  &:before
+    content: ""
+    position: absolute
+    top: 0px
+    left: 0px
+    width: $w_ic_back
+    height: 21px
+    background:
+      image: url("../images/icons/ic-back.svg")
+      repeat: no-repeat
+      position: center
+      size: contain
