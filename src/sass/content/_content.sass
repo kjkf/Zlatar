@@ -20,13 +20,20 @@
       min-height: $h_content_in_about
       position: absolute
       left: 50%
-      top: 50%
+      top: 0
       margin-left: 0
-      margin-top: calc(#{$h_content_in_about} / -2)
+      margin-top: 230px
       padding: 30px 40px 40px
       border-radius: $rad_about
       background: $bg_body
       border-right: 0.5px solid $bg_menu
+      +laptop-down
+        padding: 15px 20px 15px
+        min-height: $h_content_in_about_laptop
+        margin-top: 192px
+      +tablet-down
+        width: $w_content_in_about_tablet
+
       &:after, &:before
         content: ""
         position: absolute
@@ -46,8 +53,7 @@
 
 
 
-      +laptop_1024-down
-        padding: 15px 20px 15px
+
 
     .content__center
       p
@@ -66,5 +72,8 @@
     align-items: center
     margin-top: auto
     z-index: 10
+    +laptop-down
+      justify-content: center
+      flex-direction: column
 
 
