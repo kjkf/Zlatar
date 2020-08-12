@@ -71,8 +71,12 @@
 
 .nav-wrap
   display: flex
-  margin-left: -#{$pl_left_side}
+  margin-left: -#{$p_container}
   height: calc(100% - #{$h_logo} - #{$mb_logo})
+  +laptop-down
+    margin-left: -#{$p_container_laptop}
+  +tablet-down
+    margin-left: -#{$p_container_tablet}
 
 .nav
   background-color: $bg_dark
