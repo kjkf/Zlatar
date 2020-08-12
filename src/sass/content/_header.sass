@@ -27,6 +27,8 @@
     height: $h_logo_tablet
   &__link
     display: flex
+    justify-content: center
+    align-items: center
   &__img
     width: 100%
     height: auto
@@ -54,6 +56,10 @@
 
   .logo
     margin-bottom: $mb_logo
+    +laptop-down
+      margin-bottom: $mb_logo_laptop
+    +tablet-down
+      margin-bottom: $mb_logo_tablet
 
   &.m-collapsed
     width: calc(#{$w_nav} + 30px)
@@ -63,11 +69,18 @@
       width: $w_logo_collapsed
       height: $h_logo_collapsed
       margin-bottom: $mb_logo_collapsed
+      +tablet-down
+        margin-bottom: $mb_logo_collapsed_tablet
     .banner
       display: none
 
   &.m-sm
     width: $w_left_side_m_sm
+    padding-top: 50px
+    .logo
+      width: 264px
+      height: 38px
+      margin-bottom: 40px
 
 .nav-wrap
   display: flex
