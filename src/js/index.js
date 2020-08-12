@@ -42,7 +42,7 @@
     }
 
     function content_in_mt() {
-        const content_in_about = document.querySelector('.about .content-in');
+        const content_in_about = document.querySelector('.content-about .content-in');
         if (content_in_about) {
             let content_in_about_h = content_in_about.clientHeight;
             content_in_about.style.marginTop = content_in_about_h / (-2) + "px";
