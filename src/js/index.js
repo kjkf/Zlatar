@@ -1,6 +1,7 @@
 
 (function () {
     const left_side = document.querySelector('.left-side');
+    const content = document.querySelector('.content');
     if(left_side) {
         const menu = document.querySelector('.menu');
         const links = menu.querySelectorAll('.menu-item');
@@ -17,10 +18,14 @@
                 //str.match(/menu-\w*/g)
                 const menuClass = classList.match(/m-\w*/g);
 
-                if (menuClass) menuClass.forEach(cl => left_side.classList.remove(cl));
+                if (menuClass) menuClass.forEach(cl => {
+                    left_side.classList.remove(cl);
+                    content.classList.remove(cl);
+                });
 
                 if (menuType) {
                     left_side.classList.add(menuType);
+                    content.classList.add(menuType);
                 }
             }
 
