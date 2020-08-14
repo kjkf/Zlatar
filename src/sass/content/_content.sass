@@ -26,6 +26,7 @@
       width: $w_content_in_about
       max-width: calc(#{$extra-large-width} / 3)
       min-height: $h_content_in_about
+      height: auto
       position: absolute
       left: 50%
       top: 0
@@ -63,14 +64,6 @@
         border-bottom-right-radius: $rad_about
         border-bottom: 0.5px solid $bg_menu
 
-
-
-
-
-    .content__center
-      p
-        text-align: justify
-        margin-bottom: 20px
     .content__footer
       text-align: center
 
@@ -80,6 +73,9 @@
   &__center
     flex-grow: 1
     justify-content: flex-start
+    p
+      text-align: justify
+      margin-bottom: 20px
 
   &__footer
     display: flex
