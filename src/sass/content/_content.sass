@@ -1,11 +1,13 @@
 .content
   flex-grow: 1
-  padding: 0px $p_content
+  padding: $pt_content $p_content
   margin-left: $w_left_side_m_sm
   +laptop-down
-    padding: 0px $p_content_laptop
+    padding-left: $p_content_laptop
+    padding-right: $p_content_laptop
   +tablet-down
-    padding: 0px $p_content_tablet
+    padding-left: $p_content_tablet
+    padding-right: $p_content_tablet
   &.m-collapsed
     //padding: $p_content_m_collapsed
     //margin-left: calc(#{$w_nav} + 30px)
@@ -14,7 +16,7 @@
   &-in
     display: flex
     flex-direction: column
-    background-color: seagreen
+    height: 100%
     &.m-sm
       padding: 0px 40px
 
@@ -77,12 +79,13 @@
 
   &__center
     flex-grow: 1
+    justify-content: flex-start
 
   &__footer
     display: flex
     justify-content: space-around
     align-items: center
-    margin-top: auto
+    margin-top: 20px
     z-index: 10
     +laptop-down
       justify-content: center
