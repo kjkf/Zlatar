@@ -5,13 +5,27 @@
     font-size: 18px
     display: flex
     justify-content: flex-end
+    +tablet-down
+      font-size: 14px
   .location
     width: 500px
+    +laptop-down
+      width: 306px
+    +tablet-down
+      width: 234px
     &:before
       width: 30px
       height: 30px
       margin-top: 7px
       margin-left: -7px
+      +laptop-down
+        margin-top: 0px
+      +tablet-down
+        width: 20px
+        height: 20px
     .span
       display: block
+    &.ic
+      +tablet-down
+        padding-left: 15px
 

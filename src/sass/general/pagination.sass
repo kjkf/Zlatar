@@ -23,12 +23,21 @@
     color: $col_acsent
     font-size: 20px
     font-family: $font_MontAlt_SemiBold
-    border: 1px solid $col_acsent
-    border-radius: 9px
-    width: 30px
-    height: 40px
+    border-right: 1px solid $col_acsent
+    width: 29px
+    height: 30px
+    //старые данные
+    //border: 1px solid $col_acsent
+    //border-radius: 9px
+    // старые размеры
+    // width: 30px
+    // height: 40px
     margin-right: 5px
+    &:nth-last-child(-n+2)
+      border-right: none
+      border-left: 1px solid $col_acsent
     &:last-child
+      border: none
       margin-right: 0px
     &.pagination__control
       padding: 0px
@@ -38,9 +47,20 @@
       height: 10px
       border-radius: 50%
       background-color: $col_acsent
+      //margin-right: 5px
       //display: none
       &>span
         display: none
+    &:hover
+      color: $bg_menu
+      border-right: 1px solid $bg_menu
+      &:nth-last-child(-n+2)
+        border-right: none
+        border-left: 1px solid $bg_menu
+      &:last-child
+        border: none
+      &:first-child
+        border: none
     //&:first-child, &:nth-child(2), &:nth-child(3)
       display: inline-block
       background-color: red

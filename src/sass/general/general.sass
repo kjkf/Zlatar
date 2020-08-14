@@ -65,10 +65,18 @@ h5
   flex-direction: column
   height: 100%
   padding: $p_container
+  max-width: 1920px
+  width: 100%
+  position: relative
   +laptop-down
     padding: $p_container_laptop
   +tablet-down
     padding: $p_container_tablet
+
+.container_wrap
+  display: flex
+  justify-content: center
+  height: 100vh
 
 .title
   color: $col_acsent
@@ -116,6 +124,9 @@ h5
   text-decoration: underline
   &--footer
     font-size: 23px
+  &:hover
+    color: $bg_menu
+    text-decoration: underline
 
 .bold-text
   font-weight: bold
@@ -171,6 +182,10 @@ h5
   background-clip: padding-box
   border: none
   border-radius: 10px
+  &:hover
+    border: 2px solid $col_main
+  &-err
+    border: 3px solid #A50000
 
 .field-label
   font-size: 20px
@@ -197,24 +212,35 @@ h5
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.25)
   &:active
     box-shadow: none
+  &:hover
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25)
+    box-shadow: none
 //end-form
 
-
 .ic-back
-  position: relative
-  padding-left: calc(#{$w_ic_back} + 5px)
-  &:before
-    content: ""
-    position: absolute
-    top: 0px
-    left: 0px
+  svg
     width: $w_ic_back
     height: 21px
-    background:
-      image: url("../images/icons/ic-back.svg")
-      repeat: no-repeat
-      position: center
-      size: contain
+    fill: $col_acsent
+  &:hover
+    color: $bg_menu
+    text-decoration: underline
+    svg
+      fill: $bg_menu
+  // старые данные
+  // &:before
+  //   content: ""
+  //   position: absolute
+  //   top: 0px
+  //   left: 0px
+  //   width: $w_ic_back
+  //   height: 21px
+  //   background:
+  //     image: url("../images/icons/ic-back.svg")
+  //     repeat: no-repeat
+  //     position: center
+  //     size: contain
+
 
 .breadcrumbs
   font-family: $font_MontAlt_Light

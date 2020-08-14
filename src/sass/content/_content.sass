@@ -1,15 +1,22 @@
 .content
   flex-grow: 1
-  padding: $p_content
+  padding: $pt_content $p_content
   margin-left: $w_left_side_m_sm
+  +laptop-down
+    padding-left: $p_content_laptop
+    padding-right: $p_content_laptop
+  +tablet-down
+    padding-left: $p_content_tablet
+    padding-right: $p_content_tablet
   &.m-collapsed
-    padding: $p_content_m_collapsed
-    margin-left: calc(#{$w_nav} + 30px)
+    //padding: $p_content_m_collapsed
+    //margin-left: calc(#{$w_nav} + 30px)
   &.m-sm
     margin-left: $w_left_side_m_sm
   &-in
     display: flex
     flex-direction: column
+    height: 100%
     &.m-sm
       padding: 0px 40px
 
@@ -17,7 +24,9 @@
     .content-in
       z-index: 2
       width: $w_content_in_about
+      max-width: calc(#{$extra-large-width} / 3)
       min-height: $h_content_in_about
+      height: auto
       position: absolute
       left: 50%
       top: 0
@@ -27,6 +36,10 @@
       border-radius: $rad_about
       background: $bg_body
       border-right: 0.5px solid $bg_menu
+      +extra-large
+        left: calc(#{$extra-large-width} * 0.5)
+      +extra-large-down
+        left: 50%
       +laptop-down
         padding: 15px 20px 15px
         min-height: $h_content_in_about_laptop
@@ -51,26 +64,24 @@
         border-bottom-right-radius: $rad_about
         border-bottom: 0.5px solid $bg_menu
 
-
-
-
-
-    .content__center
-      p
-        text-align: justify
-        margin-bottom: 20px
     .content__footer
       text-align: center
 
+    &.m-collapsed
+      display: none
 
   &__center
-    flex-grow: 1
+    //flex-grow: 1
+    justify-content: flex-start
+    p
+      text-align: justify
+      margin-bottom: 20px
 
   &__footer
     display: flex
-    justify-content: space-around
+    justify-content: space-between
     align-items: center
-    margin-top: auto
+    margin-top: 20px
     z-index: 10
     +laptop-down
       justify-content: center

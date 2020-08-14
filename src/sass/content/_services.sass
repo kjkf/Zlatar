@@ -19,18 +19,23 @@
     margin: 0
 
 .content-servicesi
-  padding: 0!important
+  //padding: 0!important
   //width: 915px
   //background-color: red
   .content-in
     .content__center
       display: flex
       flex-direction: column
-      justify-content: center
-      align-items: center
-    .content__footer
+      flex-grow: 1
+    .content-item--dark
+      flex-grow: 1
+    //.content__footer
       margin-top: 20px
       display: flex
-      background-color: red
+      justify-content: space-between
+      //background-color: red
+      width: 915px
+      align-self: center
 
-  
+  .breadcrumbs
+    width: 915px
