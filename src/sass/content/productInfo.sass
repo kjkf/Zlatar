@@ -1,0 +1,41 @@
+.productInfo
+  .info
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    margin-bottom: 50px
+
+  .info__slider
+    width: 40%
+    //background: lightsteelblue
+
+  .info__descr
+    width: 60%
+    //background: lightgreen
+
+  .cat-row
+    justify-content: space-between
+    align-items: flex-start
+    .col
+      width: 65%
+      &.info__caption
+        width: 30%
+        text-align: right
+        &.info__caption--selfAlignEnd
+          align-self: flex-end
+
+      &.info__text
+        font-family: $font_MontAlt_Medium
+
+  .info__text--highlight
+    font-size: 26px
+    line-height: 32px
+    color: $col_acsent
+
+
+  .descr
+    text-align: left
+
+    .title
+      font-family: $font_MontAlt_Medium
+      text-align: left
