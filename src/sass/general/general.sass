@@ -65,10 +65,18 @@ h5
   flex-direction: column
   height: 100%
   padding: $p_container
+  max-width: 1920px
+  width: 100%
+  position: relative
   +laptop-down
     padding: $p_container_laptop
   +tablet-down
     padding: $p_container_tablet
+
+.container_wrap
+  display: flex
+  justify-content: center
+  height: 100vh
 
 .title
   color: $col_acsent
