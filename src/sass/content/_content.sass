@@ -1,10 +1,14 @@
 .content
   flex-grow: 1
-  padding: $p_content
+  padding: 0px $p_content
   margin-left: $w_left_side_m_sm
+  +laptop-down
+    padding: 0px $p_content_laptop
+  +tablet-down
+    padding: 0px $p_content_tablet
   &.m-collapsed
-    padding: $p_content_m_collapsed
-    margin-left: calc(#{$w_nav} + 30px)
+    //padding: $p_content_m_collapsed
+    //margin-left: calc(#{$w_nav} + 30px)
   &.m-sm
     margin-left: $w_left_side_m_sm
   &-in
