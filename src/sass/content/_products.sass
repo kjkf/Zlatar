@@ -2,6 +2,8 @@
   margin: 0 auto
 
   .content-item--productCat
+    min-height: 280px
+    height: 280px
     margin-right: 40px
     &:last-child
       margin-right: 0
@@ -18,6 +20,15 @@
 
 
 .category
+  &.category--mb30
+    margin-bottom: 30px
+  .cat-link
+    width: 50%
+    & .content-item
+      width: 100%
+      max-width: 420px
+      min-width: 226px
+      min-height: 233px
   .content-item
     margin-right: 10px
     &:last-child
@@ -32,6 +43,8 @@
   .content-item__descr
     justify-content: flex-start
     align-items: center
+    padding-left: 30px
+    padding-right: 30px
 
 
 .cat-row
@@ -42,4 +55,7 @@
     margin-bottom: 0
   +tablet-down
     flex-direction: column
+
+
+
 
