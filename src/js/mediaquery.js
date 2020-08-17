@@ -1,14 +1,14 @@
 $(function() {
     const menu = document.querySelector('.menu');
-    const servicesLi = document.querySelector('.services');
-    const productsLi = document.querySelectorAll('.products');
-
+    const left_side = document.querySelector('.left-side');
+    const content = document.querySelector('.content');
     const submenus = document.querySelectorAll('.submenu');
 
     const maxHeight900 = window.matchMedia("(max-height: 900px)");
+    const maxWidth1366 = window.matchMedia("(max-width: 1366px)");
 
 
-    function handlerForMediaQueries(x) {
+    function maxHeightHandlerForMediaQueries(x) {
         if (maxHeight900.matches) { // If media query matches
             //console.log('maxHeight900.matches');
             foldMenuItem();
@@ -18,11 +18,25 @@ $(function() {
         }
     }
 
+    function maxWidthHandlerForMediaQueries(x) {
+        let activeMenuItem, firstMenuItem;
+
+        if (maxWidth1366.matches) {
+            console.log('maxWidth1366.matches');
+            activeMenuItem = menu.querySelector('.menu-item.active');
+            firstMenuItem = menu.querySelector('li:first-child');
+
+            const className = activeMenuItem === firstMenuItem ? 'm-sm' : 'm-collapsed';
+            changeClassName(className);
+        } else {
+            console.log('maxWidth1366.matches else');
+            activeMenuItem = menu.querySelector('.menu-item.active');
+            const menuType = activeMenuItem.dataset.menutype;
+            changeClassName(menuType);
+        }
+    }
+
     function foldMenuItem() {
-        /*const folded = productsLi.classList.contains('active') ? servicesLi : productsLi;
-        folded.classList.add('folded');
-        productsLi.addEventListener('click', clickHandler);
-        servicesLi.addEventListener('click', clickHandler);*/
         submenus.forEach(submenu => {
             const submenuParent = submenu.closest('.menu-item');
             submenuParent.classList.add('folded');
@@ -32,29 +46,42 @@ $(function() {
     function unfoldMenuItems() {
         const foldedItems = document.querySelectorAll('.menu-item.folded');
         foldedItems.forEach(item => item.classList.remove('folded'));
-       /* productsLi.removeEventListener('click', clickHandler);
-        servicesLi.removeEventListener('click', clickHandler);*/
     }
 
-/*    function clickHandler(e) {
-        e.currentTarget.classList.add('folded');
-    };*/
+    function changeClassName(className) {
+        const classList = left_side.classList.value;
+        const menuClass = classList.match(/m-\w*/g);
+
+        if (menuClass) menuClass.forEach(cl => {
+            left_side.classList.remove(cl);
+            content.classList.remove(cl);
+        });
+        left_side.classList.add(className);
+        content.classList.add(className);
+    }
 
     //===========================================
     const windowInnerHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
     if (windowInnerHeight <= 900 ) {
-        handlerForMediaQueries();
+        maxHeightHandlerForMediaQueries();
     }
+
+    maxWidthHandlerForMediaQueries();
 
     try {
         maxHeight900.addEventListener("change", () => {
-            handlerForMediaQueries();
+            maxHeightHandlerForMediaQueries();
+        });
+        maxWidth1366.addEventListener("change", () => {
+            maxWidthHandlerForMediaQueries();
         });
     } catch (e1) {
         try {
             maxHeight900.addListener((e) => {
-                handlerForMediaQueries();
-                //alert('inside');
+                maxHeightHandlerForMediaQueries();
+            });
+            maxWidth1366.addListener((e) => {
+                maxWidthHandlerForMediaQueries();
             });
         } catch (e2) {
             console.error(e2);

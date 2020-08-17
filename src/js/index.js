@@ -86,6 +86,7 @@
 
     //скрыть модальное окно при клике вне блока модального окна
     document.addEventListener('click', function(e) {
+        if (!modal) return;
         const target = e.target;
         const its_modal = target == modal || modal.contains(target);
         const its_btnSend = target == hide_modal;
