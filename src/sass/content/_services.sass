@@ -1,18 +1,27 @@
 .content-services
   padding: 0
   //margin-left: $w_left_side_m_sm + 47
-  //background-color: red
+  background-color: red
+  height: calc(100% - 285px)!important
+  //113 - top space 172 - bottom space
+  width: calc(100% - 45% - 40px)
+  overflow-y: scroll
+  overflow-x: scroll
 
-  .content-in
-    .content__center
+  .content-in .content__center
       display: flex
       flex-direction: row
       flex-wrap: wrap
       justify-content: center
-      flex-grow: unset
+      // align-items: flex-start
+      background-color: green
 
   .content-item
-    margin: 0 20px 20px 0
+    width: 41%
+    height: 27%
+    min-width: 240px
+    min-height: 30px
+    margin-right: 20px
     &:nth-child(2n)
       margin-right: 0
 
