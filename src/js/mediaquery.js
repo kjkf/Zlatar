@@ -32,7 +32,9 @@ $(function() {
             console.log('maxWidth1366.matches else');
             activeMenuItem = menu.querySelector('.menu-item.active');
             const menuType = activeMenuItem.dataset.menutype;
-            changeClassName(menuType);
+            const arr = window.location.href.split('/');
+            console.log(arr[arr.length - 1]);
+            if (arr[arr.length - 1] !== 'catalog_bench.html') changeClassName(menuType);
         }
     }
 

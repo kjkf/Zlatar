@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container_wrap">
-    <div class="container">
+    <div class="container category">
         <header class="header">
             <div class="contacts header__contacts">
                 <div class="contacts__l">
@@ -48,12 +48,12 @@
                             <li class="menu-item products" data-menuType="m-sm">
                                 <a href="products.html">Продукты</a>
                                 <ul class="submenu">
-                                    <li class="menu-item" data-menuType="m-collapsed"><a href="category_maf.html">Малые архитектурные формы</a></li>
-                                    <li class="menu-item active" data-menuType="m-collapsed"><a href="category_nvf.html">Навесные вентилируемые фасады</a></li>
-                                    <li class="menu-item" data-menuType="m-collapsed"><a href="#">Прочие</a></li>
+                                    <li class="menu-item" data-menuType="m-sm"><a href="category_maf.html">Малые архитектурные формы</a></li>
+                                    <li class="menu-item active" data-menuType="m-sm"><a href="category_nvf.html">Навесные вентилируемые фасады</a></li>
+                                    <li class="menu-item" data-menuType="m-sm"><a href="#">Прочие</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item" data-menuType="m-sm"><a href="#">Портфолио</a></li>
+                            <li class="menu-item" data-menuType="m-collapsed"><a href="#">Портфолио</a></li>
                             <li class="menu-item" data-menuType="m-collapsed"><a href="#">Контакты</a></li>
                         </ul>
                     </nav>
@@ -63,36 +63,32 @@
                 </div>
             </div>
         </header>
-        <div class="content m-sm"> <!--m-collapsed или m-sm -->
+        <div class="content m-sm nvf--content"> <!--m-collapsed или m-sm -->
             <div class="content-in">
                 <h2 class="content__header title title-main"><span class="ic-rhomb"></span>Навесные вентилируемые фасады</h2>
                 <div class="content__center">
                     <a href="#" class="breadcrumbs">Продукты / Навесные вентилируемые фасады</a>
-                    <div class="category">
-                        <div class="cat-row">
-                            <a href="" class="cat-link">
-                                <div class="content-item ">
-                                    <div class="content-item__in">
-                                        <div class="content-item__img">
-                                            <img src="public/images/content/bench.jpg" alt="Из оцинкованной стали">
-                                        </div>
-                                        <div class="content-item__descr"><h3 class="title">Из оцинкованной стали</h3></div>
+                    <!--<div class="category items">-->
+                        <!--<div class="cat-row">-->
+                            <a href="/" class="content-item">
+                                <div class="content-item__in">
+                                    <div class="content-item__img">
+                                        <img src="public/images/content/bench.jpg" alt="Из оцинкованной стали">
                                     </div>
+                                    <div class="content-item__descr"><h3 class="title">Из оцинкованной стали</h3></div>
                                 </div>
                             </a>
-                            <a href="" class="cat-link">
-                                <div class="content-item ">
-                                    <div class="content-item__in">
-                                        <div class="content-item__img">
-                                            <img src="public/images/content/banner_01.jpg" alt="Из нержавеющей стали">
-                                        </div>
-                                        <div class="content-item__descr"><h3 class="title">Из нержавеющей стали</h3></div>
+                            <a href="/" class="content-item ">
+                                <div class="content-item__in">
+                                    <div class="content-item__img">
+                                        <img src="public/images/content/banner_01.jpg" alt="Из нержавеющей стали">
                                     </div>
+                                    <div class="content-item__descr"><h3 class="title">Из нержавеющей стали</h3></div>
                                 </div>
                             </a>
-                        </div>
-
-                    </div>
+                        <!--</div>-->
+<!--
+                    </div>-->
                 </div>
                 <div class="content__footer">
                     <a href="#" class="link ic-back link--footer">Назад</a>

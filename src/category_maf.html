@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container_wrap">
-    <div class="container">
+    <div class="container category">
         <header class="header">
             <div class="contacts header__contacts">
                 <div class="contacts__l">
@@ -48,12 +48,12 @@
                             <li class="menu-item products" data-menuType="m-sm">
                                 <a href="products.html">Продукты</a>
                                 <ul class="submenu">
-                                    <li class="menu-item active" data-menuType="m-collapsed"><a href="category_maf.html">Малые архитектурные формы</a></li>
-                                    <li class="menu-item" data-menuType="m-collapsed"><a href="category_nvf.html">Навесные вентилируемые фасады</a></li>
-                                    <li class="menu-item" data-menuType="m-collapsed"><a href="#">Прочие</a></li>
+                                    <li class="menu-item active" data-menuType="m-sm"><a href="category_maf.html">Малые архитектурные формы</a></li>
+                                    <li class="menu-item" data-menuType="m-sm"><a href="category_nvf.html">Навесные вентилируемые фасады</a></li>
+                                    <li class="menu-item" data-menuType="m-sm"><a href="#">Прочие</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item" data-menuType="m-sm"><a href="#">Портфолио</a></li>
+                            <li class="menu-item" data-menuType="m-collapsed"><a href="#">Портфолио</a></li>
                             <li class="menu-item" data-menuType="m-collapsed"><a href="#">Контакты</a></li>
                         </ul>
                     </nav>
@@ -63,71 +63,54 @@
                 </div>
             </div>
         </header>
-        <div class="content m-sm"> <!--m-collapsed или m-sm -->
+        <div class="content m-sm maf--content"> <!--m-collapsed или m-sm -->
             <div class="content-in">
                 <h2 class="content__header title title-main"><span class="ic-rhomb"></span>Малые архитектурные формы</h2>
-                <div class="content__center">
+                <div class="content__center items">
                     <a href="#" class="breadcrumbs">Продукты / Малые архитектурные формы </a>
-                    <div class="category">
-                        <div class="cat-row">
-                            <a class="cat-link" href="catalog_bench.html">
-                                <div class="content-item ">
-                                    <div class="content-item__in">
-                                        <div class="content-item__img">
-                                            <img src="public/images/content/bench.jpg" alt="Скамейки">
-                                        </div>
-                                        <div class="content-item__descr"><h3 class="title">Скамейки</h3></div>
-                                    </div>
+                    <!--<div class="category">-->
+                        <a href="catalog_bench.html" class="content-item ">
+                            <div class="content-item__in">
+                                <div class="content-item__img">
+                                    <img src="public/images/content/bench.jpg" alt="Скамейки">
                                 </div>
-                            </a>
-                            <a class="cat-link" href="catalog_bench.html">
-                                <div class="content-item ">
-                                    <div class="content-item__in">
-                                        <div class="content-item__img">
-                                            <img src="public/images/content/banner_01.jpg" alt="Урны">
-                                        </div>
-                                        <div class="content-item__descr"><h3 class="title">Урны</h3></div>
-                                    </div>
+                                <div class="content-item__descr"><h3 class="title">Скамейки</h3></div>
+                            </div>
+                        </a>
+                        <a href="catalog_bench.html" class="content-item ">
+                            <div class="content-item__in">
+                                <div class="content-item__img">
+                                    <img src="public/images/content/banner_01.jpg" alt="Урны">
                                 </div>
-                            </a>
-                        </div>
+                                <div class="content-item__descr"><h3 class="title">Урны</h3></div>
+                            </div>
+                        </a>
+                        <a href="/" class="content-item ">
+                            <div class="content-item__in">
+                                <div class="content-item__img">
+                                    <img src="public/images/content/bench.jpg" alt="Опоры освещения">
+                                </div>
+                                <div class="content-item__descr"><h3 class="title">Опоры освещения</h3></div>
+                            </div>
+                        </a>
+                        <a href="/" class="content-item ">
+                            <div class="content-item__in">
+                                <div class="content-item__img">
+                                    <img src="public/images/content/banner_01.jpg" alt="Фонари декоративные">
+                                </div>
+                                <div class="content-item__descr"><h3 class="title">Фонари декоративные</h3></div>
+                            </div>
+                        </a>
 
-                        <div class="cat-row">
-                            <a href="" class="cat-link">
-                                <div class="content-item ">
-                                    <div class="content-item__in">
-                                        <div class="content-item__img">
-                                            <img src="public/images/content/bench.jpg" alt="Опоры освещения">
-                                        </div>
-                                        <div class="content-item__descr"><h3 class="title">Опоры освещения</h3></div>
-                                    </div>
+                        <a href="" class="content-item ">
+                            <div class="content-item__in">
+                                <div class="content-item__img">
+                                    <img src="public/images/content/bench.jpg" alt="Велопарковки">
                                 </div>
-                            </a>
-                            <a href="" class="cat-link">
-                                <div class="content-item ">
-                                    <div class="content-item__in">
-                                        <div class="content-item__img">
-                                            <img src="public/images/content/banner_01.jpg" alt="Фонари декоративные">
-                                        </div>
-                                        <div class="content-item__descr"><h3 class="title">Фонари декоративные</h3></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="cat-row">
-                            <a href="" class="cat-link">
-                                <div class="content-item ">
-                                    <div class="content-item__in">
-                                        <div class="content-item__img">
-                                            <img src="public/images/content/bench.jpg" alt="Велопарковки">
-                                        </div>
-                                        <div class="content-item__descr"><h3 class="title">Велопарковки</h3></div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                                <div class="content-item__descr"><h3 class="title">Велопарковки</h3></div>
+                            </div>
+                        </a>
+                    <!--</div>-->
                 </div>
                 <div class="content__footer">
                     <a href="#" class="link ic-back link--footer">Назад</a>
