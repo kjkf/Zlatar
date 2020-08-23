@@ -25,15 +25,15 @@ $(function() {
             console.log('maxWidth1366.matches');
             activeMenuItem = menu.querySelector('.menu-item.active');
             firstMenuItem = menu.querySelector('li:first-child');
-
-            const className = activeMenuItem === firstMenuItem ? 'm-sm' : 'm-collapsed';
+            console.log(firstMenuItem);
+            const className = activeMenuItem === firstMenuItem ? '' : 'm-collapsed';
             changeClassName(className);
         } else {
             console.log('maxWidth1366.matches else');
             activeMenuItem = menu.querySelector('.menu-item.active');
             const menuType = activeMenuItem.dataset.menutype;
             const arr = window.location.href.split('/');
-            console.log(arr[arr.length - 1]);
+
             if (arr[arr.length - 1] !== 'catalog_bench.html') changeClassName(menuType);
         }
     }
@@ -51,6 +51,7 @@ $(function() {
     }
 
     function changeClassName(className) {
+        if (!className) return;
         const classList = left_side.classList.value;
         const menuClass = classList.match(/m-\w*/g);
 
