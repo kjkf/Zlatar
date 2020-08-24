@@ -1,16 +1,18 @@
 .content
   flex-grow: 1
-  padding: $pt_content $p_content
+  padding: $pt_content $pr_content $pb_content $pl_content
   margin-left: $w_left_side_m_sm
-  +laptop-down
+  +laptop-album-down
     padding-left: $p_content_laptop
     padding-right: $p_content_laptop
   +tablet-down
     padding-left: $p_content_tablet
     padding-right: $p_content_tablet
   &.m-collapsed
-    padding: $p_content_m_collapsed
-    margin-left: calc(#{$w_nav} + 30px)
+    margin-left: calc(#{$w_nav} + #{$p_container_laptop})
+    align-self: center
+    +tablet-down
+      margin-left: calc(#{$w_nav} + #{$p_container_tablet})
   &.m-sm
     margin-left: $w_left_side_m_sm
   &-in
@@ -32,9 +34,10 @@
     display: flex
     flex-direction: row
     flex-wrap: wrap
-    justify-content: space-evenly
+    justify-content: space-between
     align-items: center
     height: 100%
+    max-height: calc(100vh - 350px)
     background-color: green
 
   &__footer
@@ -43,7 +46,7 @@
     align-items: center
     margin-top: 20px
     z-index: 10
-    +laptop-down
+    +laptop-album-down
       justify-content: center
       flex-direction: column
 

@@ -2,7 +2,7 @@
   .content-in
     z-index: 2
     width: $w_content_in_about
-    max-width: calc(#{$extra-large-width} / 3)
+    max-width: calc(#{$desktop-width} / 3)
     min-height: $h_content_in_about
     height: auto
     position: absolute
@@ -14,11 +14,11 @@
     border-radius: $rad_about
     background: $bg_body
     border-right: 0.5px solid $bg_menu
-    +extra-large
-      left: calc(#{$extra-large-width} * 0.5)
-    +extra-large-down
+    +desktop
+      left: calc(#{$desktop-width} * 0.5)
+    +desktop-down
       left: 50%
-    +laptop-down
+    +laptop-album-down
       padding: 15px 20px 15px
       min-height: $h_content_in_about_laptop
       margin-top: 192px
