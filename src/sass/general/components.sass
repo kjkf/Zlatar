@@ -4,14 +4,15 @@
   border-radius: $rad_content_item
   padding: $p_content_item
   max-width: 420px
-  width: 44%
-  height: 27%
-  min-width: 240px
+  width: 50%
+  height: 30%
+  min-width: 226px
   min-height: 30px
-  +laptop-down
-    min-height: 210px
+  +laptop-album-down
+    max-height: 210px
+    width: 49%
   +tablet-down
-    min-height: 155px
+    max-height: 155px
 
   &__in
     display: flex
@@ -24,7 +25,7 @@
     border-radius: $rad_content_item
     height: 100%
     width: 100%
-    +laptop-down
+    +laptop-album-down
       height: 140px
     +tablet-down
       height: 155px
@@ -42,6 +43,7 @@
     display: flex
     align-items: flex-start
     justify-content: center
+    padding: 5px 0px
     +tablet-down
       font-size: 14px
 
