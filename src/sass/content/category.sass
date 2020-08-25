@@ -19,23 +19,23 @@
 
 .nvf--content
   .content__center.items
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    justify-content: space-evenly
     align-items: flex-start
-    height: 100%
 
   .content-item
-    height: 45%
-    margin-right: 25px
+    height: 100%
+    width: 49%
+    max-height: 300px
+    //margin-right: 25px
     +laptop-down
-      margin-right: 0
+      //margin-right: 0
       height: 27%
       width: 49%
 
+    .content-item__img
+      height: 235px
+
   .content__footer
-    +laptop-down
+    +laptop-album-down
       flex-direction: row
       justify-content: space-between
 
@@ -43,20 +43,21 @@
   .breadcrumbs
     margin-bottom: 0
   .content__center.items
-    justify-content: flex-start
+    justify-content: space-between
     +laptop-down
       justify-content: space-between
   .content__footer
-    +laptop-down
+    +laptop-album-down
       flex-direction: row
       justify-content: space-between
 
   .content-item
-    margin-right: 25px
+    //margin-right: 25px
     +laptop-down
-      margin-right: 0
+      //margin-right: 0
       width: 48%
       height: 30%
+      max-height: 280px
 
   .content-item__img
     +laptop-down
@@ -64,21 +65,24 @@
 
 .catalog--content
   .content-item--catalog
-    height: 40%
+    height: 28%
     min-height: 30px
-    +laptop
+    +laptop-down
       height: 28%
       width: 48%
   .content-item__descr
     +laptop-down
       font-size: 16px
   .content__footer
-    +laptop-down
+    +laptop-album-down
       flex-direction: row
       justify-content: space-between
 
   .content__center.items
     max-height: calc(100vh - 375px)
+
+  .pagination
+    width: 100%
 
 
 
