@@ -29,20 +29,56 @@
   .content-item
     height: 45%
     margin-right: 25px
+    +laptop-down
+      margin-right: 0
+      height: 27%
+      width: 49%
+
+  .content__footer
+    +laptop-down
+      flex-direction: row
+      justify-content: space-between
 
 .maf--content
   .breadcrumbs
     margin-bottom: 0
   .content__center.items
     justify-content: flex-start
+    +laptop-down
+      justify-content: space-between
+  .content__footer
+    +laptop-down
+      flex-direction: row
+      justify-content: space-between
 
   .content-item
     margin-right: 25px
+    +laptop-down
+      margin-right: 0
+      width: 48%
+      height: 30%
+
+  .content-item__img
+    +laptop-down
+      height: 205px
 
 .catalog--content
   .content-item--catalog
     height: 40%
     min-height: 30px
+    +laptop
+      height: 28%
+      width: 48%
+  .content-item__descr
+    +laptop-down
+      font-size: 16px
+  .content__footer
+    +laptop-down
+      flex-direction: row
+      justify-content: space-between
+
+  .content__center.items
+    max-height: calc(100vh - 375px)
 
 
 

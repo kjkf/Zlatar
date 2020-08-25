@@ -4,13 +4,20 @@
     justify-content: space-between
     align-items: flex-start
     margin-bottom: 50px
+    +laptop-down
+      flex-direction: column
+      margin-bottom: 20px
 
   .info__slider
     width: 40%
-    //background: lightsteelblue
+    +laptop-down
+      width: 100%
+      margin-bottom: 30px
 
   .info__descr
     width: 60%
+    +laptop-down
+      width: 100%
     //background: lightgreen
 
   .cat-row
@@ -19,14 +26,22 @@
     margin-bottom: 0
     .col
       width: 65%
+      +laptop-down
+        width: 55%
       &.info__caption
         width: 30%
         text-align: right
-        &.info__caption--selfAlignEnd
-          align-self: flex-end
+        +laptop-down
+          width: 43%
+        &.info__caption--selfAlign
+          align-self: stretch
+          line-height: 32px
 
       &.info__text
         font-family: $font_MontAlt_Medium
+        +laptop-down
+          font-size: 16px
+          text-align: left
 
   .info__text--highlight
     font-size: 26px
@@ -40,6 +55,12 @@
     .title
       font-family: $font_MontAlt_Medium
       text-align: left
+
+.productInfo--content
+  .content__footer
+    +laptop-down
+      flex-direction: row
+      justify-content: space-between
 
 .flex-end
   justify-content: flex-end

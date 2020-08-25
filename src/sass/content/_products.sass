@@ -1,24 +1,18 @@
-.products_cats
-  margin: 0 auto
+.products--content
+  .content__center.items
+    max-height: calc(100vh - 375px)
+    +laptop-down
+      flex-direction: column
 
-  .content-item--productCat
-    min-height: 280px
-    height: 280px
-    margin-right: 40px
-    &:last-child
-      margin-right: 0
+    .content-item--productCat
+      +laptop-down
+        width: 100%
+        height: 30%
+        max-height: 286px
 
-    +tablet-down
-      margin-right: 0
-      margin-bottom: 21px
-      &:last-child
-        margin-bottom: 0
-
-    .content-item__img
-      +phone-down
-        display: none
-
-
+  .content__footer
+    +laptop-down
+      align-items: flex-end
 
 .cat-row
   display: flex
