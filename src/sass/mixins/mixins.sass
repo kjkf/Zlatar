@@ -16,21 +16,22 @@
 		@content
 
 
-$extra-large-width: 1920px
+$desktop-width: 1920px
+$laptop-album-width: 1366px
 $laptop-width: 1024px
-$ipad-width: 992px
 $tablet-width: 768px
-$phone-width: 576px
-$phone-width-min: 320px
+$phone-width: 568px
+$phone_min-width: 320px
 
-=extra-large
-	@media screen and (min-width: $extra-large-width)
+
+=desktop
+	@media screen and (min-width: $desktop-width)
+		@content
+=laptop-album
+	@media screen and (min-width: $laptop-album-width)
 		@content
 =laptop
 	@media screen and (min-width: $laptop-width)
-		@content
-=ipad
-	@media screen and (min-width: $ipad-width)
 		@content
 =tablet
 	@media screen and (min-width: $tablet-width)
@@ -39,17 +40,19 @@ $phone-width-min: 320px
 	@media screen and (min-width: $phone-width)
 		@content
 =phone_min
-	@media screen and (min-width: $phone-width-min)
+	@media screen and (min-width: $phone_min-width)
 		@content
 
-=extra-large-down
-	@media screen and (max-width: $extra-large-width)
+
+
+=desktop-down
+	@media screen and (max-width: $desktop-width)
+		@content
+=laptop-album-down
+	@media screen and (max-width: $laptop-album-width)
 		@content
 =laptop-down
 	@media screen and (max-width: $laptop-width)
-		@content
-=ipad-down
-	@media screen and (max-width: $ipad-width)
 		@content
 =tablet-down
 	@media screen and (max-width: $tablet-width)
@@ -57,9 +60,10 @@ $phone-width-min: 320px
 =phone-down
 	@media screen and (max-width: $phone-width)
 		@content
-=phonemin-down
-	@media screen and (max-width: $phone-width-min)
+=phone_min-down
+	@media screen and (max-width: $phone_min-width)
 		@content
+
 
 $min-height: 970px
 =max-height
@@ -67,7 +71,7 @@ $min-height: 970px
 		@content
 
 =media-w1024_h900
-	@media screen and (min-width: $laptop-width) and (max-height: $min-height)
+	@media screen and (min-width: $tablet-width) and (max-height: $min-height)
 		@content
 
 
