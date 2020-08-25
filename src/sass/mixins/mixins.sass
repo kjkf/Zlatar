@@ -23,6 +23,17 @@ $tablet-width: 768px
 $phone-width: 568px
 $phone_min-width: 320px
 
+$laptop-height: 1366px
+$tablet-album-height: 768px
+
+=laptop-device-down
+	@media screen and (max-width: $laptop-width) and (max-height: $laptop-height)
+		@content
+
+=tablet-album-device-down
+	@media screen and (max-width: $laptop-width) and (max-height: $tablet-album-height)
+		@content
+
 
 =desktop
 	@media screen and (min-width: $desktop-width)
