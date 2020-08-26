@@ -39,6 +39,9 @@
     height: 100%
     max-height: calc(100vh - 350px)
     background-color: green
+    +desktop-device-height
+      flex-grow: unset
+      height: auto
 
   &__footer
     display: flex

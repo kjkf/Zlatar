@@ -23,8 +23,14 @@ $tablet-width: 768px
 $phone-width: 568px
 $phone_min-width: 320px
 
+$desktop-height: 1160px
 $laptop-height: 1366px
 $tablet-album-height: 768px
+
+
+=desktop-device
+  @media screen and (min-width: $desktop-width) and (min-height: $desktop-height)
+    @content
 
 =laptop-device-down
 	@media screen and (max-width: $laptop-width) and (max-height: $laptop-height)
@@ -34,9 +40,12 @@ $tablet-album-height: 768px
 	@media screen and (max-width: $laptop-width) and (max-height: $tablet-album-height)
 		@content
 
+=desktop-device-height
+	@media screen and (min-height: $laptop-album-width)
+		@content
 
 =desktop
-	@media screen and (min-width: $desktop-width)
+	@media screen and (min-width: calc(#{$desktop-width} + 1px))
 		@content
 =laptop-album
 	@media screen and (min-width: $laptop-album-width)
