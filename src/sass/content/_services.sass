@@ -8,7 +8,9 @@
 
   .content-item--dark
     margin: 0
-  
+
+
+
 
 .content-servicesi
   .content-in
@@ -18,10 +20,18 @@
     .content-item--dark
       flex-grow: 1
 
+
   .breadcrumbs
     width: 915px
 
-@media screen and (max-height: 825px)
+@media screen and (max-height: 825px), (max-width: 747px)
   .content-services
+    .content__center
+      justify-content: center
+    .content-item
+      height: 80px
+      width: 230px
     .content-item__img
       display: none
+    .content-item__descr
+      align-items: center
