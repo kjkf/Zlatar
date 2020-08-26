@@ -8,10 +8,17 @@
   +tablet-down
     padding-left: $p_content_tablet
     padding-right: $p_content_tablet
+    padding-top: $pt_content_tablet
+  +tablet-album-device-down
+    padding-left: $p_content_tablet
+    padding-right: $p_content_tablet
+    padding-top: 10px
   &.m-collapsed
     margin-left: calc(#{$w_nav} + #{$p_container_laptop})
     align-self: center
     +tablet-down
+      margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
+    +tablet-album-device-down
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
   &.m-sm
     margin-left: $w_left_side_m_sm

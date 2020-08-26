@@ -22,6 +22,8 @@ body
   overflow-y: hidden
   +tablet-down
     font-size: 14px
+  +tablet-album-device-down
+    font-size: 14px
   +phone-down
     font-size: 12px
 
@@ -41,12 +43,20 @@ h2
   font-size: $fontSize_h2
   line-height: $lineHeight_h2
   font-weight: normal
+  +tablet-down
+    font-size: $fontSize_h2_tablet
+    line-height: $lineHeight_h2_tablet
+  +tablet-album-device-down
+    font-size: $fontSize_h2_tablet
+    line-height: $lineHeight_h2_tablet
 
 h3
   font-size: $fontSize_h3
   line-height: $lineHeight_h3
   font-weight: normal
   +tablet-down
+    font-size: $fontSize_h3_tablet
+  +tablet-album-device-down
     font-size: $fontSize_h3_tablet
   +phone-down
     font-size: $fontSize_h3_mob
@@ -115,6 +125,9 @@ h5
   background: $col_acsent
   transform: rotate(-45deg)
   +tablet-down
+    width: $w_rhomb_tablet
+    height: $h_rhomb_tablet
+  +tablet-album-device-down
     width: $w_rhomb_tablet
     height: $h_rhomb_tablet
 

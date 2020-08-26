@@ -8,12 +8,13 @@
   height: 30%
   min-width: 226px
   min-height: 30px
-  max-width: 422px
   max-height: 233px
   +laptop-album-down
     max-height: 210px
     width: 49%
   +tablet-down
+    max-height: 155px
+  +tablet-album-device-down
     max-height: 155px
 
   &__in
@@ -48,6 +49,8 @@
     padding: 5px 0px
     +tablet-down
       font-size: 14px
+    +tablet-album-device-down
+      font-size: 14px
 
   .title
     font-family: $font_MontAlt_Medium
@@ -80,6 +83,8 @@
       font-size: 14px
       +tablet-down
         font-size: 12px
+      +tablet-album-device-down
+        font-size: 12px
 
 .content-item--managment
   .content-item__in
@@ -107,8 +112,9 @@
       margin-bottom: 15px
 
 .content-item--productCat
-  width: 46%
+  width: 49%
   max-width: 450px
+  max-height: 313px
   height: 42%
   position: relative
   &:hover
@@ -117,9 +123,9 @@
           opacity: 1
 
   .content-item__descr
-    padding-left: 12%
-    padding-right: 12%
-    min-height: 80px
+    padding-left: 9%
+    padding-right: 9%
+    min-height: 63px
     align-items: center
 
   .content-item-hover
