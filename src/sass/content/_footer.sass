@@ -5,17 +5,20 @@
     font-size: 18px
     display: flex
     justify-content: flex-end
-    +tablet-down
+    +laptop-down
       font-size: 14px
+    +tablet-down
+      font-size: 12px
     +tablet-album-device-down
       font-size: 14px
       line-height: 17px
   .location
     width: 500px
     +laptop-album-down
-      width: 306px
+      width: 270px
     +tablet-down
-      width: 234px
+      width: 220px
+
     &:before
       width: 30px
       height: 30px
@@ -31,4 +34,3 @@
     &.ic
       +tablet-down
         padding-left: 15px
-
