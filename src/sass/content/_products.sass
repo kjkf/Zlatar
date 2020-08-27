@@ -2,16 +2,29 @@
   .content__center.items
     max-height: calc(100vh - 375px)
     justify-content: space-evenly
+
+
     +laptop-down
       flex-direction: column
 
     .content-item--productCat
       +laptop-album-down
         max-height: 286px
-
+      +laptop-device-down
+        max-height: 220px
+        margin-bottom: 20px
+        &:last-child
+          margin-bottom: 0
       +laptop-down
         width: 100%
         height: 30%
+
+  .content-item-hover
+    +laptop-device-down
+      font-size: 18px
+      line-height: 1
+      padding: 3% 2%
+
 
   .content__footer
     +laptop-album-down

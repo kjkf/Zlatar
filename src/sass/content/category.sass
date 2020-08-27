@@ -26,10 +26,15 @@
     width: 49%
     max-height: 300px
     //margin-right: 25px
+    +laptop-album-down
+      max-width: 310px
+      max-height: 210px
     +laptop-down
       //margin-right: 0
       height: 27%
       width: 49%
+    +laptop-device-down
+      height: 100%
 
     .content-item__img
       height: 235px
@@ -42,8 +47,16 @@
 .maf--content
   .breadcrumbs
     margin-bottom: 0
+    +laptop-album-down
+      margin-left: -21%
+    +laptop-device-down
+      margin-left: 0
   .content__center.items
     justify-content: space-between
+    +laptop-album-down
+      padding: 0 15%
+    +laptop-device-down
+      padding: 0
     +laptop-down
       justify-content: space-between
   .content__footer
@@ -53,6 +66,9 @@
 
   .content-item
     //margin-right: 25px
+    +laptop-album-down
+      max-width: 310px
+
     +laptop-down
       //margin-right: 0
       width: 48%
@@ -67,6 +83,10 @@
   .content-item--catalog
     height: 28%
     min-height: 30px
+    +laptop-album-down
+      height: 37%
+      max-width: 310px
+      max-height: 210px
     +laptop-down
       height: 28%
       width: 48%
