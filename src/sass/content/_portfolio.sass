@@ -1,11 +1,54 @@
 .content-portfolio
   font-family: $font_MontAlt_Regular
+
   .content__header
-    margin-bottom: 57px
+    margin-bottom: 70px
+    +laptop-down
+      margin-bottom: 20px
+
+  .content__footer
+    +laptop-album-down
+      align-items: flex-end
+
   .content-wrap
     display: flex
     justify-content: space-between
     height: 100%
     margin-top: 20px
+    +laptop-down
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
+      margin-top: 60px
+    +tablet-down
+      margin-top: 0px
+    +tablet-album-device-down
+      flex-direction: row
+      justify-content: space-between
+      align-items: flex-start
+      margin-top: 0px
+
   .content__center p
-    margin-bottom: 0px
+    margin-bottom: 10px
+    +tablet-down
+      margin-bottom: 15px
+    +tablet-album-device-down
+      margin-bottom: 15px
+
+  .content-item--productCat
+    +laptop-down
+      width: 100%
+      max-height: 286px
+      margin-bottom: 20px
+
+    +tablet-down
+      max-width: 340px
+      max-height: 217px
+
+    +tablet-album-device-down
+      max-width: 340px
+      max-height: 217px
+
+    .content-item__img
+      +laptop-album-down
+        height: 100%

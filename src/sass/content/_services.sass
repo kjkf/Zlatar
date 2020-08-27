@@ -1,13 +1,16 @@
 .content-services
   //padding: 0
   //margin-left: $w_left_side_m_sm + 47
-  background-color: red
+  //background-color: red
   //height: calc(100% - 285px)!important
   //113 - top space 172 - bottom space
   //width: calc(100% - 45% - 40px)
 
   .content-item--dark
     margin: 0
+
+
+
 
 .content-servicesi
   .content-in
@@ -17,5 +20,18 @@
     .content-item--dark
       flex-grow: 1
 
+
   .breadcrumbs
     width: 915px
+
+@media screen and (max-height: 825px), (max-width: 747px)
+  .content-services
+    .content__center
+      justify-content: center
+    .content-item
+      height: 80px
+      width: 230px
+    .content-item__img
+      display: none
+    .content-item__descr
+      align-items: center

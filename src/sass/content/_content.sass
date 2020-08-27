@@ -8,11 +8,18 @@
   +tablet-down
     padding-left: $p_content_tablet
     padding-right: $p_content_tablet
+    padding-top: $pt_content_tablet
+  +tablet-album-device-down
+    padding-left: $p_content_tablet
+    padding-right: $p_content_tablet
+    padding-top: 10px
   &.m-collapsed
     margin-left: calc(#{$w_nav} + #{$p_container_laptop})
     align-self: center
     +tablet-down
-      margin-left: calc(#{$w_nav} + #{$p_container_tablet})
+      margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
+    +tablet-album-device-down
+      margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
   &.m-sm
     margin-left: $w_left_side_m_sm
   &-in
@@ -21,7 +28,6 @@
     height: 100%
     &.m-sm
       padding: 0px 40px
-
 
   &__center
     flex-grow: 1
@@ -38,7 +44,10 @@
     align-items: center
     height: 100%
     max-height: calc(100vh - 350px)
-    background-color: green
+    //background-color: green
+    +desktop-device-height
+      flex-grow: unset
+      height: auto
 
   &__footer
     display: flex
@@ -49,5 +58,3 @@
     +laptop-album-down
       justify-content: center
       flex-direction: column
-
-
