@@ -25,6 +25,10 @@
       width: 20px
       height: 20px
   .contacts__r
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: flex-end
     +tablet-down
       text-align: right
     +tablet-album-device-down
@@ -46,9 +50,12 @@
   line-height: 1.2
   font-family: $font_MontAlt_Medium
   font-weight: 500
-  +tablet-down
+  +laptop-down
     font-size: 14px
     line-height: 20px
+  +tablet-down
+    font-size: 12px
+    //line-height: 20px
   +tablet-album-device-down
     font-size: 14px
     line-height: 20px
