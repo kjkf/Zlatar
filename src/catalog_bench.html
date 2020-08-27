@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../public/css/normalize.css">
     <link rel="stylesheet" href="../public/css/styles.min.css">
 </head>
-<body>
+<body class="modal-bg">
 <div class="container_wrap">
     <div class="container">
         <header class="header">
@@ -203,6 +203,31 @@
             </span>
             </div>
         </footer>
+
+        <!-- модальное окно -->
+        <div class="modal modal-order">
+            <div class="modal__in">
+                <form action="">
+                    <h2 class="title modal-title">Введите номер телефона и получите доступ к каталогу</h2>
+                    <div class="modal-msg">
+                        <span>Все поля должны быть заполнены!</span>
+                    </div>
+                    <div class="modal-content">
+                        <div class="field-group">
+                            <label class="field-label">Ваше имя:</label>
+                            <input type="text" class="field">
+                        </div>
+                        <div class="field-group">
+                            <label class="field-label">Номер Вашего телефона:</label>
+                            <input type="text" class="field">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn hide-modal">Отправить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 <script src="../public/main.min.js"></script>
