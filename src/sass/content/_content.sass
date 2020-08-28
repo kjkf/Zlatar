@@ -14,6 +14,10 @@
     padding-left: $p_content_tablet
     padding-right: $p_content_tablet
     padding-top: 10px
+  +phone-down
+    margin-left: 0
+    padding: 0
+    background: lightgreen
   &.m-collapsed
     margin-left: calc(#{$w_nav} + #{$p_container_laptop})
     align-self: center
@@ -21,8 +25,12 @@
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
     +tablet-album-device-down
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
+    +phone-down
+      margin-left: 0
   &.m-sm
     margin-left: $w_left_side_m_sm
+    +phone-down
+      margin-left: 0
   &-in
     display: flex
     flex-direction: column

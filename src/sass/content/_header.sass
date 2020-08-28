@@ -59,6 +59,8 @@
   +tablet-album-device-down
     font-size: 14px
     line-height: 20px
+  +phone-down
+    display: none
   &__r
     min-width: 215px
     margin-left: 20px
@@ -109,6 +111,17 @@
     width: $w_left_side_m_sm
     padding-top: 50px
 
+.left-side, .left-side.m-collapsed, .left-side.m-sm
+  +phone-down
+    width: 100%
+    border-radius: 0
+    height: 40px
+    min-height: 24px
+    padding: 8px 5px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    z-index: 3
 
 .nav-wrap
   display: flex
@@ -120,6 +133,22 @@
     margin-left: -#{$p_container_tablet}
   +tablet-album-device-down
     margin-left: -#{$p_container_tablet}
+
+  +phone-down
+    position: fixed
+    top: 0
+    left: -100%
+    width: 100%
+    height: 90%
+    background-color: $bg_menu
+    padding: 0
+    transition: all 0.5s ease 0s
+    overflow: auto
+    border-bottom-right-radius: 30px
+  &.active
+    left: 0
+    padding: 70px 10px 20px 10px
+
 
 .nav
   background-color: $bg_dark
@@ -234,6 +263,8 @@
       width: auto
     +desktop-device
       width: auto
+  +phone-down
+    display: none
 
 
 
@@ -263,6 +294,9 @@
     +tablet-album-device-down
       margin-bottom: $mb_logo_tablet
 
+    +phone-down
+      margin-bottom: 0
+
   &.m-collapsed, &.m-sm
     .logo
       width: $w_logo_collapsed
@@ -276,8 +310,56 @@
         margin-bottom: $mb_logo_collapsed_tablet
         width: $w_logo_tablet
         height: $h_logo_tablet
+
+      +phone-down
+        margin-bottom: 0
   //&.m-sm
     .logo
       width: $w_logo_collapsed
       height: $h_logo_collapsed
       margin-bottom: $mb_logo_collapsed
+
+.header__burger
+  display: none
+  +phone-down
+    display: block
+    position: relative
+    width: 30px
+    height: 20px
+    position: relative
+    z-index: 3
+
+    &:before, &:after
+      content: ''
+      background-color: #fff
+      position: absolute
+      width: 100%
+      height: 2px
+      left: 0
+      transition: all 0.3s ease 0s
+
+    &:before
+      top: 0
+    &:after
+      bottom: 0
+
+    & span
+      position: absolute
+      background-color: #fff
+      width: 100%
+      height: 2px
+      top: 9px
+      left: 0
+      transition: all 0.3s ease 0s
+
+    &.active:before
+      transform: rotate(45deg)
+      top: 9px
+
+    &.active:after
+      transform: rotate(-45deg)
+      top: 9px
+
+    &.active span
+      transform: scale(0)
+

@@ -34,3 +34,18 @@
     &.ic
       +tablet-down
         padding-left: 15px
+
+.footer
+  +phone-down
+    min-height: 47px
+    background: $bg_menu
+    text-align: right
+    padding: 10px 20px
+  .footer__contacts
+    +phone-down
+      display: none
+  .footer__arrow-down
+    display: none
+    +phone-down
+      display: inline-block
+
