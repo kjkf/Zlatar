@@ -4,9 +4,11 @@
     justify-content: space-between
     align-items: flex-start
     margin-bottom: 50px
-    +laptop-down
+    +tablet-album-device-down
+      margin-bottom: 30px
+    +tablet-down
       flex-direction: column
-      margin-bottom: 20px
+      margin-bottom: 10px
 
   .info__slider
     width: 40%
@@ -24,6 +26,8 @@
     justify-content: space-between
     align-items: flex-start
     margin-bottom: 0
+    +tablet-down
+      flex-direction: row
     .col
       width: 65%
       +laptop-down
@@ -36,17 +40,43 @@
         &.info__caption--selfAlign
           align-self: stretch
           line-height: 32px
+          +laptop-device-down
+            line-height: 24px
+          +tablet-album-device-down
+            line-height: 20px
+          +tablet-down
+            line-height: 17px
 
       &.info__text
         font-family: $font_MontAlt_Medium
         text-align: left
-        +laptop-down
+        +laptop-device-down
           font-size: 16px
+          line-height: 20px
+        +tablet-album-device-down
+          font-size: 14px
+        +tablet-down
+          font-size: 14px
 
   .info__text--highlight
     font-size: 26px
     line-height: 32px
     color: $col_acsent
+    +laptop-device-down
+      font-size: 20px
+      line-height: 24px
+    +tablet-album-device-down
+      font-size: 16px
+      line-height: 20px
+    +tablet-down
+      font-size: 16px
+      line-height: 20px
+
+  .content__center p
+    +tablet-album-device-down
+      margin-bottom: 10px
+    +tablet-down
+      margin-bottom: 5px
 
   .descr
     text-align: left
@@ -54,6 +84,15 @@
     .title
       font-family: $font_MontAlt_Medium
       text-align: left
+      +laptop-device-down
+        font-size: 20px
+        line-height: 24px
+      +tablet-album-device-down
+        font-size: 16px
+        line-height: 20px
+      +tablet-down
+        font-size: 16px
+        line-height: 20px
 
 .productInfo--content
   .content__footer

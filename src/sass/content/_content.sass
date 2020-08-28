@@ -2,7 +2,7 @@
   flex-grow: 1
   padding: $pt_content $pr_content $pb_content $pl_content
   margin-left: $w_left_side_m_sm
-  background-color: grey
+  //background-color: grey
   +laptop-album-down
     padding-left: $p_content_laptop
     padding-right: $p_content_laptop
@@ -49,6 +49,8 @@
     +desktop-device-height
       flex-grow: unset
       height: auto
+    +tablet-album-device-down
+      max-height: calc(100vh - 295px)
     +tablet-down
       max-height: 100%
       //calc(100vh - 150px)
