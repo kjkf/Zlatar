@@ -328,41 +328,53 @@
   +phone-down
     display: block
     position: relative
-    width: 30px
-    height: 20px
+    width: 40px
+    height: 30px
     position: relative
     z-index: 3
+    color: #ffffff
 
     &:before, &:after
       content: ''
       background-color: #fff
       position: absolute
       width: 100%
-      height: 2px
+      height: 3px
+      border-radius: 5px
       left: 0
       transition: all 0.3s ease 0s
 
     &:before
       top: 0
     &:after
-      bottom: 0
+      top: 16px
+      content: 'меню'
+      font-family: $font_MontAlt_Regular
+      font-size: 10px
+      line-height: 18px
+      letter-spacing: 0.34em
 
     & span
       position: absolute
       background-color: #fff
       width: 100%
-      height: 2px
-      top: 9px
+      height: 3px
+      border-radius: 5px
+      top: 8px
       left: 0
       transition: all 0.3s ease 0s
 
     &.active:before
       transform: rotate(45deg)
-      top: 9px
+      top: 16px
+      width: 75%
 
     &.active:after
       transform: rotate(-45deg)
-      top: 9px
+      top: 16px
+      width: 75%
+      content: ''!important
+
 
     &.active span
       transform: scale(0)
