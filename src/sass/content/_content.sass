@@ -16,8 +16,12 @@
     padding-top: 10px
   +phone-down
     margin-left: 0
-    padding: 0
-    background: lightgreen
+    margin-top: 40px
+    padding: 0 10px
+    background: #ffffff
+    border-radius: 10px
+
+    //background: lightgreen
   &.m-collapsed
     margin-left: calc(#{$w_nav} + #{$p_container_laptop})
     align-self: center
@@ -72,3 +76,6 @@
     +laptop-album-down
       justify-content: center
       flex-direction: column
+    +phone-down
+      position: relative
+      z-index: 2

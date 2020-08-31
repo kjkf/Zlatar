@@ -87,6 +87,7 @@ h5
     padding: $p_container_tablet
   +phone-down
     padding: 0
+    background: $bg_menu
 
 .container_wrap
   display: flex
@@ -101,6 +102,8 @@ h5
     position: relative
     padding-bottom: 15px
     margin-bottom: 10px
+    +phone-down
+      padding-top: 20px
     &:before, &:after
       content: ""
       position: absolute
@@ -276,6 +279,13 @@ h5
   text-align: left
   color: $col_acsent
   margin-bottom: 20px
+  +laptop-down
+    font-size: 16px
+    line-height: 1.2
+  +tablet-down
+    font-size: 14px
+  +phone-down
+    font-size: 10px
 
 
 .wrap

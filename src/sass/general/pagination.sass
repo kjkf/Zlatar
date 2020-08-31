@@ -11,6 +11,9 @@
       height: 25px
       background: transparent no-repeat center center
       background-size: 100% 100%
+      +phone-down
+        width: 20px
+        height: 20px
 
   &__control_prev::before, &__control_next::before
     background-image: url("../images/icons/ic-triangle.svg")
@@ -35,6 +38,10 @@
     // width: 30px
     // height: 40px
     margin-right: 5px
+    +phone-down
+      font-size: 12px
+      height: 20px
+      width: 20px
     &:nth-last-child(-n+2)
       border-right: none
       border-left: 1px solid $col_acsent
@@ -51,6 +58,9 @@
       background-color: $col_acsent
       //margin-right: 5px
       //display: none
+      +phone-down
+        width: 5px
+        height: 5px
       &>span
         display: none
     &:hover

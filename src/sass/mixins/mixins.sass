@@ -83,6 +83,9 @@ $tablet-album-height: 768px
 =phone_min-down
 	@media screen and (max-width: $phone_min-width)
 		@content
+=phone-landscape-down
+	@media screen and (max-width: $phone-width) and (orientation: landscape)
+		@content
 
 
 $min-height: 970px

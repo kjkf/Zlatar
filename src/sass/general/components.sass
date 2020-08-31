@@ -38,6 +38,8 @@
     height: 100%
     border-radius: $rad_content_item
     overflow: hidden
+    +phone-down
+      justify-content: center
   &__img
     overflow: hidden
     border-radius: $rad_content_item
@@ -47,6 +49,8 @@
       //height: 140px
     +tablet-down
       height: 155px
+    +phone-down
+      display: none
 
     img
       width: 100%

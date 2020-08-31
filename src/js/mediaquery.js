@@ -22,14 +22,13 @@ $(function() {
         let activeMenuItem, firstMenuItem;
 
         if (maxWidth1366.matches) {
-            console.log('maxWidth1366.matches');
+            //console.log('maxWidth1366.matches');
             activeMenuItem = menu.querySelector('.menu-item.active');
             firstMenuItem = menu.querySelector('li:first-child');
-            console.log(firstMenuItem);
             const className = activeMenuItem === firstMenuItem ? '' : 'm-collapsed';
             changeClassName(className);
         } else {
-            console.log('maxWidth1366.matches else');
+            //console.log('maxWidth1366.matches else');
             activeMenuItem = menu.querySelector('.menu-item.active');
             const menuType = activeMenuItem.dataset.menutype;
             const arr = window.location.href.split('/');
@@ -63,6 +62,59 @@ $(function() {
         content.classList.add(className);
     }
 
+    function createTabs() {
+        const infoDescr = document.querySelector('.info__descr');
+        const descr = document.querySelector('.descr');
+        if (!infoDescr) return false;
+        console.log('createTab=====');
+        const tabs = createTabsWrapper();
+        const tabsBody = tabs.querySelector('.tabs__body');
+        const specBody = createTabBody('spec', infoDescr);
+        specBody.classList.add('active');
+        const descrBody = createTabBody('descr', descr);
+        tabsBody.insertAdjacentElement('beforeend', specBody);
+        tabsBody.insertAdjacentElement('beforeend', descrBody);
+        console.log('++++', tabs);
+
+        const contentCenter = document.querySelector('.content__center');
+        contentCenter.insertAdjacentElement('beforeend', tabs);
+    };
+
+    function createTabsWrapper() {
+        console.log('createTabsWrapper');
+        const tabs = document.createElement('div');
+        tabs.className = 'tabs';
+        const nav = document.createElement('nav');
+        nav.className = 'tabs__items';
+        const a_spec = createLink('Характеристики', 'spec');
+        a_spec.classList.add('active');
+        const a_descr = createLink('Описание', 'descr');
+        nav.insertAdjacentElement('beforeend', a_spec);
+        nav.insertAdjacentElement('beforeend', a_descr);
+        const tabBody = document.createElement('div');
+        tabBody.className = 'tabs__body';
+
+        tabs.insertAdjacentElement('beforeend', nav);
+        tabs.insertAdjacentElement('beforeend', tabBody);
+        return tabs;
+    }
+
+    function createLink(title, href) {
+        const a = document.createElement('a');
+        a.className = 'tabs__item';
+        a.href = '#' + href;
+        a.innerHTML = title;
+        return a;
+    }
+    
+    function createTabBody(id, content) {
+        const div = document.createElement('div');
+        div.className = 'tabs__block';
+        div.id = id;
+        div.insertAdjacentElement('beforeend', content);
+        return div;
+    }
+
     //===========================================
     const windowInnerHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
     if (windowInnerHeight <= 900 ) {
@@ -70,6 +122,7 @@ $(function() {
     }
 
     maxWidthHandlerForMediaQueries();
+    //createTabs();
 
     try {
         maxHeight900.addEventListener("change", () => {
