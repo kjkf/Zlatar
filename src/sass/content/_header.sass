@@ -79,7 +79,7 @@
   left: 0
   width: $w_left_side
   max-width: calc(#{$desktop-width} * 2/3)
-  height: 100%
+  height: 100vh
   min-height: 500px
   padding: $p_container $pr_left_side $pb_left_side $p_container
   background-color: $bg_menu
@@ -387,3 +387,7 @@
 
     &.active span
       transform: scale(0)
+
+.content__header
+  +desktop-device-height
+    margin-bottom: 30px

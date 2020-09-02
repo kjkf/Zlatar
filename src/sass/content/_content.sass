@@ -39,13 +39,24 @@
   &-in
     display: flex
     flex-direction: column
-    height: 100%
+    height: calc(100vh - 210px)
     &.m-sm
       padding: 0px 40px
+    +tablet-album-device-down
+      height: calc(100vh - 180px)
+    +tablet-down
+      height: calc(100vh - 195px)
+    +phone-down
+      height: calc(100vh - 80px)
+    +phone-landscape-down
+      height: calc(100vh - 50px)
 
   &__center
     flex-grow: 1
     justify-content: flex-start
+    margin-bottom: 20px
+    +phone-down
+      margin-bottom: 15px
     p
       text-align: justify
       margin-bottom: 20px
@@ -57,13 +68,14 @@
     justify-content: space-between
     align-items: center
     height: 100%
-    max-height: calc(100vh - 350px)
+    //max-height: calc(100vh - 350px)
     //background-color: green
     +desktop-device-height
       flex-grow: unset
       height: auto
+      //height: auto
     +tablet-album-device-down
-      max-height: calc(100vh - 295px)
+      //max-height: calc(100vh - 295px)
     //   min-height: calc(100vh - 295px)
     // +tablet-down
     //   min-height: calc(100vh - 295px)
@@ -74,7 +86,7 @@
     display: flex
     justify-content: space-between
     align-items: center
-    margin-top: 20px
+    margin-top: auto
     z-index: 10
     +laptop-album-down
       justify-content: center
@@ -82,5 +94,5 @@
     +phone-down
       position: relative
       z-index: 2
-      margin: 15px 0
+      margin: auto 0px 15px
       padding-right: 5px
