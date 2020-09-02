@@ -39,7 +39,8 @@
   &-in
     display: flex
     flex-direction: column
-    height: 100%
+    //height: 100%
+    height: calc(100vh - 350px)
     &.m-sm
       padding: 0px 40px
 
@@ -57,13 +58,14 @@
     justify-content: space-between
     align-items: center
     height: 100%
-    max-height: calc(100vh - 350px)
+    //max-height: calc(100vh - 350px)
     //background-color: green
     +desktop-device-height
       flex-grow: unset
       height: auto
+      //height: auto
     +tablet-album-device-down
-      max-height: calc(100vh - 295px)
+      //max-height: calc(100vh - 295px)
     //   min-height: calc(100vh - 295px)
     // +tablet-down
     //   min-height: calc(100vh - 295px)
