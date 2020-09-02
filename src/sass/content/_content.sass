@@ -40,13 +40,16 @@
     display: flex
     flex-direction: column
     //height: 100%
-    height: calc(100vh - 350px)
+    height: calc(100vh - 330px)
     &.m-sm
       padding: 0px 40px
 
   &__center
     flex-grow: 1
     justify-content: flex-start
+    margin-bottom: 20px
+    +phone-down
+      margin-bottom: 15px
     p
       text-align: justify
       margin-bottom: 20px
@@ -76,7 +79,7 @@
     display: flex
     justify-content: space-between
     align-items: center
-    margin-top: 20px
+    margin-top: auto
     z-index: 10
     +laptop-album-down
       justify-content: center
@@ -84,5 +87,5 @@
     +phone-down
       position: relative
       z-index: 2
-      margin: 15px 0
+      margin: auto 0px 15px
       padding-right: 5px
