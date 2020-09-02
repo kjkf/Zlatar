@@ -6,6 +6,7 @@ $(function() {
 
     const maxHeight900 = window.matchMedia("(max-height: 900px)");
     const maxWidth1366 = window.matchMedia("(max-width: 1366px)");
+    const maxWidth568 = window.matchMedia("(max-width: 568px)");
 
 
     function maxHeightHandlerForMediaQueries(x) {
@@ -37,6 +38,17 @@ $(function() {
         }
     }
 
+    function maxWidth568Handler(x) {
+        if (maxWidth568.matches) {
+            //console.log('maxWidth568.matches createTabs');
+            createTabs();
+        } else {
+            //console.log('maxWidth568.matches destroyTabs');
+            const tabs = document.querySelector('.tabs');
+            if (tabs) destroyTabs();
+        }
+    }
+
     function foldMenuItem() {
         submenus.forEach(submenu => {
             const submenuParent = submenu.closest('.menu-item');
@@ -62,11 +74,26 @@ $(function() {
         content.classList.add(className);
     }
 
+    function destroyTabs() {
+        //console.log('destroyTabs');
+        const infoWrapper = document.querySelector('.info-wrapper');
+        if (!infoWrapper) return false;
+        //console.log('======= destroyTabs');
+        const infoDescr = infoWrapper.querySelector('.info__descr');
+        const info = infoWrapper.querySelector('.info');
+        const descr = infoWrapper.querySelector('.descr');
+
+        info.insertAdjacentElement('beforeend', infoDescr);
+        infoWrapper.insertAdjacentElement('beforeend', descr);
+
+        const tabs = infoWrapper.querySelector('.tabs');
+        tabs.remove();
+    }
+
     function createTabs() {
         const infoDescr = document.querySelector('.info__descr');
         const descr = document.querySelector('.descr');
         if (!infoDescr) return false;
-        console.log('createTab=====');
         const tabs = createTabsWrapper();
         const tabsBody = tabs.querySelector('.tabs__body');
         const specBody = createTabBody('spec', infoDescr);
@@ -74,16 +101,14 @@ $(function() {
         const descrBody = createTabBody('descr', descr);
         tabsBody.insertAdjacentElement('beforeend', specBody);
         tabsBody.insertAdjacentElement('beforeend', descrBody);
-        console.log('++++', tabs);
 
-        const contentCenter = document.querySelector('.content__center');
-        contentCenter.insertAdjacentElement('beforeend', tabs);
+        const infoWrapper = document.querySelector('.content__center .info-wrapper');
+        infoWrapper.insertAdjacentElement('beforeend', tabs);
 
         initTabs('#tabs');
     };
 
     function createTabsWrapper() {
-        console.log('createTabsWrapper');
         const tabs = document.createElement('div');
         tabs.className = 'tabs';
         tabs.id = 'tabs';
@@ -125,7 +150,8 @@ $(function() {
     }
 
     maxWidthHandlerForMediaQueries();
-    createTabs();
+    maxWidth568Handler();
+
 
     try {
         maxHeight900.addEventListener("change", () => {
@@ -134,6 +160,9 @@ $(function() {
         maxWidth1366.addEventListener("change", () => {
             maxWidthHandlerForMediaQueries();
         });
+        maxWidth568.addEventListener("change", () => {
+            maxWidth568Handler();
+        });
     } catch (e1) {
         try {
             maxHeight900.addListener((e) => {
@@ -141,6 +170,9 @@ $(function() {
             });
             maxWidth1366.addListener((e) => {
                 maxWidthHandlerForMediaQueries();
+            });
+            maxWidth568.addListener((e) => {
+                maxWidth568Handler();
             });
         } catch (e2) {
             console.error(e2);

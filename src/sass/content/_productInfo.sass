@@ -2,6 +2,9 @@
   .breadcrumbs
     +phone-down
       margin-bottom: 5px
+  .title-main
+    +phone-landscape-down
+      padding: 5px 0
   .info
     display: flex
     justify-content: space-between
@@ -12,6 +15,11 @@
     +tablet-down
       flex-direction: column
       margin-bottom: 10px
+    +phone-down
+      margin-bottom: 0
+    +phone-landscape-down
+      margin: 0 20px
+      width: 60%
 
   .info__slider
     width: 40%
@@ -87,13 +95,20 @@
     +tablet-down
       font-size: 16px
 
-  .content__center p
-    +tablet-album-device-down
-      margin-bottom: 10px
-    +tablet-down
+  .content__center
+    +phone-landscape-down
       margin-bottom: 5px
-    //+phone-down
-      margin-bottom: 0
+    .info-wrapper
+      +phone-landscape-down
+        display: flex
+        min-height: 195px
+    p
+      +tablet-album-device-down
+        margin-bottom: 10px
+      +tablet-down
+        margin-bottom: 5px
+      //+phone-down
+        margin-bottom: 0
 
   .descr
     text-align: left
@@ -110,6 +125,10 @@
         font-size: 16px
       +tablet-down
         font-size: 16px
+
+  .tabs
+    +phone-landscape-down
+      width: 80%
 
 .productInfo--content
   .content__footer

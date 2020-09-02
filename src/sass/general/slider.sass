@@ -53,9 +53,13 @@
 
 .slider__control_prev
   left: -33px
+  +phone-down
+    left: -28px
 
 .slider__control_next
   right: -33px
+  +phone-down
+    right: -28px
 
 .slider__control::before
   content: ''
@@ -64,6 +68,9 @@
   height: 25px
   background: transparent no-repeat center center
   background-size: 100% 100%
+  +phone-down
+    width: 20px
+    height: 20px
 
 .slider__control_prev::before, .slider__control_next::before
   background-image: url("../images/icons/ic-triangle.svg")
