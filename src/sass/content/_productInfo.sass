@@ -1,4 +1,7 @@
 .productInfo
+  .breadcrumbs
+    +phone-down
+      margin-bottom: 5px
   .info
     display: flex
     justify-content: space-between
@@ -30,6 +33,8 @@
     margin-bottom: 0
     +tablet-down
       flex-direction: row
+    +phone-down
+      align-items: stretch
     .col
       width: 65%
       +laptop-down
@@ -39,10 +44,11 @@
       &.info__caption
         width: 30%
         text-align: right
+        line-height: 1.2
         +laptop-down
           width: 43%
         +phone-down
-          width: 28%
+          width: 30%
         +phone-down
           font-size: 10px
         &.info__caption--selfAlign
@@ -54,6 +60,8 @@
             line-height: 20px
           +tablet-down
             line-height: 17px
+          +phone-down
+            line-height: 12px
 
       &.info__text
         font-family: $font_MontAlt_Medium
@@ -108,3 +116,5 @@
     +laptop-album-down
       flex-direction: row
       justify-content: space-between
+    +phone-down
+      margin: 0 0 8px

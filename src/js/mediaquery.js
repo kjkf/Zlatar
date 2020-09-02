@@ -78,12 +78,15 @@ $(function() {
 
         const contentCenter = document.querySelector('.content__center');
         contentCenter.insertAdjacentElement('beforeend', tabs);
+
+        initTabs('#tabs');
     };
 
     function createTabsWrapper() {
         console.log('createTabsWrapper');
         const tabs = document.createElement('div');
         tabs.className = 'tabs';
+        tabs.id = 'tabs';
         const nav = document.createElement('nav');
         nav.className = 'tabs__items';
         const a_spec = createLink('Характеристики', 'spec');
@@ -122,7 +125,7 @@ $(function() {
     }
 
     maxWidthHandlerForMediaQueries();
-    //createTabs();
+    createTabs();
 
     try {
         maxHeight900.addEventListener("change", () => {
