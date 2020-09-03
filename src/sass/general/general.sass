@@ -15,6 +15,7 @@ body
   color: $col_main
   line-height: 1.2
   min-width: $phone-width-min
+  min-height: $phone-height
   margin: 0
   padding: 0
   height: 100vh
@@ -22,10 +23,14 @@ body
   overflow-y: hidden
   +tablet-down
     font-size: 14px
+  +tablet-device-height
+    font-size: 14px
   +tablet-album-device-down
     font-size: 14px
+  +tablet-device-height
+    font-size: 14px
   +phone-down
-    font-size: 12px
+    font-size: 10px
 
 a
   display: inline-block
@@ -49,6 +54,9 @@ h2
   +tablet-album-device-down
     font-size: $fontSize_h2_tablet
     line-height: $lineHeight_h2_tablet
+  +tablet-device-height
+    font-size: $fontSize_h2_tablet
+    line-height: $lineHeight_h2_tablet
   +phone-down
     font-size: $fontSize_h2_phone
     line-height: $lineHeight_h2_phone
@@ -58,6 +66,8 @@ h3
   line-height: $lineHeight_h3
   font-weight: normal
   +tablet-down
+    font-size: $fontSize_h3_tablet
+  +tablet-device-height
     font-size: $fontSize_h3_tablet
   +tablet-album-device-down
     font-size: $fontSize_h3_tablet
@@ -87,6 +97,8 @@ h5
     padding: $p_container_laptop
   +tablet-down
     padding: $p_container_tablet
+  +tablet-device-height
+    padding: $p_container_tablet
   +phone-down
     padding: 0
     background: $bg_menu
@@ -105,7 +117,8 @@ h5
     padding-bottom: 15px
     margin-bottom: 10px
     +phone-down
-      padding-top: 15px
+      padding-top: 12px
+      padding-bottom: 11px
     &:before, &:after
       content: ""
       position: absolute
@@ -114,14 +127,26 @@ h5
       border-bottom: 0.3px solid $col_acsent
       +tablet-down
         width: $w_title_border_tablet
+      +tablet-device-height
+        width: $w_title_border_tablet
+      +phone-down
+        width: $w_title_border_phone
     &:before
       left: calc(50% - calc(#{$w_title_border + 15px}))
       +tablet-down
         left: calc(50% - calc(#{$w_title_border_tablet + 15px}))
+      +tablet-device-height
+        left: calc(50% - calc(#{$w_title_border_tablet + 15px}))
+      +phone-down
+        left: calc(50% - calc(#{$w_title_border_phone + 15px}))
     &:after
       right: calc(50% - calc(#{$w_title_border + 15px}))
       +tablet-down
         right: calc(50% - calc(#{$w_title_border_tablet + 15px}))
+      +tablet-device-height
+        right: calc(50% - calc(#{$w_title_border_tablet + 15px}))
+      +phone-down
+        right: calc(50% - calc(#{$w_title_border_phone + 15px}))
     .ic-rhomb
       position: absolute
       bottom: calc(-#{$h_rhomb} / 2)
@@ -133,6 +158,9 @@ h5
   background: $col_acsent
   transform: rotate(-45deg)
   +tablet-down
+    width: $w_rhomb_tablet
+    height: $h_rhomb_tablet
+  +tablet-device-height
     width: $w_rhomb_tablet
     height: $h_rhomb_tablet
   +tablet-album-device-down
@@ -150,6 +178,8 @@ h5
     +laptop-down
       font-size: 18px
     +tablet-down
+      font-size: 18px
+    +tablet-device-height
       font-size: 18px
     +phone-down
       font-size: 12px

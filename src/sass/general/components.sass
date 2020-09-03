@@ -19,6 +19,10 @@
     width: 47%
     max-height: 155px
     max-width: 165px
+  +tablet-device-height
+    width: 47%
+    max-height: 155px
+    max-width: 165px
   +tablet-album-device-down
     max-height: 155px
   +phone-down
@@ -55,6 +59,8 @@
     +phone-down
       display: none
 
+    +tablet-device-height
+      height: 155px
     img
       width: 100%
       height: 100%
@@ -70,6 +76,8 @@
     justify-content: center
     padding: 5px 0px
     +tablet-down
+      font-size: 14px
+    +tablet-device-height
       font-size: 14px
     +tablet-album-device-down
       font-size: 14px
@@ -105,6 +113,8 @@
       font-size: 14px
       +tablet-down
         font-size: 12px
+      +tablet-device-height
+        font-size: 12px
       +tablet-album-device-down
         font-size: 12px
 
@@ -139,16 +149,23 @@
   max-height: 313px
   height: 42%
   position: relative
+  +phone-down
+    height: auto
+    width: auto
   &:hover
       .content-item-hover
           visibility: visible
           opacity: 1
 
   .content-item__descr
-    padding-left: 5%
-    padding-right: 5%
+    padding-left: 9%
+    padding-right: 9%
     min-height: 63px
     align-items: center
+    +phone-down
+      min-height: 50px
+      padding-left: 0px
+      padding-right: 0px
 
   .content-item-hover
     //display: none
@@ -167,6 +184,8 @@
     font-size: 20px
     font-weight: 300
     padding: 5% 7%
+    +phone-down
+      display: none
     .title
       font-family: $font_MontAlt_Regular
       margin-bottom: 15px
@@ -190,11 +209,15 @@
     color: #ffffff
     +tablet-down
       font-size: 14px
+    +tablet-device-height
+      font-size: 14px
     +phone-down
       font-size: 12px
     .title
       margin-bottom: 20px
       +tablet-down
+        font-size: 18px
+      +tablet-device-height
         font-size: 18px
       +phone-down
         font-size: 12px

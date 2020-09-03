@@ -10,6 +10,10 @@
     padding-left: $p_content_tablet
     padding-right: $p_content_tablet
     padding-top: $pt_content_tablet
+  +tablet-device-height
+    //padding-left: $p_content_tablet
+    //padding-right: $p_content_tablet
+    padding-top: $pt_content_tablet
   +tablet-album-device-down
     padding-left: $p_content_tablet
     padding-right: $p_content_tablet
@@ -18,7 +22,7 @@
     margin-left: 0
     margin-top: 40px
     //margin-bottom: 40px
-    padding: 0 10px
+    padding: 0 5px
     background: #ffffff
     border-radius: 10px
 
@@ -27,6 +31,8 @@
     margin-left: calc(#{$w_nav} + #{$p_container_laptop})
     align-self: center
     +tablet-down
+      margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
+    +tablet-device-height
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
     +tablet-album-device-down
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
@@ -56,7 +62,7 @@
     justify-content: flex-start
     margin-bottom: 20px
     +phone-down
-      margin-bottom: 15px
+      margin-bottom: 0px
     p
       text-align: justify
       margin-bottom: 20px
@@ -82,6 +88,8 @@
     //   min-height: calc(100vh - 295px)
     //   max-height: 100%
       //calc(100vh - 150px)
+    +tablet-device-height
+      max-height: 100%
 
   &__footer
     display: flex
