@@ -5,6 +5,8 @@
     margin-bottom: 70px
     +laptop-down
       margin-bottom: 20px
+    +phone_min-down
+      margin-bottom: 25px
 
   .content__footer
     +laptop-album-down
@@ -29,6 +31,14 @@
       justify-content: space-between
       align-items: flex-start
       margin-top: 0px
+    +phone-down
+      margin-top: 13px
+      justify-content: space-evenly
+    +phone_min-down
+      margin-top: 18px
+      flex-direction: column
+      height: auto
+      align-items: center
 
   .content__center p
     margin-bottom: 10px
@@ -38,13 +48,15 @@
       margin-bottom: 15px
     +tablet-album-device-down
       margin-bottom: 15px
+    +phone-down
+      margin-bottom: 5px
+
 
   .content-item--productCat
     +laptop-down
-      width: 100%
+      width: 49%
       max-height: 286px
       margin-bottom: 20px
-
     +tablet-down
       max-width: 340px
       max-height: 217px
@@ -54,6 +66,11 @@
     +tablet-album-device-down
       max-width: 340px
       max-height: 217px
+    +phone-down
+      width: 43%
+    +phone_min-down
+      width: 78%
+      margin-bottom: 15px
 
     .content-item__img
       +laptop-album-down

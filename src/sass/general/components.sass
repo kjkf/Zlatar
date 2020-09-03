@@ -149,6 +149,9 @@
   max-height: 313px
   height: 42%
   position: relative
+  +phone-down
+    height: auto
+    width: auto
   &:hover
       .content-item-hover
           visibility: visible
@@ -159,6 +162,10 @@
     padding-right: 9%
     min-height: 63px
     align-items: center
+    +phone-down
+      min-height: 50px
+      padding-left: 0px
+      padding-right: 0px
 
   .content-item-hover
     //display: none
@@ -177,6 +184,8 @@
     font-size: 20px
     font-weight: 300
     padding: 5% 14%
+    +phone-down
+      display: none
     .title
       font-family: $font_MontAlt_Regular
       margin-bottom: 15px
