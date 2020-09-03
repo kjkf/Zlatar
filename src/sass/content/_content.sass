@@ -10,6 +10,10 @@
     padding-left: $p_content_tablet
     padding-right: $p_content_tablet
     padding-top: $pt_content_tablet
+  +tablet-device-height
+    //padding-left: $p_content_tablet
+    //padding-right: $p_content_tablet
+    padding-top: $pt_content_tablet
   +tablet-album-device-down
     padding-left: $p_content_tablet
     padding-right: $p_content_tablet
@@ -27,6 +31,8 @@
     margin-left: calc(#{$w_nav} + #{$p_container_laptop})
     align-self: center
     +tablet-down
+      margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
+    +tablet-device-height
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
     +tablet-album-device-down
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
@@ -82,6 +88,8 @@
     //   min-height: calc(100vh - 295px)
     //   max-height: 100%
       //calc(100vh - 150px)
+    +tablet-device-height
+      max-height: 100%
 
   &__footer
     display: flex
