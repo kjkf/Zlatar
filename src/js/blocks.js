@@ -12,6 +12,7 @@
     var winowWidth = window.innerWidth;
 
     var container = document.querySelector(".container");
+    var content = document.querySelector(".content");
     var content_in = document.querySelector(".content-in");
 
 
@@ -21,8 +22,11 @@
     var container_pt = getStyle(container, 'padding-top');
     var container_pb = getStyle(container, 'padding-bottom');
 
+    var content_pt = getStyle(content, 'padding-top');
+    var content_pb = getStyle(content, 'padding-bottom');
 
-    var sum = parseInt(container_pt) + parseInt(container_pb) + page_header.clientHeight + page_footer.clientHeight
+
+    var sum = parseInt(container_pt) + parseInt(container_pb) + parseInt(content_pt) + parseInt(content_pb) + page_header.clientHeight + page_footer.clientHeight;
     var content_in_h = winowHeight - sum;
 
     console.log("page_header.clientHeight = " + page_header.clientHeight + "; page_footer.clientHeight = "+ page_footer.clientHeight);
@@ -41,8 +45,8 @@
     var content__footer = document.querySelector(".content__footer");
     //var content__breadcrumbs = document.querySelector(".content__breadcrumbs");
 
-    var sum = content__header.clientHeight + content__footer.clientHeight
-    var content__center_h = content_in_h - sum
+    var sum = content__header.clientHeight + content__footer.clientHeight;
+    var content__center_h = content_in_h - sum;
     console.log("content__center_h = " + content__center_h);
     content__center.style.height = content_in_h + "px";
   }
