@@ -134,6 +134,10 @@
     content_wrap.style.height = content_wrap_h + "px";
   }
 
+  function setHeight_Content_About(content_about){
+
+  }
+
   function calculateBlocksHeight(){
     const winowHeight = window.innerHeight;
     const winowWidth = window.innerWidth;
@@ -148,6 +152,10 @@
 
       var content_wrap = document.querySelector(".content-wrap");
       if (content_wrap) setHeight_Content_Wrap(content__center_h);
+
+      var content_about = document.querySelector(".content-about");
+      if (content_about) setHeight_Content_About(content_about);
+
     }
   }
 
