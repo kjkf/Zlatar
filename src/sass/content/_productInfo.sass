@@ -9,9 +9,12 @@
     display: flex
     justify-content: space-between
     align-items: flex-start
-    margin-bottom: 50px
+    margin-bottom: 20px
+    +laptop-down
+      flex-direction: column
     +tablet-album-device-down
       margin-bottom: 30px
+      flex-direction: row
     +tablet-down
       flex-direction: column
       margin-bottom: 10px
@@ -54,7 +57,8 @@
         text-align: right
         line-height: 1.2
         +laptop-down
-          width: 43%
+          width: 40%
+          margin-right: 5px
         +phone-down
           width: 30%
         +phone-down

@@ -3,8 +3,25 @@
     //max-height: calc(100vh - 375px)
     justify-content: space-evenly
 
+    background: aqua
     +laptop-down
-      //flex-direction: column
+      background: green
+    //+laptop-landscape-down
+      background: lightgreen
+    +tablet-down
+      background: yellow
+    +phone_down
+      background: blue
+    +phone-landscape-down
+      background: coral
+
+    .content-wrap
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: space-evenly
+      align-items: flex-start
+
 
     .content-item--productCat
       +laptop-album-down
@@ -45,9 +62,12 @@
     +phone-down
       display: none
     .title
+      margin-bottom: 10px
       +tablet-down
         font-size: 15px
         margin-bottom: 5px
+    .content-in__list li
+      margin-bottom: 2%
 
 
 

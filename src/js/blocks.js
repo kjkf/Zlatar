@@ -7,8 +7,8 @@
 
   function setHeight_Content_In(content_in){
     //вычисление высоты .content-in
-    const winowHeight = window.innerHeight;
-    const winowWidth = window.innerWidth;
+    const winowHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+    const winowWidth = window.visualViewport ? window.visualViewport.width : window.innerWidth;
     //........................................................................//
     const container = document.querySelector(".container");
     var container_h = 0;
@@ -41,13 +41,21 @@
       const page_footer_mb = getStyle(page_footer, 'margin-bottom');
       page_footer_h = page_footer.clientHeight + parseInt(page_footer_mt) + parseInt(page_footer_mb);
     }
+    let leftSide_h = 0;
+    if (winowWidth <= 568) {
+      const leftSide = document.querySelector('.left-side');
+      leftSide_h = leftSide.clientHeight;
+    }
     //........................................................................//
     //var content_in = document.querySelector(".content-in");
     var sum = container_h +
               content_h +
+              leftSide_h + //высота хедера в мобильной версии
               page_header_h +
               page_footer_h;
     var content_in_h = winowHeight - sum;
+
+    //console.log(winowHeight, '===', container_h, content_h, page_header_h, page_footer_h, '===', content_in_h);
 
     // console.log("page_header_h = " + page_header_h + "; page_footer_h = "+ page_footer_h);
     // console.log("container_h = " + container_h );
@@ -94,11 +102,12 @@
     //........................................................................//
     var sum = content__header_h +
               content__footer_h +
-              content__breadcrumbs_h
+              content__breadcrumbs_h +
               parseInt(content__center_mt) + parseInt(content__center_mb);
 
     var content__center_h = content_in_h - sum;
     content__center.style.height = content__center_h + "px";
+    console.log(content__center_h, '====', content__header_h, content__footer_h, content__breadcrumbs_h, content__center_mt, content__center_mb, '----', content_in_h);
 
     return content__center_h;// + parseInt(content__center_mt) + parseInt(content__center_mb);
 
@@ -139,7 +148,14 @@
 
   calculateBlocksHeight();
 
-  window.addEventListener("resize", calculateBlocksHeight);
+  window.addEventListener("resize", () => {
+    console.log('resize');
+    calculateBlocksHeight();
+  });/*
+  window.addEventListener("orientationchange", () => {
+    console.log('orientationchange!!!');
+    calculateBlocksHeight();
+  });*/
 
 
 

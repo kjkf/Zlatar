@@ -83,13 +83,16 @@ $tablet-album-height: 768px
 	@media screen and (max-width: $tablet-width)
 		@content
 =phone-down
-	@media screen and (max-width: $phone-width)
+	@media screen and (max-width: $phone-width) //, screen and (max-width: $laptop-width) and (orientation: landscape)
 		@content
 =phone_min-down
 	@media screen and (max-width: $phone_min-width)
 		@content
 =phone-landscape-down
 	@media screen and (max-width: $phone-width) and (orientation: landscape)
+		@content
+=laptop-landscape-down
+	@media screen and (max-width: $laptop-width) and (orientation: landscape)
 		@content
 
 
