@@ -3,15 +3,46 @@
     h2.title
       color: $col_main
       text-align: left
+  .content__center.scrolled
+    padding-right: 10px
+    +laptop-album-down
+      padding-right: 8px
 
 .img-row
   display: flex
   justify-content: space-around
+  +laptop-album-down
+    flex-wrap: wrap
+    justify-content: center
+
+
 
 .img-wrap
   margin-right: 10px
+  +laptop-album-down
+    width: 195px
+    height: 240px
+    margin-right: 0px
+  &:first-child
+    +laptop-album-down
+      order: 0
+  &:nth-child(2)
+    +laptop-album-down
+      order: 2
+  &:nth-child(3)
+    +laptop-album-down
+      order: 3
   &:last-child
     margin-right: 0px
+    +laptop-album-down
+      order: 1
   img
     width: 100%
     height: auto
+
+.img-bg
+  +laptop-album-down
+    width: 400px
+    height: 240px
+    margin-bottom: 5px
+    margin-right: 5px
