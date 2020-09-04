@@ -7,8 +7,8 @@
 
   function setHeight_Content_In(content_in){
     //вычисление высоты .content-in
-    const winowHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-    const winowWidth = window.visualViewport ? window.visualViewport.width : window.innerWidth;
+    const winowHeight = window.innerHeight;
+    const winowWidth = window.innerWidth;
     //........................................................................//
     const container = document.querySelector(".container");
     var container_h = 0;
@@ -55,8 +55,6 @@
               page_footer_h;
     var content_in_h = winowHeight - sum;
 
-    //console.log(winowHeight, '===', container_h, content_h, page_header_h, page_footer_h, '===', content_in_h);
-
     // console.log("page_header_h = " + page_header_h + "; page_footer_h = "+ page_footer_h);
     // console.log("container_h = " + container_h );
     // console.log("content_h = " + content_h );
@@ -75,6 +73,7 @@
     //var content__center = document.querySelector(".content__center");
     const content__center_mt = getStyle(content__center, 'margin-top');
     const content__center_mb = getStyle(content__center, 'margin-bottom');
+    // console.log("parseInt(content__center_mt) | parseInt(content__center_mb) = " + parseInt(content__center_mt) + "|" + parseInt(content__center_mb));
     //........................................................................//
     const content__header = document.querySelector(".content__header");
     var content__header_h = 0;
@@ -82,14 +81,17 @@
       const content__header_mt = getStyle(content__header, 'margin-top');
       const content__header_mb = getStyle(content__header, 'margin-bottom');
       content__header_h = content__header.clientHeight + parseInt(content__header_mt) + parseInt(content__header_mb);
+      // console.log("content__header_h = " + content__header_h);
     }
     //........................................................................//
     const content__footer = document.querySelector(".content__footer");
     var content__footer_h = 0;
     if (content__footer){
+      content__footer.style.marginTop = "0px";
       const content__footer_mt = getStyle(content__footer, 'margin-top');
       const content__footer_mb = getStyle(content__footer, 'margin-bottom');
       content__footer_h = content__footer.clientHeight + parseInt(content__footer_mt) + parseInt(content__footer_mb);
+      // console.log("content__footer_h = " + content__footer_h);
     }
     //........................................................................//
     const content__breadcrumbs = document.querySelector(".content__breadcrumbs");
@@ -98,22 +100,24 @@
       const content__breadcrumbs_mt = getStyle(content__footer, 'content__breadcrumbs');
       const content__breadcrumbs_mb = getStyle(content__footer, 'content__breadcrumbs');
       content__breadcrumbs_h = content__breadcrumbs.clientHeight + parseInt(content__breadcrumbs_mt) + parseInt(content__breadcrumbs_mb);
+      // console.log("content__breadcrumbs_h = " + content__breadcrumbs_h);
     }
     //........................................................................//
     var sum = content__header_h +
               content__footer_h +
-              content__breadcrumbs_h +
+              content__breadcrumbs_h
               parseInt(content__center_mt) + parseInt(content__center_mb);
 
     var content__center_h = content_in_h - sum;
     content__center.style.height = content__center_h + "px";
-    console.log(content__center_h, '====', content__header_h, content__footer_h, content__breadcrumbs_h, content__center_mt, content__center_mb, '----', content_in_h);
-
+    // console.log("content_in_h = " + content_in_h);
+    console.log("content__center_h = " + content__center_h);
+    content__center.style.backgroundColor = "green";
     return content__center_h;// + parseInt(content__center_mt) + parseInt(content__center_mb);
 
-    //console.log("content__center_h = " + content__center_h);
+
     //content__header.style.backgroundColor = "yellow";
-    //content__center.style.backgroundColor = "green";
+
   }
 
   function setHeight_Content_Wrap(content__center_h){
@@ -129,34 +133,32 @@
         paragraphs_h += paragraphs[i].clientHeight + parseInt(getStyle(paragraphs[i], 'margin-top')) + parseInt(getStyle(paragraphs[i], 'margin-bottom'));
       }
     }
-    //console.log("paragraphs_h = "+paragraphs_h);
+    console.log("paragraphs_h = "+paragraphs_h);
     //........................................................................//
     var content_wrap_h = content__center_h - paragraphs_h - parseInt(content_wrap_mt) - parseInt(content_wrap_mb);
+    content_wrap.style.backgroundColor = "grey";
     content_wrap.style.height = content_wrap_h + "px";
   }
 
   function calculateBlocksHeight(){
-    var content_in = document.querySelector(".content-in");
-    const content_in_h = content_in!=null? setHeight_Content_In(content_in) : 0;
+    const winowHeight = window.innerHeight;
+    const winowWidth = window.innerWidth;
+    var l = winowHeight>568 && winowWidth>568 ;
+    //console.log("winowHeight = "+ winowHeight + ";winowWidth =  "+ winowWidth + " = = = " + l);
+    if (winowHeight>568 && winowWidth>568){
+      var content_in = document.querySelector(".content-in");
+      const content_in_h = content_in!=null? setHeight_Content_In(content_in) : 0;
 
-    var content__center = document.querySelector(".content__center");
-    const content__center_h = content__center!=null ? setHeight_Content__Center(content__center, content_in_h) : 0;
+      var content__center = document.querySelector(".content__center");
+      const content__center_h = content__center!=null ? setHeight_Content__Center(content__center, content_in_h) : 0;
 
-    var content_wrap = document.querySelector(".content-wrap");
-    if (content_wrap) setHeight_Content_Wrap(content__center_h);
+      var content_wrap = document.querySelector(".content-wrap");
+      if (content_wrap) setHeight_Content_Wrap(content__center_h);
+    }
   }
 
   calculateBlocksHeight();
 
-  window.addEventListener("resize", () => {
-    console.log('resize');
-    calculateBlocksHeight();
-  });/*
-  window.addEventListener("orientationchange", () => {
-    console.log('orientationchange!!!');
-    calculateBlocksHeight();
-  });*/
-
-
+  window.addEventListener("resize", calculateBlocksHeight);
 
 })();
