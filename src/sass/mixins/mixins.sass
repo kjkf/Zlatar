@@ -23,6 +23,7 @@ $tablet-width: 768px
 $phone-width: 568px
 $phone_min-width: 320px
 $phone-height: 568px
+$phone-landscape-height: 820px
 
 $desktop-height: 1160px
 $laptop-height: 1366px
@@ -83,13 +84,13 @@ $tablet-album-height: 768px
 	@media screen and (max-width: $tablet-width)
 		@content
 =phone-down
-	@media screen and (max-width: $phone-width) //, screen and (max-width: $laptop-width) and (orientation: landscape)
+	@media screen and (max-width: $phone-width), screen and (max-width: $phone-landscape-height) and (max-height: $phone-width)
 		@content
 =phone_min-down
 	@media screen and (max-width: $phone_min-width)
 		@content
 =phone-landscape-down
-	@media screen and (max-width: $phone-width) and (orientation: landscape)
+	@media screen and (max-width: $phone-width) and (orientation: landscape), screen and (max-width: $phone-landscape-height) and (orientation: landscape)
 		@content
 =laptop-landscape-down
 	@media screen and (max-width: $laptop-width) and (orientation: landscape)
