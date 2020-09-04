@@ -81,6 +81,7 @@
     const content__footer = document.querySelector(".content__footer");
     var content__footer_h = 0;
     if (content__footer){
+      content__footer.style.marginTop = "0px";
       const content__footer_mt = getStyle(content__footer, 'margin-top');
       const content__footer_mb = getStyle(content__footer, 'margin-bottom');
       content__footer_h = content__footer.clientHeight + parseInt(content__footer_mt) + parseInt(content__footer_mb);
@@ -104,13 +105,13 @@
     var content__center_h = content_in_h - sum;
     content__center.style.height = content__center_h + "px";
     // console.log("content_in_h = " + content_in_h);
-    // console.log("content__center_h = " + content__center_h);
-
+    console.log("content__center_h = " + content__center_h);
+    content__center.style.backgroundColor = "green";
     return content__center_h;// + parseInt(content__center_mt) + parseInt(content__center_mb);
 
 
     //content__header.style.backgroundColor = "yellow";
-    //content__center.style.backgroundColor = "green";
+
   }
 
   function setHeight_Content_Wrap(content__center_h){
@@ -126,21 +127,28 @@
         paragraphs_h += paragraphs[i].clientHeight + parseInt(getStyle(paragraphs[i], 'margin-top')) + parseInt(getStyle(paragraphs[i], 'margin-bottom'));
       }
     }
-    //console.log("paragraphs_h = "+paragraphs_h);
+    console.log("paragraphs_h = "+paragraphs_h);
     //........................................................................//
     var content_wrap_h = content__center_h - paragraphs_h - parseInt(content_wrap_mt) - parseInt(content_wrap_mb);
+    content_wrap.style.backgroundColor = "grey";
     content_wrap.style.height = content_wrap_h + "px";
   }
 
   function calculateBlocksHeight(){
-    var content_in = document.querySelector(".content-in");
-    const content_in_h = content_in!=null? setHeight_Content_In(content_in) : 0;
+    const winowHeight = window.innerHeight;
+    const winowWidth = window.innerWidth;
+    var l = winowHeight>568 && winowWidth>568 ;
+    //console.log("winowHeight = "+ winowHeight + ";winowWidth =  "+ winowWidth + " = = = " + l);
+    if (winowHeight>568 && winowWidth>568){
+      var content_in = document.querySelector(".content-in");
+      const content_in_h = content_in!=null? setHeight_Content_In(content_in) : 0;
 
-    var content__center = document.querySelector(".content__center");
-    const content__center_h = content__center!=null ? setHeight_Content__Center(content__center, content_in_h) : 0;
+      var content__center = document.querySelector(".content__center");
+      const content__center_h = content__center!=null ? setHeight_Content__Center(content__center, content_in_h) : 0;
 
-    var content_wrap = document.querySelector(".content-wrap");
-    if (content_wrap) setHeight_Content_Wrap(content__center_h);
+      var content_wrap = document.querySelector(".content-wrap");
+      if (content_wrap) setHeight_Content_Wrap(content__center_h);
+    }
   }
 
   calculateBlocksHeight();
