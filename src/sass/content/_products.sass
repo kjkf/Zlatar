@@ -3,8 +3,26 @@
     //max-height: calc(100vh - 375px)
     justify-content: space-evenly
 
+    background: aqua
     +laptop-down
-      //flex-direction: column
+      background: green
+    //+laptop-landscape-down
+      background: lightgreen
+    +tablet-down
+      background: yellow
+    +phone_down
+      background: blue
+      align-items: flex-start
+    +phone-landscape-down
+      background: coral
+
+    .content-wrap
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      justify-content: space-evenly
+      align-items: flex-start
+
 
     .content-item--productCat
       +laptop-album-down
@@ -26,7 +44,7 @@
         margin-bottom: 5px
       +phone-down
         max-height: 60px
-        margin-bottom: 0
+        margin-bottom: 15px
         max-width: 240px
 
       .content-item__descr
@@ -45,9 +63,12 @@
     +phone-down
       display: none
     .title
+      margin-bottom: 10px
       +tablet-down
         font-size: 15px
         margin-bottom: 5px
+    .content-in__list li
+      margin-bottom: 2%
 
 
 

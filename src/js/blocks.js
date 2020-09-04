@@ -41,10 +41,16 @@
       const page_footer_mb = getStyle(page_footer, 'margin-bottom');
       page_footer_h = page_footer.clientHeight + parseInt(page_footer_mt) + parseInt(page_footer_mb);
     }
+    let leftSide_h = 0;
+    if (winowWidth <= 568) {
+      const leftSide = document.querySelector('.left-side');
+      leftSide_h = leftSide.clientHeight;
+    }
     //........................................................................//
     //var content_in = document.querySelector(".content-in");
     var sum = container_h +
               content_h +
+              leftSide_h + //высота хедера в мобильной версии
               page_header_h +
               page_footer_h;
     var content_in_h = winowHeight - sum;
@@ -99,7 +105,7 @@
     //........................................................................//
     var sum = content__header_h +
               content__footer_h +
-              content__breadcrumbs_h +
+              content__breadcrumbs_h
               parseInt(content__center_mt) + parseInt(content__center_mb);
 
     var content__center_h = content_in_h - sum;
