@@ -27,6 +27,7 @@ $phone-height: 568px
 $desktop-height: 1160px
 $laptop-height: 1366px
 $tablet-album-height: 768px
+$height_820: 820px
 
 
 =desktop-device
@@ -48,6 +49,11 @@ $tablet-album-height: 768px
 =tablet-device-height
 	@media screen and (max-height: $tablet-album-height)
 		@content
+
+=height_820
+	@media screen and (max-height: $height_820)
+		@content
+
 
 =desktop
 	@media screen and (min-width: calc(#{$desktop-width} + 1px))
