@@ -33,7 +33,7 @@
       margin-top: 0px
     +phone-down
       margin-top: 13px
-      justify-content: flex-start
+      justify-content: space-evenly
     +phone_min-down
       margin-top: 18px
       flex-direction: column
@@ -53,10 +53,15 @@
 
 
   .content-item--productCat
+    height: 53%
     +laptop-down
       width: 49%
       max-height: 286px
       margin-bottom: 20px
+    +laptop-album-down
+      height: 71%
+    +laptop-device-down
+      width: 72%
     +tablet-down
       max-width: 340px
       max-height: 217px
@@ -68,6 +73,7 @@
       max-height: 217px
     +phone-down
       width: 43%
+      height: 31%
     +phone_min-down
       width: 78%
       margin-bottom: 15px
