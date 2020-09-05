@@ -359,14 +359,30 @@ h5
   overflow-y: scroll
 
 .scrolled::-webkit-scrollbar
-  width: 12px
-  height: 12px
+  width: 20px
+  height: 20px
   background-color: rgba(252, 91, 31, 0.3)
-  border-radius: 10px
+  border-radius: 20px
+  +laptop-album-down
+    width: 15px
+    height: 15px
+    border-radius: 15px
+  +laptop-down
+    width: 12px
+    height: 12px
+    border-radius: 12px
+  +phone-down
+    width: 8px
+    height: 8px
+    border-radius: 8px
 
 .scrolled::-webkit-scrollbar-thumb
   background-color: #FC5B1F
-  border-radius: 8px
+  border-radius: 10px
+  +laptop-album-down
+    border-radius: 8px
+  +phone-down
+    border-radius: 4px
 
 .scrolled
   scrollbar-color: #FC5B1F rgba(252, 91, 31, 0.3)
