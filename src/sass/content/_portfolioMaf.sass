@@ -7,6 +7,8 @@
     padding-right: 10px
     +laptop-album-down
       padding-right: 8px
+    +laptop-device-down
+      padding-right: 3px
 
 .img-row
   display: flex
@@ -14,8 +16,8 @@
   +laptop-album-down
     flex-wrap: wrap
     justify-content: center
-
-
+  +phone_min-down
+    justify-content: space-between
 
 .img-wrap
   margin-right: 10px
@@ -23,15 +25,24 @@
     width: 195px
     height: 240px
     margin-right: 0px
+  +laptop-device-down
+    width: 148px
+    height: 182px
+  +phone_min-down
+    width: 146px
   &:first-child
     +laptop-album-down
       order: 0
   &:nth-child(2)
     +laptop-album-down
       order: 2
+    +phone_min-down
+      order: 3
   &:nth-child(3)
     +laptop-album-down
       order: 3
+    +phone_min-down
+      order: 2
   &:last-child
     margin-right: 0px
     +laptop-album-down
@@ -46,3 +57,9 @@
     height: 240px
     margin-bottom: 5px
     margin-right: 5px
+  +laptop-device-down
+    width: 300px
+    height: 182px
+  +phone_min-down
+    width: 100%
+    margin-right: 0px
