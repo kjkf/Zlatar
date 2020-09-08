@@ -79,6 +79,7 @@
     if(hide_modal) {
         hide_modal.addEventListener('click', e => {
             e.stopPropagation();
+            if (modal.classList.contains('modal-catalog-phone')) return false;
             modal.classList.remove('active');
             body.classList.remove("modal-bg");
         });
@@ -87,6 +88,7 @@
     //скрыть модальное окно при клике вне блока модального окна
     document.addEventListener('click', function(e) {
         if (!modal) return;
+        if (modal.classList.contains('modal-catalog-phone')) return false;
         const target = e.target;
         const its_modal = target == modal || modal.contains(target);
         const its_btnSend = target == hide_modal;
