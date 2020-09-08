@@ -7,8 +7,8 @@
 
   function setHeight_Content_In(content_in){
     //вычисление высоты .content-in
-    const winowHeight = window.innerHeight;
-    const winowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
     //........................................................................//
     const container = document.querySelector(".container");
     var container_h = 0;
@@ -42,7 +42,7 @@
       page_footer_h = page_footer.clientHeight + parseInt(page_footer_mt) + parseInt(page_footer_mb);
     }
     let leftSide_h = 0;
-    if (winowWidth <= 568) {
+    if (windowWidth <= 568) {
       const leftSide = document.querySelector('.left-side');
       leftSide_h = leftSide.clientHeight;
     }
@@ -53,13 +53,13 @@
               leftSide_h + //высота хедера в мобильной версии
               page_header_h +
               page_footer_h;
-    var content_in_h = winowHeight - sum;
+    var content_in_h = windowHeight - sum;
 
     // console.log("page_header_h = " + page_header_h + "; page_footer_h = "+ page_footer_h);
     // console.log("container_h = " + container_h );
     // console.log("content_h = " + content_h );
     // console.log("sum = " + sum);
-    // console.log("winowHeight = " + winowHeight);
+    // console.log("windowHeight = " + windowHeight);
     // console.log("content_in_h = " + content_in_h);
 
     content_in.style.height = content_in_h + "px";
@@ -147,12 +147,84 @@
     content_wrap.style.height = content_wrap_h + "px";
   }
 
+  function setHeight_Content_About(content_about){
+    const windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
+    var content_in = document.querySelector(".content-in");
+    const content_in_mt = parseInt(getStyle(content_in, 'margin-top'));
+    const content_in_mb = parseInt(getStyle(content_in, 'margin-bottom'));
+    const content_in_pt = parseInt(getStyle(content_in, 'padding-top'));
+    const content_in_pb = parseInt(getStyle(content_in, 'padding-bottom'));
+    console.log("content_in_pt = " + content_in_pt + "; content_in_pb = " + content_in_pb);
+    //........................................................................//
+    const container = document.querySelector(".container");
+    var container_h = 0;
+    var container_pt = 0;
+    var container_pb = 0;
+    if (container){
+      container_pt = parseInt(getStyle(container, 'padding-top'));
+      container_pb = parseInt(getStyle(container, 'padding-bottom'));
+      container_h = container_pt + container_pb;
+      console.log("container_pt = " + container_pt + "; container_pb = " + container_pb);
+    }
+    //........................................................................//
+    const page_header = document.querySelector(".header");
+    var page_header_h = 0;
+    if (page_header){
+      const page_header_mt = getStyle(page_header, 'margin-top');
+      const page_header_mb = getStyle(page_header, 'margin-bottom');
+      page_header_h = page_header.clientHeight + parseInt(page_header_mt) + parseInt(page_header_mb) + container_pt;
+      console.log("page_header_h = "+page_header_h);
+    }
+    //........................................................................//
+    const page_footer = document.querySelector(".footer");
+    var page_footer_h = 0;
+    if (page_footer){
+      const page_footer_mt = getStyle(page_footer, 'margin-top');
+      const page_footer_mb = getStyle(page_footer, 'margin-bottom');
+      page_footer_h = page_footer.clientHeight + parseInt(page_footer_mt) + parseInt(page_footer_mb) + container_pb;
+      console.log("page_footer.clientHeight = "+page_footer.clientHeight);
+      console.log("page_footer_h = "+page_footer_h);
+    }
+    //........................................................................//
+    //вычисляем высоту радиусов баннера
+    const left_side = document.querySelector(".left-side");
+    var left_side_rh = 0;
+    if (left_side){
+      const border_t = parseInt(getStyle(left_side, 'border-top-right-radius'));
+      const border_b = parseInt(getStyle(left_side, 'border-bottom-right-radius'));
+      var top_space = page_header_h > border_t ? page_header_h : border_t;
+      top_space = top_space > content_in_mt ? top_space : content_in_mt;
+      console.log("top_space = " + top_space);
+      var bot_space = page_footer_h > border_b ? page_footer_h : border_b;
+      console.log("bot_space = " + bot_space);
+      left_side_rh = top_space + bot_space;
+      console.log("border top = " + border_t + "; border_b = " + border_b);
+      console.log("left_side_rh = "+left_side_rh);
+    }
+    //........................................................................//
+
+    console.log("windowHeight = "+windowHeight);
+    //var foot_head = page_header_h + page_footer_h;
+    var sum = left_side_rh;
+
+    var content_in_h = windowHeight - sum;
+    console.log("content_in_h = "+content_in_h);
+    const content_in_cssh = parseInt(getStyle(content_in, 'min-height'));
+    console.log("content_in_cssh = "+content_in_cssh);
+    console.log("content_in.clientHeight = "+content_in.clientHeight);
+    if (content_in_h < content_in_cssh || content_in_h < content_in.clientHeight){
+      content_in.style.height = content_in_h + "px";
+      content_in.style.minHeight = "initial"
+    }
+  }
+
   function calculateBlocksHeight(){
-    const winowHeight = window.innerHeight;
-    const winowWidth = window.innerWidth;
-    var l = winowHeight>568 && winowWidth>568 ;
-    //console.log("winowHeight = "+ winowHeight + ";winowWidth =  "+ winowWidth + " = = = " + l);
-    if (winowHeight>568 && winowWidth>568){
+    const windowHeight = window.innerHeight;
+    const windowWidth = window.innerWidth;
+    var l = windowHeight>568 && windowWidth>568 ;
+    //console.log("windowHeight = "+ windowHeight + ";windowWidth =  "+ windowWidth + " = = = " + l);
+    if (windowHeight>568 && windowWidth>568){
       var content_in = document.querySelector(".content-in");
       const content_in_h = content_in!=null? setHeight_Content_In(content_in) : 0;
 
@@ -161,6 +233,10 @@
 
       var content_wrap = document.querySelector(".content-wrap");
       if (content_wrap) setHeight_Content_Wrap(content__center_h);
+
+      const content_about = document.querySelector(".content-about");
+      if (content_about) setHeight_Content_About(content_about);
+
     }
   }
 
