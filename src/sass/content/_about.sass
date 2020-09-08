@@ -10,6 +10,7 @@
     top: 0
     margin-left: 0
     margin-top: $left-side-rrt
+    //margin-top: calc((100vh/2) - 50%)
     padding: 30px 40px 40px
     border-radius: $rad_about
     background: $bg_body
@@ -18,49 +19,79 @@
       left: calc(#{$desktop-width} * 0.5)
     +desktop-down
       left: 50%
+    +laptop-down
+      width: 40%
     +laptop-album-down
       padding: 15px 20px 15px
       min-height: $h_content_in_about_laptop
       margin-top: 192px
     +tablet-down
-      width: $w_content_in_about_tablet
+      width: 45%
+      //width: $w_content_in_about_tablet
     +tablet-device-height
-      width: $w_content_in_about_tablet
+      width: 41%
+      padding: 20px 15px
+      left: 45%
+      //$w_content_in_about_tablet
+    // +height_820
+    //   padding: 10px
     +max-height
-      margin-top: 200px
+      width: 50%
+      left: 41%
+      padding: 10px
+      //margin-top: 200px
       min-height: 57%
-      padding: 30px 20px
-
+      //padding: 30px 20px
     +phone-down
-      width: 95%
+      min-width: 95%
       margin-top: 55px
       left: 3%
+      border:  0.5px solid $bg_menu
+      height: calc(100vh - 120px)
 
     .content__center
       flex-grow: unset
+      // +height_820
+      //   margin-bottom: 5px
       p
         margin-bottom: 10px
+        +laptop-down
+          //background-color: red
+          font-size: 16px
+        +max-height
+          margin-bottom: 3px
+        +phone-down
+          margin-bottom: 5px
 
     &:after, &:before
       content: ""
       position: absolute
       top: 0px
       right: 0px
-      width: calc(100% / 2 + #{$pr_left_side})
+      width: 50%
+      //calc(100% / 2 + #{$pr_left_side})
       height: 100%
+      // +phone
+      //   content: none
+
     &:before
       border-top: 0.5px solid $bg_menu
       border-top-right-radius: $rad_about
       top: -1px
       +media-w1024_h900
-        width: calc(100% / 2 + #{$pr_left_side} + 95px)
+        width: 50%
+        //calc(100% / 2 + #{$pr_left_side} + 95px)
     &:after
       border-bottom-right-radius: $rad_about
       border-bottom: 0.5px solid $bg_menu
 
+
+
   .content__footer
     justify-content: center
     text-align: center
+    +desktop
+      margin-top: 0px
 
   &.m-collapsed
     display: none
