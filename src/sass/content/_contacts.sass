@@ -1,0 +1,172 @@
+.content-contacts
+  width: calc(100% -  #{$w_nav} - #{$p_container_laptop})
+  +phone-down
+    width: 100%
+
+.contacts__t
+  position: relative
+  display: flex
+  justify-content: flex-end
+  margin-bottom: 50px
+  //height: 768px
+  +laptop-album-down
+    margin-bottom: 15px
+    height: 325px
+  +laptop-down
+    margin-bottom: 35px
+  +tablet-album-device-down
+    margin-bottom: 0px
+  +tablet-down
+    height: 265px
+    margin-bottom: 15px
+  +phone-down
+    justify-content: flex-start
+    height: calc(#{$h_map-wrap_mob} + #{$h_contacts__b_mob} + 5px)
+    //height: auto
+    margin-bottom: 0px
+  +phone_min-down
+    flex-direction: column
+    margin-bottom: 5px
+    height: auto
+
+.contacts__b
+  //margin-left: 685px
+  display: flex
+  justify-content: flex-end
+  +laptop-album-down
+    justify-content: flex-start
+  +phone-down
+    position: absolute
+    right: 0
+    bottom: 0
+    height: $h_contacts__b_mob
+    justify-content: flex-end
+  +phone_min-down
+    position: static
+    justify-content: center
+
+.address
+  width: 48%
+  background-color: #FC5B1F
+  font-size: 20px
+  //margin-left: 685px
+  +laptop-album-down
+    width: 50%
+    font-size: 18px
+  +laptop-down
+    width: 40%
+    font-size: 16px
+  +tablet-album-device-down
+    width: 60%
+  +tablet-down
+    font-size: 14px
+  +phone-down
+    font-size: 12px
+  +phone_min-down
+    width: 100%
+    margin-bottom: 5px
+
+  .title
+    color: $col_main
+    text-align: left
+    +laptop-down
+      font-size: 20px
+    +tablet-down
+      font-size: 16px
+    +phone-down
+      font-size: 12px
+  &-list
+    list-style: none
+    &__item
+      position: relative
+      margin-bottom: 20px
+      padding-left: calc(10px + 30px)
+      display: flex
+      +laptop-down
+        flex-wrap: wrap
+      +tablet-album-device-down
+        flex-wrap: nowrap
+      +phone-down
+        margin-bottom: 5px
+        flex-wrap: wrap
+      +phone_min-down
+        flex-wrap: nowrap
+
+      &:last-child
+        margin-bottom: 0px
+      &:before
+        content: ""
+        position: absolute
+        display: inline-block
+        top: 0px
+        left: 0px
+        width: 30px
+        height: 30px
+        background-color: aqua
+    span
+      &:nth-child(2)
+        margin-left: 15px
+        +laptop-down
+          margin-left: 0px
+        +tablet-album-device-down
+          margin-left: 5px
+
+
+.map-wrap
+  position: absolute
+  top: 0
+  left: 0
+  width: 50%
+  background-color: #A50000
+  height: 768px
+  +laptop-album-down
+    //height: 325px
+    width: 48%
+    height: 100%
+  +laptop-down
+    width: 58%
+    //height: 100%
+  +tablet-album-device-down
+    width: 37%
+  +phone-down
+    right: 0
+    left: unset
+    height: $h_map-wrap_mob
+  +phone_min-down
+    position: static
+    height: 118px
+    width: 100%
+    order: 1
+
+
+.contacts-img
+  width: 48%
+  height: auto
+  img
+    width: 100%
+    height: auto
+
+  +laptop-down
+    width: 100%
+  +tablet-album-device-down
+    width: 48%
+  +phone-down
+    width: 37%
+    overflow: hidden
+  +phone_min-down
+    width: 68%
+
+.phone-wrap
+  display: flex
+  flex-direction: column
+  .phone
+    margin-bottom: 5px
+
+.content.m-collapsed
+  width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
+  +phone-down
+    width: 100%
+
+.content-wrap
+  +phone-down
+    position: relative
