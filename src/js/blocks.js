@@ -97,15 +97,15 @@
     const content__breadcrumbs = document.querySelector(".content__breadcrumbs");
     var content__breadcrumbs_h = 0;
     if (content__breadcrumbs){
-      const content__breadcrumbs_mt = getStyle(content__footer, 'content__breadcrumbs');
-      const content__breadcrumbs_mb = getStyle(content__footer, 'content__breadcrumbs');
+      const content__breadcrumbs_mt = getStyle(content__breadcrumbs, 'margin-top');
+      const content__breadcrumbs_mb = getStyle(content__breadcrumbs, 'margin-bottom');
       content__breadcrumbs_h = content__breadcrumbs.clientHeight + parseInt(content__breadcrumbs_mt) + parseInt(content__breadcrumbs_mb);
       // console.log("content__breadcrumbs_h = " + content__breadcrumbs_h);
     }
     //........................................................................//
     var sum = content__header_h +
               content__footer_h +
-              content__breadcrumbs_h
+              content__breadcrumbs_h +
               parseInt(content__center_mt) + parseInt(content__center_mb);
 
     var content__center_h = content_in_h - sum;
@@ -133,9 +133,16 @@
         paragraphs_h += paragraphs[i].clientHeight + parseInt(getStyle(paragraphs[i], 'margin-top')) + parseInt(getStyle(paragraphs[i], 'margin-bottom'));
       }
     }
+    //........................................................................//
+    let pagination_h = 0;
+    const pagination = document.querySelector('.pagination');
+    if (pagination) {
+      pagination_h = pagination.clientHeight;
+    }
+
     console.log("paragraphs_h = "+paragraphs_h);
     //........................................................................//
-    var content_wrap_h = content__center_h - paragraphs_h - parseInt(content_wrap_mt) - parseInt(content_wrap_mb);
+    var content_wrap_h = content__center_h - paragraphs_h - pagination_h - parseInt(content_wrap_mt) - parseInt(content_wrap_mb);
     content_wrap.style.backgroundColor = "grey";
     content_wrap.style.height = content_wrap_h + "px";
   }

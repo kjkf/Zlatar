@@ -24,6 +24,13 @@
     &:last-child
       margin-bottom: 0
 
+  .content-wrap
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    justify-content: space-evenly
+    align-items: flex-start
+    width: 100%
 
 .nvf--content
   .content__center.items
@@ -64,15 +71,15 @@
 
 .maf--content
   .breadcrumbs
-    margin-bottom: 0
+    //margin-bottom: 0
     +laptop-album-down
-      margin-left: -21%
+      //margin-left: -21%
     +laptop-device-down
       margin-left: 0
   .content__center.items
     justify-content: space-between
     +laptop-album-down
-      padding: 0 15%
+      //padding: 0 15%
     +laptop-device-down
       padding: 0
     +laptop-down
@@ -104,6 +111,7 @@
     +tablet-down
       max-height: 155px
       max-width: 226px
+      margin-right: 5px
     +phone-down
       max-height: 30px
       max-width: 240px
@@ -119,18 +127,23 @@
       justify-content: center
     +phone-landscape-down
       justify-content: space-evenly
+  .content-wrap
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-evenly
+    align-items: flex-start
   .breadcrumbs
     +phone-down
       margin-bottom: 0
   .content-item--catalog
-    height: 28%
+    height: 45%
     min-height: 30px
     +laptop-album-down
       height: 37%
       max-width: 310px
       max-height: 210px
     +laptop-down
-      height: 50%
+      height: 30%
       width: 48%
     +tablet-album-device-down
       max-width: 226px
