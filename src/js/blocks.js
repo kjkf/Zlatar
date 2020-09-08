@@ -82,7 +82,7 @@
   }
 
   function setHeight_Content__Center(content__center, content_in_h){
-    console.log("--вычислением высоты .content__center--");
+    //console.log("--вычислением высоты .content__center--");
     const content__center_margins = getMarginsHeight(content__center);
     //........................................................................//
     const content__header = document.querySelector(".content__header");
@@ -93,13 +93,6 @@
     //........................................................................//
     const content__breadcrumbs = document.querySelector(".content__breadcrumbs");
     var content__breadcrumbs_h = getElemHeight(content__breadcrumbs, false, true);
-    // if (content__breadcrumbs){
-    //   const content__breadcrumbs_mt = getStyle(content__breadcrumbs, 'margin-top');
-    //   const content__breadcrumbs_mb = getStyle(content__breadcrumbs, 'margin-bottom');
-    //   content__breadcrumbs_h = content__breadcrumbs.clientHeight + parseInt(content__breadcrumbs_mt) + parseInt(content__breadcrumbs_mb);
-    //    console.log("content__breadcrumbs_h = " + content__breadcrumbs_h);
-    // }
-    // console.log(getElemHeight(content__breadcrumbs, false, true));
     //........................................................................//
     var sum = content__header_h +
               content__footer_h +
@@ -108,9 +101,7 @@
 
     var content__center_h = content_in_h - sum;
     content__center.style.height = content__center_h + "px";
-    console.log("content__center_h = " + content__center_h);
-    //content__center.style.backgroundColor = "green";
-    console.log("-- -- -- -- --");
+    //console.log("-- -- -- -- --");
     return content__center_h;
   }
 
@@ -122,7 +113,7 @@
 
     const pagination = document.querySelector('.pagination');
     let pagination_h = getElemHeight(pagination, false, false);
-    //........................................................................//
+
     const sum =  paragraphs_h + pagination_h + content_wrap_margins;
     const content_wrap_h = content__center_h  - sum;
     // var content_wrap_h = content__center_h - paragraphs_h - pagination_h - parseInt(content_wrap_mt) - parseInt(content_wrap_mb);
@@ -134,7 +125,6 @@
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
     var content_in = document.querySelector(".content-in");
-
     //........................................................................//
     //вычислить высоту содержимого .content-in
     const content_in_mt = parseInt(getStyle(content_in, 'margin-top'));
@@ -157,8 +147,6 @@
     if (container){
       container_pt = parseInt(getStyle(container, 'padding-top'));
       container_pb = parseInt(getStyle(container, 'padding-bottom'));
-      //container_h = container_pt + container_pb;
-      console.log("container_pt = " + container_pt + "; container_pb = " + container_pb);
     }
     //........................................................................//
     const page_header = document.querySelector(".header");
