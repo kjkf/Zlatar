@@ -1,7 +1,32 @@
 .content-contacts
-  width: calc(100% -  #{$w_nav} - #{$p_container_laptop})
   +phone-down
     width: 100%
+
+  .ic
+    &:before
+      +laptop-down
+        width: $w_contacts_ic_laptop
+        height: $w_contacts_ic_laptop
+      +phone-down
+        width: $w_contacts_ic_phone
+        height: $w_contacts_ic_phone
+
+  .content-in
+    width: 89.5%
+    //background-color: green
+    +laptop-album-down
+      width: 79.3%
+    +laptop-down
+      width: 88.3%
+    +phone-down
+      width: 100%
+
+  &.content.m-collapsed
+    width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
+    +laptop-album-down
+      align-self: flex-start
+    +phone-down
+      width: 100%
 
 .contacts__t
   position: relative
@@ -46,12 +71,12 @@
     justify-content: center
 
 .address
-  width: 48%
-  background-color: #FC5B1F
+  width: 48.3%
+  //background-color: #FC5B1F
   font-size: 20px
   //margin-left: 685px
   +laptop-album-down
-    width: 50%
+    width: 53.9%
     font-size: 18px
   +laptop-down
     width: 40%
@@ -80,29 +105,26 @@
     &__item
       position: relative
       margin-bottom: 20px
-      padding-left: calc(10px + 30px)
+      padding-left: calc(10px + #{$w_contacts_ic})
       display: flex
       +laptop-down
         flex-wrap: wrap
+        padding-left: calc(5px + #{$w_contacts_ic_laptop})
       +tablet-album-device-down
         flex-wrap: nowrap
+        margin-bottom: 10px
+      +tablet-down
+        margin-bottom: 10px
       +phone-down
         margin-bottom: 5px
         flex-wrap: wrap
+        padding-left: calc(5px + #{$w_contacts_ic_phone})
       +phone_min-down
         flex-wrap: nowrap
 
       &:last-child
         margin-bottom: 0px
-      &:before
-        content: ""
-        position: absolute
-        display: inline-block
-        top: 0px
-        left: 0px
-        width: 30px
-        height: 30px
-        background-color: aqua
+
     span
       &:nth-child(2)
         margin-left: 15px
@@ -116,12 +138,12 @@
   position: absolute
   top: 0
   left: 0
-  width: 50%
-  background-color: blue
-  height: 768px
+  width: 48.3%
+  //background-color: blue
+  height: 745px
   +laptop-album-down
     //height: 325px
-    width: 48%
+    width: 43.8%
     height: 100%
   +laptop-down
     width: 58%
@@ -140,12 +162,13 @@
 
 
 .contacts-img
-  width: 48%
+  width: 48.3%
   height: auto
   img
     width: 100%
     height: auto
-
+  +laptop-album-down
+    width: 49.6%
   +laptop-down
     width: 100%
   +tablet-album-device-down
@@ -162,10 +185,6 @@
   .phone
     margin-bottom: 5px
 
-.content.m-collapsed
-  width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
-  +phone-down
-    width: 100%
 
 .content-wrap
   +phone-down
