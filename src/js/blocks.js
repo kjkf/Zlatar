@@ -165,7 +165,6 @@
       top_space = top_space > content_in_mt ? top_space : content_in_mt;
       var bot_space = page_footer_h > border_b ? page_footer_h : border_b;
       left_side_rh = top_space + bot_space;
-
     }
     //........................................................................//
     var content_in_h = windowHeight - left_side_rh;
@@ -183,7 +182,7 @@
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
 
-    if (windowHeight>568 && windowWidth>568){
+    if (windowHeight>568 || windowWidth>568){
 
       var content_in = document.querySelector(".content-in");
       const content_in_h = content_in!=null? setHeight_Content_In(content_in) : 0;

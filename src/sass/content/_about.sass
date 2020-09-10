@@ -55,13 +55,17 @@
       //   margin-bottom: 5px
       p
         margin-bottom: 10px
+        background-color: blue
         +laptop-down
           //background-color: red
-          font-size: 16px
-        +max-height
-          margin-bottom: 3px
+          font-size: 12px
+          background-color: red
         +phone-down
           margin-bottom: 5px
+          background-color: yellow
+        +max-height
+          margin-bottom: 3px
+          background-color: none
 
     &:after, &:before
       content: ""
