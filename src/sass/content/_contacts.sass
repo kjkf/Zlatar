@@ -10,6 +10,12 @@
       +phone-down
         width: $w_contacts_ic_phone
         height: $w_contacts_ic_phone
+      +phone-height-down
+        width: $w_contacts_ic_phone
+        height: $w_contacts_ic_phone
+      +media-w1240_h569
+        width: $w_contacts_ic_phone
+        height: $w_contacts_ic_phone
 
   .content-in
     width: 89.5%
@@ -18,6 +24,8 @@
       width: 79.3%
     +laptop-down
       width: 88.3%
+    +tablet-down
+      width: 100%
     +phone-down
       width: 100%
 
@@ -36,31 +44,63 @@
   //height: 768px
   +laptop-album-down
     margin-bottom: 15px
-    height: 325px
+    //height: 325px
   +laptop-down
     margin-bottom: 35px
   +tablet-album-device-down
     margin-bottom: 0px
-  +tablet-down
-    height: 265px
+  +media-w1024_h1024
+    margin-bottom: 0px
+  +tablet-landscape-down
+    //height: 265px
     margin-bottom: 15px
   +phone-down
     justify-content: flex-start
     height: calc(#{$h_map-wrap_mob} + #{$h_contacts__b_mob} + 5px)
     //height: auto
     margin-bottom: 0px
+  +phone-height-down
+    justify-content: flex-start
+    height: calc(#{$h_map-wrap_mob} + #{$h_contacts__b_mob} + 5px)
+    margin-bottom: 0px
+  +media-w1240_h569
+    justify-content: flex-start
+    height: calc(#{$h_map-wrap_mob} + #{$h_contacts__b_mob} + 5px)
+    margin-bottom: 0px
+
   +phone_min-down
     flex-direction: column
     margin-bottom: 5px
     height: auto
+  +max-height
+    margin-bottom: 0px
 
 .contacts__b
   //margin-left: 685px
   display: flex
   justify-content: flex-end
+  height: 50%
+
   +laptop-album-down
     justify-content: flex-start
+    height: 38%
+  +media-w1024_h1024
+    height: 30%
+  +laptop-device-down
+    height: 50%
   +phone-down
+    position: absolute
+    right: 0
+    bottom: 0
+    height: $h_contacts__b_mob
+    justify-content: flex-end
+  +phone-height-down
+    position: absolute
+    right: 0
+    bottom: 0
+    height: $h_contacts__b_mob
+    justify-content: flex-end
+  +media-w1240_h569
     position: absolute
     right: 0
     bottom: 0
@@ -87,6 +127,10 @@
     font-size: 14px
   +phone-down
     font-size: 12px
+  +phone-height-down
+    font-size: 12px
+  +media-w1240_h569
+    font-size: 12px
   +phone_min-down
     width: 100%
     margin-bottom: 5px
@@ -99,6 +143,10 @@
     +tablet-down
       font-size: 16px
     +phone-down
+      font-size: 12px
+    +phone-height-down
+      font-size: 12px
+    +media-w1240_h569
       font-size: 12px
   &-list
     list-style: none
@@ -119,8 +167,18 @@
         margin-bottom: 5px
         flex-wrap: wrap
         padding-left: calc(5px + #{$w_contacts_ic_phone})
+      +phone-height-down
+        margin-bottom: 5px
+        flex-wrap: wrap
+        padding-left: calc(5px + #{$w_contacts_ic_phone})
+      +media-w1240_h569
+        margin-bottom: 5px
+        flex-wrap: wrap
+        padding-left: calc(5px + #{$w_contacts_ic_phone})
       +phone_min-down
         flex-wrap: nowrap
+      +height_820
+        margin-bottom: 3px
 
       &:last-child
         margin-bottom: 0px
@@ -140,7 +198,8 @@
   left: 0
   width: 48.3%
   //background-color: blue
-  height: 745px
+  //height: 745px
+  height: calc(100vh - 390px)
   +laptop-album-down
     //height: 325px
     width: 43.8%
@@ -153,20 +212,28 @@
   +phone-down
     right: 0
     left: unset
-    height: $h_map-wrap_mob
+    height: $h_map-wrap_mob!important
+  +phone-height-down
+    right: 0
+    left: unset
+    height: $h_map-wrap_mob!important
+  +media-w1240_h569
+    right: 0
+    left: unset
+    height: $h_map-wrap_mob!important
   +phone_min-down
     position: static
-    height: 118px
+    height: 118px!important
     width: 100%
     order: 1
 
 
 .contacts-img
   width: 48.3%
-  height: auto
+  height: 100%
   img
     width: 100%
-    height: auto
+    height: 100%
   +laptop-album-down
     width: 49.6%
   +laptop-down
@@ -174,6 +241,12 @@
   +tablet-album-device-down
     width: 48%
   +phone-down
+    width: 37%
+    overflow: hidden
+  +phone-height-down
+    width: 37%
+    overflow: hidden
+  +media-w1240_h569
     width: 37%
     overflow: hidden
   +phone_min-down
@@ -189,3 +262,8 @@
 .content-wrap
   +phone-down
     position: relative
+  +phone-height-down
+    position: relative
+  +media-w1240_h569
+    position: relative
+

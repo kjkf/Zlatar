@@ -43,6 +43,10 @@ $height_820: 820px
 	@media screen and (max-width: $laptop-width) and (max-height: $tablet-album-height)
 		@content
 
+=tablet-landscape-down
+	@media screen and (max-width: $tablet-width) and (max-height: $laptop-width)
+		@content
+
 =desktop-device-height
 	@media screen and (min-height: $laptop-album-width)
 		@content
@@ -101,6 +105,10 @@ $height_820: 820px
 =laptop-landscape-down
 	@media screen and (max-width: $laptop-width) and (orientation: landscape)
 		@content
+=phone-height-down
+  @media screen and (max-height: $phone-width)
+    @content
+
 
 
 $min-height_menu_menu: 970px
@@ -112,6 +120,13 @@ $min-height_menu_menu: 970px
 	@media screen and (min-width: $tablet-width) and (max-height: $min-height_menu_menu)
 		@content
 
+=media-w1240_h569
+	@media screen and (max-width: 1240px) and (max-height: 569px)
+		@content
+
+=media-w1024_h1024
+	@media screen and (max-width: $laptop-width) and (max-height: $laptop-width)
+		@content
 
 
 =scrolled($height)
