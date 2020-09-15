@@ -1,6 +1,8 @@
-.content-services
+.content-services, .nvf--content, .maf--content
   +laptop-down
     padding-left: 0
+  +phone-down
+    padding: 0px 5px
 
   .content__center
     +tablet-down
@@ -12,7 +14,7 @@
     margin: 0
 
 @media screen and (max-height: 825px)
-  .content-services
+  .content-services, .nvf--content, .maf--content
     .content__center
       justify-content: center
     .content-item
@@ -30,7 +32,7 @@
       align-items: center
 
 @media screen and (max-width: 665px)
-  .content-services
+  .content-services, .nvf--content, .maf--content
     .content__center
       justify-content: center
     .content-item
@@ -45,3 +47,6 @@
       display: none
     .content-item__descr
       align-items: center
+  .nvf--content
+    .title
+      font-size: 15px

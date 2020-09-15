@@ -36,12 +36,12 @@
       height: 100%
 
 .nvf--content
-  .content__center.items
-    align-items: flex-start
-    +phone-down
-      justify-content: center
-    +phone-landscape-down
-      justify-content: space-evenly
+  // .content__center.items
+  //   align-items: flex-start
+  //   +phone-down
+  //     justify-content: center
+  //   +phone-landscape-down
+  //     justify-content: space-evenly
 
   // .content-item
   //   height: 100%
@@ -62,41 +62,41 @@
   //     max-width: 240px
   //     width: 100%
 
-    .content-item__img
-      height: 235px
-
-  .content__footer
-    +laptop-album-down
-      flex-direction: row
-      justify-content: space-between
-    +phone-down
-      margin: 10px 0
+    // .content-item__img
+    //   height: 235px
+  // 
+  // .content__footer
+  //   +laptop-album-down
+  //     flex-direction: row
+  //     justify-content: space-between
+  //   +phone-down
+  //     margin: 10px 0
 
 .maf--content
   .breadcrumbs
-    //margin-bottom: 0
-    +laptop-album-down
-      //margin-left: -21%
+    // //margin-bottom: 0
+    // +laptop-album-down
+    //   //margin-left: -21%
     +laptop-device-down
       margin-left: 0
-  .content__center.items
-    justify-content: space-between
-    +laptop-album-down
-      //padding: 0 15%
-    +laptop-device-down
-      padding: 0
-    +laptop-down
-      justify-content: space-between
-    +tablet-album-device-down
-      justify-content: flex-start
-    +phone-down
-      justify-content: center
-  .content__footer
-    +laptop-album-down
-      flex-direction: row
-      justify-content: space-between
-    +phone-down
-      margin: 10px 0
+  // .content__center.items
+  //   justify-content: space-between
+  //   +laptop-album-down
+  //     //padding: 0 15%
+  //   +laptop-device-down
+  //     padding: 0
+  //   +laptop-down
+  //     justify-content: space-between
+  //   +tablet-album-device-down
+  //     justify-content: flex-start
+  //   +phone-down
+  //     justify-content: center
+  // .content__footer
+  //   +laptop-album-down
+  //     flex-direction: row
+  //     justify-content: space-between
+  //   +phone-down
+  //     margin: 10px 0
 
   // .content-item
   //   //margin-right: 25px
@@ -215,37 +215,38 @@
     width: 100%
 
 
-@media screen and (max-height: 825px)
-  .category
-    .content__center
-      justify-content: center
-    .content-item
-      height: 50px
-      width: 230px
-      margin: 0 5px
-      border-radius: 10px
-    .title
-      font-size: 16px
-    .content-item__in
-      justify-content: center
-    .content-item__img
-      display: none
-    .content-item__descr
-      align-items: center
-
-@media screen and (max-width: 665px)
-  .category
-    .content__center
-      justify-content: center
-    .content-item
-      height: 50px
-      width: 230px
-      border-radius: 10px
-    .title
-      font-size: 16px
-    .content-item__in
-      justify-content: center
-    .content-item__img
-      display: none
-    .content-item__descr
-      align-items: center
+// @media screen and (max-height: 825px)
+//   //.category
+//   .nvf--content, .maf--content
+//     .content__center
+//       justify-content: center
+//     .content-item
+//       height: 50px
+//       width: 230px
+//       margin: 0 5px
+//       border-radius: 10px
+//     .title
+//       font-size: 15px
+//     .content-item__in
+//       justify-content: center
+//     .content-item__img
+//       display: none
+//     .content-item__descr
+//       align-items: center
+//
+// @media screen and (max-width: 665px)
+//   .nvf--content, .maf--content
+//     .content__center
+//       justify-content: center
+//     .content-item
+//       height: 50px
+//       width: 230px
+//       border-radius: 10px
+//     .title
+//       font-size: 15px
+//     .content-item__in
+//       justify-content: center
+//     .content-item__img
+//       display: none
+//     .content-item__descr
+//       align-items: center
