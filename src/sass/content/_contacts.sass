@@ -42,38 +42,36 @@
   justify-content: flex-end
   margin-bottom: 50px
   //height: 768px
-  +laptop-album-down
+  +laptop-album-down //1366
     margin-bottom: 15px
-    //height: 325px
-  +laptop-down
+  +max-height //970
+    margin-bottom: 0px
+  +laptop-down //1024
     margin-bottom: 35px
-  +tablet-album-device-down
+  +media-w1024_h1024 //1024 1024
     margin-bottom: 0px
-  +media-w1024_h1024
-    margin-bottom: 0px
-  +tablet-landscape-down
+  +tablet-album-device-down // 1024 768
+    margin-bottom: 5px
+  +tablet-landscape-down //768 1024
     //height: 265px
     margin-bottom: 15px
-  +phone-down
-    justify-content: flex-start
-    height: calc(#{$h_map-wrap_mob} + #{$h_contacts__b_mob} + 5px)
-    //height: auto
-    margin-bottom: 0px
-  +phone-height-down
+  +phone-down // 568
     justify-content: flex-start
     height: calc(#{$h_map-wrap_mob} + #{$h_contacts__b_mob} + 5px)
     margin-bottom: 0px
-  +media-w1240_h569
+  +phone-height-down // h 568
     justify-content: flex-start
     height: calc(#{$h_map-wrap_mob} + #{$h_contacts__b_mob} + 5px)
     margin-bottom: 0px
-
-  +phone_min-down
+  +media-w1240_h569 //1240 569
+    justify-content: flex-start
+    height: calc(#{$h_map-wrap_mob} + #{$h_contacts__b_mob} + 5px)
+    margin-bottom: 0px
+  +phone_min-down //320
     flex-direction: column
     margin-bottom: 5px
     height: auto
-  +max-height
-    margin-bottom: 0px
+
 
 .contacts__b
   //margin-left: 685px
