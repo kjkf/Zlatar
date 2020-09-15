@@ -105,6 +105,7 @@
   +tablet-device-height
     padding-left: $p_container_tablet
     padding-top: 50px
+    padding-bottom: 0px
   +tablet-album-device-down
     padding-left: $p_container_tablet
     padding-top: 50px
@@ -130,6 +131,8 @@
   &.m-sm
     width: $w_left_side_m_sm
     padding-top: 50px
+    +tablet-device-height
+      padding-top: 30px
 
 .left-side, .left-side.m-collapsed, .left-side.m-sm
   +phone-down
@@ -351,7 +354,7 @@
         width: $w_logo_tablet
         height: $h_logo_tablet
       +tablet-device-height
-        margin-bottom: $mb_logo_collapsed_tablet
+        margin-bottom: 20px
         width: $w_logo_tablet
         height: $h_logo_tablet
       +tablet-album-device-down
