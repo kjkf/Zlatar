@@ -4,17 +4,17 @@
     justify-content: space-evenly
 
     //background: aqua
-    +laptop-down
-      //background: green
-    //+laptop-landscape-down
-      background: lightgreen
-    +tablet-down
-      //background: yellow
+    // +laptop-down
+    //   //background: green
+    // //+laptop-landscape-down
+    //   background: lightgreen
+    // +tablet-down
+    //   //background: yellow
     +phone_down
       //background: blue
       align-items: flex-start
-    +phone-landscape-down
-      //background: coral
+    // +phone-landscape-down
+    //   //background: coral
 
     .content-wrap
       display: flex
@@ -32,10 +32,16 @@
         margin-bottom: 20px
         //&:last-child
           margin-bottom: 0
+      +laptop-down
+        //background-color: green
+        height: 23%
+        max-height: 23%
       +tablet-album-device-down
-        max-width: 341px
-        max-height: 217px
-        height: 52%
+        margin-bottom: 10px
+      //   background-color: yellow
+      //   max-width: 341px
+      //   max-height: 217px
+      //   height: 52%
       +laptop-down
         width: 100%
       +tablet-down
@@ -50,7 +56,13 @@
       .content-item__descr
         +phone-down
           padding: 5px
-
+        .title
+          +tablet-down
+            font-size: 14px
+          +tablet-device-height
+            font-size: 14px
+          +tablet-album-device-down
+            font-size: 14px
 
   .content-item-hover
     +laptop-device-down
@@ -89,6 +101,35 @@
   +tablet-down
     flex-direction: column
 
+@media screen and (max-height: 825px)
+  .products--content
+    .content__center
+      justify-content: center
+    .content-item
+      height: 50px
+      //width: 230px
+      margin: 0 5px
+      border-radius: 10px
+    .title
+      font-size: 19px
+    .content-item__in
+      justify-content: center
+    .content-item__img
+      display: none
+    .content-item__descr
+      align-items: center
 
-
-
+@media screen and (max-width: 665px)
+  .content-services
+    .content__center
+      justify-content: center
+    .content-item
+      height: 50px
+      //width: 230px
+      border-radius: 10px
+    .content-item__in
+      justify-content: center
+    .content-item__img
+      display: none
+    .content-item__descr
+      align-items: center
