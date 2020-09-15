@@ -3,15 +3,24 @@
     padding-left: 0
   +phone-down
     padding: 0px 5px
-
   .content__center
     +tablet-down
       justify-content: center!important
     .content-item
       +tablet-down
-        margin: 0 5px
+        margin: 5px 5px
   .content-item--dark
     margin: 0
+
+.nvf--content
+  .content-wrap
+    +phone-down
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
+  // .content-item
+  //   +phone-down
+  //     margin-bottom: 10px!important
 
 @media screen and (max-height: 825px)
   .content-services, .nvf--content, .maf--content
@@ -39,6 +48,7 @@
       height: 50px
       width: 230px
       border-radius: 10px
+      //margin-bottom: 10px
     .title
       font-size: 16px
     .content-item__in
