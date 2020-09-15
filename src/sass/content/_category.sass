@@ -1,8 +1,9 @@
 .category
-  .content__center.items
-    //max-height: calc(100vh - 350px)
+  // .content__center.items
+  //   //max-height: calc(100vh - 350px)
   .content-item__descr
-    justify-content: flex-start
+    //justify-content: flex-start
+    justify-content: center
     align-items: center
     padding-left: 30px
     padding-right: 30px
@@ -42,24 +43,24 @@
     +phone-landscape-down
       justify-content: space-evenly
 
-  .content-item
-    height: 100%
-    width: 49%
-    max-height: 300px
-    //margin-right: 25px
-    +laptop-album-down
-      max-width: 310px
-      max-height: 210px
-    +laptop-down
-      //margin-right: 0
-      height: 27%
-      width: 49%
-    +laptop-device-down
-      height: 100%
-    +phone-down
-      max-height: 30px
-      max-width: 240px
-      width: 100%
+  // .content-item
+  //   height: 100%
+  //   width: 49%
+  //   max-height: 300px
+  //   //margin-right: 25px
+  //   +laptop-album-down
+  //     max-width: 310px
+  //     max-height: 210px
+  //   +laptop-down
+  //     //margin-right: 0
+  //     height: 27%
+  //     width: 49%
+  //   +laptop-device-down
+  //     height: 100%
+  //   +phone-down
+  //     max-height: 30px
+  //     max-width: 240px
+  //     width: 100%
 
     .content-item__img
       height: 235px
@@ -97,31 +98,31 @@
     +phone-down
       margin: 10px 0
 
-  .content-item
-    //margin-right: 25px
-    +laptop-album-down
-      max-width: 310px
-    +tablet-album-device-down
-      max-width: 226px
-      max-height: 155px
-      margin-right: 10px
-    +laptop-down
-      //margin-right: 0
-      width: 48%
-      height: 30%
-      max-height: 280px
-    +tablet-down
-      max-height: 155px
-      max-width: 226px
-      margin-right: 5px
-    +phone-down
-      max-height: 30px
-      max-width: 240px
-      width: 90%
+  // .content-item
+  //   //margin-right: 25px
+  //   +laptop-album-down
+  //     max-width: 310px
+  //   +tablet-album-device-down
+  //     max-width: 226px
+  //     max-height: 155px
+  //     margin-right: 10px
+  //   +laptop-down
+  //     //margin-right: 0
+  //     width: 48%
+  //     height: 30%
+  //     max-height: 280px
+  //   +tablet-down
+  //     max-height: 155px
+  //     max-width: 226px
+  //     margin-right: 5px
+  //   +phone-down
+  //     max-height: 30px
+  //     max-width: 240px
+  //     width: 90%
 
-  .content-item__img
-    +laptop-down
-      height: 205px
+  // .content-item__img
+  //   +laptop-down
+  //     height: 205px
 
 .catalog--content
   .content__center.items
@@ -214,4 +215,37 @@
     width: 100%
 
 
+@media screen and (max-height: 825px)
+  .category
+    .content__center
+      justify-content: center
+    .content-item
+      height: 50px
+      width: 230px
+      margin: 0 5px
+      border-radius: 10px
+    .title
+      font-size: 16px
+    .content-item__in
+      justify-content: center
+    .content-item__img
+      display: none
+    .content-item__descr
+      align-items: center
 
+@media screen and (max-width: 665px)
+  .category
+    .content__center
+      justify-content: center
+    .content-item
+      height: 50px
+      width: 230px
+      border-radius: 10px
+    .title
+      font-size: 16px
+    .content-item__in
+      justify-content: center
+    .content-item__img
+      display: none
+    .content-item__descr
+      align-items: center
