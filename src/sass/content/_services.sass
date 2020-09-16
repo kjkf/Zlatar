@@ -18,6 +18,9 @@
       flex-direction: column
       justify-content: flex-start
       align-items: center
+  .title
+    +tablet-down
+      font-size: 16px
   // .content-item
   //   +phone-down
   //     margin-bottom: 10px!important
@@ -39,6 +42,12 @@
       display: none
     .content-item__descr
       align-items: center
+  .nvf--content
+    .content-item
+      width: 300px
+    .title
+      font-size: 16px
+
 
 @media screen and (max-width: 665px)
   .content-services, .nvf--content, .maf--content
