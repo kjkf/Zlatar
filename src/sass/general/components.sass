@@ -86,10 +86,15 @@
     font-family: $font_MontAlt_Medium
     color: #FFFFFF
 
-.content-item--catalog, .content-item--managment
+.content-item--catalog,
+  //.content-item--managment
   width: 450px
   height: 300px
   min-height: 300px
+  +tablet-device-height
+    //background-color: green
+    height: 48%
+    max-width: 26%
 
 .content-item--catalog
   position: relative
