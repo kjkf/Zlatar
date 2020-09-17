@@ -26,11 +26,15 @@
     margin-bottom: 4px
     +tablet-down
       margin-bottom: 5px
+      padding-left: 20px
     +tablet-device-height
       margin-bottom: 5px
     &:before
       width: 20px
       height: 20px
+      +tablet-down
+        width: 15px
+        height: 15px
   .contacts__r
     display: flex
     flex-direction: column
@@ -45,18 +49,20 @@
       text-align: right
 
     .ic
-      +tablet-down
-        margin-bottom: 5px
       +tablet-device-height
         margin-bottom: 5px
+      +tablet-down
+        margin-bottom: 0px
+
   .contacts__l
     .ic
       +laptop-down
         margin-bottom: 15px
-      +tablet-down
-        margin-bottom: 5px
       +tablet-device-height
         margin-bottom: 5px
+      +tablet-down
+        margin-bottom: 0px
+
 
 .contacts
   font-size: 20px
@@ -66,14 +72,14 @@
   +laptop-down
     font-size: 14px
     line-height: 20px
+  +tablet-album-device-down
+    font-size: 14px
+    line-height: 20px
   +tablet-down
     font-size: 12px
     //line-height: 20px
   +tablet-device-height
     font-size: 12px
-  +tablet-album-device-down
-    font-size: 14px
-    line-height: 20px
   +phone-down
     display: none
   &__r
@@ -188,16 +194,17 @@
   +laptop-down
     width: $w_nav_laptop
     padding-left: calc(#{$p_container_laptop} + #{$w_rhomb})
-  +tablet-down
-    width: $w_nav_tablet
-    padding-top: $pt_nav_tablet
-    padding-left: calc(#{$p_container_tablet} + #{$w_rhomb_tablet})
-  +max-height
-    padding-top: 20px
   +tablet-device-height
     width: $w_nav_tablet
     padding-top: $pt_nav_tablet
     padding-left: calc(#{$p_container_tablet} + #{$w_rhomb_tablet})
+  +tablet-down
+    width: $w_nav_tablet
+    padding-top: $pt_nav_tablet
+    padding-left: calc(#{$p_container_tablet} + #{$w_rhomb_tablet})
+    padding-left: calc(#{$p_container_tablet})
+  +max-height
+    padding-top: 20px
   +tablet-album-device-down
     width: $w_nav_tablet
     padding-top: $pt_nav_tablet
@@ -212,6 +219,7 @@
   &.m-collapsed
     .nav
       +tablet-down
+        padding: 20px
         padding-right: 0px
       +tablet-device-height
         padding-right: 0px

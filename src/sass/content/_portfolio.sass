@@ -17,13 +17,13 @@
     justify-content: space-between
     height: 100%
     margin-top: 20px
+    min-height: 86px
     +laptop-down
       flex-direction: column
       justify-content: flex-start
       align-items: center
       margin-top: 20px
-    +tablet-down
-      margin-top: 0px
+
     +tablet-device-height
       margin-top: 0px
     +tablet-album-device-down
@@ -31,9 +31,14 @@
       justify-content: space-between
       align-items: flex-start
       margin-top: 0px
+    +tablet-down
+      margin-top: 0px
+      flex-direction: column
+      justify-content: flex-start
+      align-items: center
     +phone-down
       margin-top: 13px
-      justify-content: space-evenly
+      //justify-content: space-evenly
     +phone_min-down
       margin-top: 18px
       flex-direction: column
@@ -45,10 +50,14 @@
     margin-bottom: 10px
     +tablet-down
       margin-bottom: 15px
-    +tablet-device-height
-      margin-bottom: 15px
     +tablet-album-device-down
       margin-bottom: 15px
+    +media-w944_h821
+      margin-bottom: 5px
+      font-size: 10px
+    +tablet-device-height
+      margin-bottom: 5px
+      font-size: 10px
     +phone-down
       margin-bottom: 5px
 
@@ -66,9 +75,12 @@
     +tablet-down
       max-width: 340px
       max-height: 217px
+      margin-bottom: 5px
     +tablet-device-height
       max-width: 340px
       max-height: 217px
+      height: auto
+      width: auto
     +tablet-album-device-down
       max-width: 340px
       max-height: 217px
@@ -83,3 +95,13 @@
     .content-item__img
       +laptop-album-down
         height: 100%
+      +tablet-device-height
+        display: none
+    .content-item__descr
+      +tablet-album-device-down
+        min-height: 25px
+        padding-left: 0px
+        padding-right: 0px
+  h3
+    +tablet-album-device-down
+      font-size: 13px
