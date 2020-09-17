@@ -10,11 +10,15 @@
     if (elem){
       if (padding){
         paddings_h = parseInt(getStyle(elem, 'padding-top')) + parseInt(getStyle(elem, 'padding-bottom'));
+        // console.log("paddings_h = "+ paddings_h);
       }
       if (margin){
         margins_h = parseInt(getStyle(elem, 'margin-top')) + parseInt(getStyle(elem, 'margin-bottom'));
+        // console.log("margins_t = "+ parseInt(getStyle(elem, 'margin-top')) + " ; margins_b = "+ parseInt(getStyle(elem, 'margin-bottom')));
+        // console.log("margin.top = "+ elem.style.marginT);
       }
       const sum = elem.clientHeight + paddings_h + margins_h;
+      // console.log("element_height = "+ sum);
       return sum;
     }else return 0;
   }
@@ -61,8 +65,8 @@
     //console.log("page_header_h = "+ page_header_h)
     //........................................................................//
     const page_footer = document.querySelector(".footer");
-    var page_footer_h = getElemHeight(page_footer, false, true);
-    //console.log("page_footer_h = "+page_footer_h);
+    var page_footer_h = page_footer!=null ? getElemHeight(page_footer, false, true) : 0;
+    //console.log("page_footer = "+page_footer.clientHeight);
     //........................................................................//
     let leftSide_h = 0;
     if (windowWidth <= 568) {
@@ -75,8 +79,14 @@
               leftSide_h + //высота хедера в мобильной версии
               page_header_h +
               page_footer_h;
+    console.log("container_h = " + container_h + "; content_h = " + content_h +
+                "; leftSide_h = " + leftSide_h + "; page_header_h = " + page_header_h +
+                "; page_footer_h = "+ page_footer_h);
+    console.log("sum = " + sum);
+    console.log("windowHeight = "+windowHeight);
     var content_in_h = windowHeight - sum;
     content_in.style.height = content_in_h + "px";
+    console.log("content_in_h = "+content_in_h);
     //console.log("-- -- -- -- --");
     return content_in_h;
   }
@@ -98,9 +108,14 @@
               content__footer_h +
               content__breadcrumbs_h +
               content__center_margins;
+    console.log("content__header_h = "+ content__header_h  + "; content__footer_h = " +
+                content__footer_h + "; content__breadcrumbs_h = " + content__breadcrumbs_h +
+                "; content__center_margins = " + content__center_margins);
+    console.log("sum = " + sum);
 
     var content__center_h = content_in_h - sum;
     content__center.style.height = content__center_h + "px";
+    console.log("content__center_h = "+content__center_h);
     //console.log("-- -- -- -- --");
     return content__center_h;
   }
