@@ -33,15 +33,16 @@
       height: 100%
 
 .catalog--content
+  +height_820
+    align-self: flex-start!important
+    padding-left: 0!important
   .content__center.items
     +phone-down
       justify-content: center
       height: calc(100% - 90px)
       max-height: calc(100% - 90px)
-      // height: 60%
-      // max-height: 60%
-    +phone-landscape-down
-      //justify-content: space-evenly
+    +phone-height-down
+      overflow-y: scroll
   .content-wrap
     display: flex
     flex-wrap: wrap
@@ -86,8 +87,9 @@
     +height_820
       height: 48%
       max-height: 45%
+      min-height: 100px
       width: 48%
-      max-width: 80%
+      max-width: 300px
       display: none
       &:nth-child(3n+1)
         display: block
@@ -97,6 +99,7 @@
   .content-item__descr
     +laptop-down
       font-size: 16px
+      padding: 7px 10px
     +tablet-album-device-down
       left: 50%
       top: 5px
@@ -105,6 +108,7 @@
       justify-content: space-evenly
       font-size: 14px
       line-height: 17px
+
     +tablet-down
       left: 50%
       top: 5px
@@ -113,9 +117,11 @@
       justify-content: space-evenly
       font-size: 14px
       line-height: 17px
+
     +phone-down
       font-size: 11px
       line-height: 1.2
+      padding: 5px
     .descr-vendorCode
       +tablet-album-device-down
         font-size: 12px
@@ -124,7 +130,7 @@
         font-size: 10px
     .descr-left div
       +phone-down
-        margin-bottom: 10px
+        margin-bottom: 5px
   .content__footer
     +laptop-album-down
       flex-direction: row
