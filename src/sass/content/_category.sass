@@ -33,22 +33,27 @@
       height: 100%
 
 .catalog--content
+  +tablet-down
+    align-self: flex-start!important
+    padding-left: 0!important
+  +height_820
+    align-self: flex-start!important
+    padding-left: 0!important
   .content__center.items
+
     +phone-down
       justify-content: center
       height: calc(100% - 90px)
       max-height: calc(100% - 90px)
-      // height: 60%
-      // max-height: 60%
-    +phone-landscape-down
-      //justify-content: space-evenly
+    +phone-height-down
+      overflow-y: scroll
   .content-wrap
     display: flex
     flex-wrap: wrap
     justify-content: space-evenly
     align-items: flex-start
     +phone-down
-      height: 90%
+      height: 89%
       width: 100%
   .breadcrumbs
     //+phone-down
@@ -72,22 +77,28 @@
     +tablet-down
       max-width: 226px
       max-height: 155px
-      height: 40%
+      height: 38%
+      margin-bottom: 5px
+      display: none
+      &:nth-child(2n)
+        display: block
     +phone-down
       width: 100%
       height: 70%
       max-width: 190px
-      max-height: 70%!important
+      max-height: 130px!important
       //min-height: 70%!important
       //130px!important
-      display: none
+      display: none!important
       &:nth-child(3n+1)
-        display: block
+        display: block!important
     +height_820
       height: 48%
       max-height: 45%
-      width: 48%
-      max-width: 80%
+      min-height: 100px
+      width: 45%
+      min-width: 165px
+      max-width: 300px
       display: none
       &:nth-child(3n+1)
         display: block
@@ -97,6 +108,7 @@
   .content-item__descr
     +laptop-down
       font-size: 16px
+      padding: 7px 10px
     +tablet-album-device-down
       left: 50%
       top: 5px
@@ -116,6 +128,9 @@
     +phone-down
       font-size: 11px
       line-height: 1.2
+      padding: 5px
+    +height_820
+      padding: 3px
     .descr-vendorCode
       +tablet-album-device-down
         font-size: 12px
@@ -124,7 +139,7 @@
         font-size: 10px
     .descr-left div
       +phone-down
-        margin-bottom: 10px
+        margin-bottom: 5px
   .content__footer
     +laptop-album-down
       flex-direction: row
