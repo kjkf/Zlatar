@@ -1,6 +1,12 @@
 .content-nvf
   .slider
     margin-bottom: 30px
+    +media-h1030
+      max-width: 200px
+    +media-w1100
+      max-width: 330px
+    +media-w870
+      max-width: 230px
   .content-in
     +laptop-album-down
       padding-left: 20px
@@ -17,7 +23,9 @@
     p
       +laptop-album-down
         margin-bottom: 5px
+      +media-h650
+        font-size: 10px
   .scrolled
     overflow-y: hidden
-    +phone-down
+    +tablet-down
       overflow-y: scroll
