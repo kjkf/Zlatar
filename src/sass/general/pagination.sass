@@ -23,7 +23,7 @@
   &__control_prev::before
     transform: scale(-1, 1)
 
-  a
+  a, span.active
     display: inline-flex
     align-items: center
     justify-content: center
@@ -83,3 +83,6 @@
     //&:first-child, &:nth-child(2), &:nth-child(3)
       display: inline-block
       background-color: red
+
+  span.active
+    color: $bg_menu
