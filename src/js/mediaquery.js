@@ -6,7 +6,7 @@ $(function() {
 
     const maxHeight900 = window.matchMedia("(max-height: 900px)");
     const maxWidth1366 = window.matchMedia("(max-width: 1366px)");
-    const maxWidth568 = window.matchMedia("(max-width: 568px)");
+    const maxWidth850 = window.matchMedia("(max-width: 850px)");
 
 
     function maxHeightHandlerForMediaQueries(x) {
@@ -38,12 +38,12 @@ $(function() {
         }
     }
 
-    function maxWidth568Handler(x) {
-        if (maxWidth568.matches) {
-            //console.log('maxWidth568.matches createTabs');
+    function maxWidth850Handler(x) {
+        if (maxWidth850.matches) {
+            //console.log('maxWidth850.matches createTabs');
             createTabs();
         } else {
-            //console.log('maxWidth568.matches destroyTabs');
+            //console.log('maxWidth850.matches destroyTabs');
             const tabs = document.querySelector('.tabs');
             if (tabs) destroyTabs();
         }
@@ -150,7 +150,7 @@ $(function() {
     }
 
     maxWidthHandlerForMediaQueries();
-    maxWidth568Handler();
+    maxWidth850Handler();
 
 
     try {
@@ -160,8 +160,8 @@ $(function() {
         maxWidth1366.addEventListener("change", () => {
             maxWidthHandlerForMediaQueries();
         });
-        maxWidth568.addEventListener("change", () => {
-            maxWidth568Handler();
+        maxWidth850.addEventListener("change", () => {
+            maxWidth850Handler();
         });
     } catch (e1) {
         try {
@@ -171,8 +171,8 @@ $(function() {
             maxWidth1366.addListener((e) => {
                 maxWidthHandlerForMediaQueries();
             });
-            maxWidth568.addListener((e) => {
-                maxWidth568Handler();
+            maxWidth850.addListener((e) => {
+                maxWidth850Handler();
             });
         } catch (e2) {
             console.error(e2);
