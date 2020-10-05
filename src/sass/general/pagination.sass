@@ -83,9 +83,8 @@
     //&:first-child, &:nth-child(2), &:nth-child(3)
       display: inline-block
       background-color: red
-
+  a:nth-last-child(-n+2)
+    border-right: none
   span.active
     color: $bg_menu
-    border-right: 1px solid $bg_menu
-    &:last-child
-      border-right: none
+    border-right-color: $bg_menu
