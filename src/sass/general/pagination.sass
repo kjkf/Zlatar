@@ -66,14 +66,15 @@
         height: 5px
       &>span
         display: none
-      &+a:nth-last-child(-n+2)
-        border-left-color: $col_acsent
+      &+a //:nth-last-child(-n+2)
+        border-left: 1px solid $col_acsent
     &:hover
       color: $bg_menu
-      border-right: 1px solid $bg_menu
+      border-right-color: $bg_menu
       &:nth-last-child(-n+2)
-        border-right: none
-        border-left: 1px solid $bg_menu
+        border-right-color: transparent
+        //border-left-color: transparent
+        //border-left: 1px solid $bg_menu
       &:last-child
         border-color: transparent
       &:first-child
