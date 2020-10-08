@@ -44,6 +44,8 @@
       text-align: right
     +tablet-device-height
       text-align: right
+      align-items: flex-start
+      min-width: 150px
     +tablet-album-device-down
       min-width: 150px
       text-align: right
@@ -77,8 +79,10 @@
     line-height: 20px
   +tablet-down
     font-size: 12px
+
     //line-height: 20px
   +tablet-device-height
+    justify-content: flex-end
     font-size: 12px
   +phone-down
     display: none
@@ -143,6 +147,7 @@
     padding-top: 50px
     +tablet-device-height
       padding-top: 30px
+    
 
 .left-side, .left-side.m-collapsed, .left-side.m-sm
   +phone-down
