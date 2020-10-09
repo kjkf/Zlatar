@@ -190,8 +190,12 @@
     font-size: 20px
     font-weight: 300
     padding: 5% 7%
+    +media-w1024_h1220
+      padding: 1% 2% !important
     +max-height
       font-size: 18px
+    +media-w1024_h1024
+      display: none
     +media-h825
       display: none
     +phone-down
@@ -199,6 +203,8 @@
     .title
       font-family: $font_MontAlt_Regular
       margin-bottom: 15px
+      +media-w1024_h1220
+        margin-bottom: 0px!important
       +max-height
         margin-bottom: 5px !important
 
