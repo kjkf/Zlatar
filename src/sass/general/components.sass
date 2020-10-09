@@ -86,7 +86,7 @@
     font-family: $font_MontAlt_Medium
     color: #FFFFFF
 
-.content-item--catalog,
+.content-item--catalog
   //.content-item--managment
   width: 450px
   height: 300px
@@ -190,16 +190,24 @@
     font-size: 20px
     font-weight: 300
     padding: 5% 7%
+    +max-height
+      font-size: 18px
+    +media-h825
+      display: none
     +phone-down
       display: none
     .title
       font-family: $font_MontAlt_Regular
       margin-bottom: 15px
+      +max-height
+        margin-bottom: 5px !important
 
     .content-in__list
       margin-left: 8%
       li
         margin-bottom: 4%
+        +max-height
+          margin-bottom: 0px !important
 
 .content-item--dark
   padding: $p_content_item_dark
