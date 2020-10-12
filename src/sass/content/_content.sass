@@ -31,8 +31,12 @@
   &.m-collapsed
     margin-left: calc(#{$w_nav} + #{$p_container_laptop})
     align-self: center
+    width: calc(100% - #{$w_nav} - #{$p_container_laptop})
+    +height_820
+      width: calc(100% - #{$w_nav} - #{$p_container_tablet})
     +tablet-down
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
+      width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
     +tablet-device-height
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
     +tablet-album-device-down
@@ -41,9 +45,7 @@
     +phone-down
       margin-left: 0
       width: 100%!important
-    +height_820
-       //width: calc(100% - #{$w_nav} - #{$p_container_tablet})
-       background-color: blue
+
 
   &.m-sm
     margin-left: $w_left_side_m_sm
