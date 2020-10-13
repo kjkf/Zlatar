@@ -9,6 +9,7 @@
     margin-left: calc(#{$w_nav})!important
   +tablet-device-height
     margin-left: calc(#{$w_nav_tablet})!important
+    width: calc(100% - #{$w_nav_tablet})!important
 
   +tablet-down
     margin-left: 0!important
@@ -32,12 +33,14 @@
         margin-bottom: 10px
         //background-color: yellow
       +laptop-down
-        font-size: 14px
+        font-size: 13px
         margin-bottom: 5px
       +tablet-down
         font-size: 12px
-      +tablet-down
-        font-size: 10px
+      +tablet-device-height
+        margin-bottom: 0!important
+      // +tablet-down
+      //   font-size: 10px
     .title
       +tablet-down
         margin-bottom: 5px

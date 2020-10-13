@@ -1,4 +1,8 @@
 .content-about
+  +tablet-down
+    justify-content: center
+    align-items: center
+    display: flex
   .content-in
     z-index: 2
     width: $w_content_in_about
@@ -10,7 +14,6 @@
     top: 0
     margin-left: 0
     margin-top: $left-side-rrt
-    //margin-top: calc((100vh/2) - 50%)
     padding: 30px 40px 40px
     border-radius: $rad_about
     background: $bg_body
@@ -27,11 +30,13 @@
       margin-top: 192px
     +tablet-down
       width: 45%
+      left: auto!important
       //width: $w_content_in_about_tablet
     +tablet-device-height
       width: 41%
       padding: 20px 15px
       left: 45%
+      margin-top: 105px
       //$w_content_in_about_tablet
     // +height_820
     //   padding: 10px
@@ -55,17 +60,17 @@
       //   margin-bottom: 5px
       p
         margin-bottom: 10px
-        background-color: blue
+        //background-color: blue
         +laptop-down
           //background-color: red
           font-size: 12px
-          background-color: red
+          //background-color: red
         +tablet-down
           margin-bottom: 5px
-          background-color: yellow
+          //background-color: yellow
         +max-height
           margin-bottom: 3px
-          background-color: none
+          //background-color: none
 
     &:after, &:before
       content: ""
