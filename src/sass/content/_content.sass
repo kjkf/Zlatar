@@ -19,7 +19,7 @@
     padding-left: $p_content_tablet
     padding-right: $p_content_tablet
     padding-top: 10px
-  +phone-down
+  +tablet-down
     margin-left: 0
     margin-top: 40px
     //margin-bottom: 40px
@@ -42,14 +42,14 @@
     +tablet-album-device-down
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
       min-width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
-    +phone-down
+    +tablet-down
       margin-left: 0
       width: 100%!important
 
 
   &.m-sm
     margin-left: $w_left_side_m_sm
-    +phone-down
+    +tablet-down
       margin-left: 0
   &-in
     display: flex
@@ -61,7 +61,7 @@
       height: calc(100vh - 180px)
     +tablet-down
       //height: calc(100vh - 195px)
-    +phone-down
+    +tablet-down
       height: calc(100vh - 80px)
     +phone-landscape-down
       height: calc(100vh - 50px)
@@ -70,7 +70,7 @@
     flex-grow: 1
     justify-content: flex-start
     margin-bottom: 20px
-    +phone-down
+    +tablet-down
       margin-bottom: 0px
     p
       text-align: justify
@@ -109,7 +109,7 @@
     // +laptop-album-down
     //   justify-content: center
     //   flex-direction: column
-    +phone-down
+    +tablet-down
       position: relative
       z-index: 2
       margin: auto 0px 15px

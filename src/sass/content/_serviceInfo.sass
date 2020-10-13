@@ -10,12 +10,14 @@
   +tablet-device-height
     margin-left: calc(#{$w_nav_tablet})!important
 
-  +phone-down
+  +tablet-down
     margin-left: 0!important
+    align-self: unset!important
+    width: 100%
   .content-in
     +laptop-album-down
       padding-left: 20px
-    +phone-down
+    +tablet-down
       padding-left: 0
   .breadcrumbs
     margin-bottom: 10px
@@ -34,10 +36,10 @@
         margin-bottom: 5px
       +tablet-down
         font-size: 12px
-      +phone-down
+      +tablet-down
         font-size: 10px
     .title
-      +phone-down
+      +tablet-down
         margin-bottom: 5px
   // .content-item--dark .content-item__in
   //   +tablet-device-height
@@ -45,7 +47,7 @@
 
   .scrolled
     overflow-y: hidden
-    +phone-down
+    +tablet-down
       overflow-y: scroll
 
   .btn-offer
@@ -68,7 +70,7 @@
       border-radius: 10px
       font-size: 18px
       line-height: 22px
-    +phone-down
+    +tablet-down
       width: 200px
       height: 30px
       font-size: 12px

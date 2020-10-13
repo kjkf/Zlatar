@@ -1,5 +1,5 @@
 .content-contacts
-  +phone-down
+  +tablet-down
     width: 100%
 
   .ic
@@ -7,10 +7,10 @@
       +laptop-down
         width: $w_contacts_ic_laptop
         height: $w_contacts_ic_laptop
-      +media-w768_h740
+      +media-w950_h1200
         width: $w_contacts_ic_phone
         height: $w_contacts_ic_phone
-      +phone-down
+      +tablet-down
         width: $w_contacts_ic_phone
         height: $w_contacts_ic_phone
       +phone-height-down
@@ -29,14 +29,14 @@
       width: 88.3%
     //+tablet-down
       width: 100%
-    //+phone-down
+    //+tablet-down
       width: 100%
 
   &.content.m-collapsed
     //width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
     +laptop-album-down
       align-self: flex-start
-    +phone-down
+    +tablet-down
       width: 100%
 
 .contacts__t
@@ -58,11 +58,11 @@
   +tablet-landscape-down //768 1024
     //height: 265px
     margin-bottom: 15px
-  +media-w768_h740 // 568
+  +media-w950_h1200 // 568
     flex-direction: column
     margin-bottom: 0px
     height: auto
-  +phone-down // 568
+  +tablet-down // 568
     justify-content: flex-start
     height: calc(#{$h_contacts__b_mob} + 5px)
     margin-bottom: 0px
@@ -93,11 +93,11 @@
     //height: 50%
   +media-w1024_h1024
     height: 35%
-  +media-w768_h740
+  +media-w950_h1200
     height: 118px
     position: static
     justify-content: flex-end
-  +phone-down
+  +tablet-down
     position: absolute
     right: 0
     top: 0
@@ -134,11 +134,11 @@
     width: 60%
   +tablet-down
     font-size: 14px
-  +media-w768_h740
+  +media-w950_h1200
     font-size: 12px
     width: 100%
     margin-bottom: 5px
-  +phone-down
+  +tablet-down
     font-size: 12px
   +phone-height-down
     font-size: 12px
@@ -155,9 +155,9 @@
       font-size: 20px
     +tablet-down
       font-size: 16px
-    +media-w768_h740
+    +media-w950_h1200
       font-size: 12px
-    +phone-down
+    +tablet-down
       font-size: 12px
     +phone-height-down
       font-size: 12px
@@ -178,11 +178,11 @@
         margin-bottom: 10px
       +tablet-down
         margin-bottom: 10px
-      +media-w768_h740
+      +media-w950_h1200
         margin-bottom: 5px
         flex-wrap: nowrap
         padding-left: calc(5px + #{$w_contacts_ic_phone})
-      +phone-down
+      +tablet-down
         margin-bottom: 5px
         flex-wrap: wrap
         padding-left: calc(5px + #{$w_contacts_ic_phone})
@@ -228,15 +228,16 @@
     //height: 100%
   //+tablet-album-device-down
     width: 37%
-  +media-w768_h740
+  +media-w950_h1200
     position: absolute
     height: 118px!important
     width: 50%
     top: 100%
     left: 0px
-  +phone-down
+  +tablet-down
     right: 0
     left: unset
+    top: 100%
     width: 37%
     height: $h_map-wrap_mob!important
   +phone-height-down
@@ -268,9 +269,9 @@
     width: 58%
   //+tablet-album-device-down
     width: 48%
-  +media-w768_h740
+  +media-w950_h1200
     width: 48%
-  +phone-down
+  +tablet-down
     width: 37%
     overflow: hidden
   +phone-height-down
@@ -290,9 +291,9 @@
 
 
 .content-wrap
-  +media-w768_h740
+  +media-w950_h1200
     position: relative
-  +phone-down
+  +tablet-down
     position: relative
   +phone-height-down
     position: relative

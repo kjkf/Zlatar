@@ -19,7 +19,7 @@
     +tablet-down
       max-width: 200px
       justify-content: flex-end
-    +phone-down
+    +tablet-down
       justify-content: flex-end
 
   .ic
@@ -84,7 +84,7 @@
   +tablet-device-height
     justify-content: flex-end
     font-size: 12px
-  +phone-down
+  +tablet-down
     display: none
   &__r
     min-width: 215px
@@ -117,7 +117,7 @@
   +tablet-album-device-down
     padding-left: $p_container_tablet
     padding-top: 50px
-  +phone-down
+  +tablet-down
     max-width: unset
 
   &.m-collapsed
@@ -150,7 +150,7 @@
     
 
 .left-side, .left-side.m-collapsed, .left-side.m-sm
-  +phone-down
+  +tablet-down
     width: 100%
     border-radius: 0
     height: 40px
@@ -174,7 +174,7 @@
   +tablet-album-device-down
     margin-left: -#{$p_container_tablet}
 
-  +phone-down
+  +tablet-down
     position: fixed
     top: 0
     left: -100%
@@ -218,7 +218,7 @@
     width: $w_nav_tablet
     padding-top: $pt_nav_tablet
     padding-left: calc(#{$p_container_tablet} + #{$w_rhomb_tablet})
-  +phone-down
+  +tablet-down
     width: 90%
     overflow: hidden
     padding: 10px 5px 10px calc(#{$p_container_tablet} + #{$w_rhomb_tablet})
@@ -256,7 +256,7 @@
       font-size: 20px
     +tablet-album-device-down
       font-size: 20px
-    +phone-down
+    +tablet-down
       font-size: 16px
     &:before
       content: ""
@@ -305,7 +305,7 @@
       font-size: 16px
     +tablet-album-device-down
       font-size: 16px
-    +phone-down
+    +tablet-down
       font-size: 14px
     &:before
       content: ""
@@ -327,7 +327,7 @@
       width: auto
     +desktop-device
       width: auto
-  +phone-down
+  +tablet-down
     display: none
 
 
@@ -362,7 +362,7 @@
     +tablet-album-device-down
       margin-bottom: $mb_logo_tablet
 
-    +phone-down
+    +tablet-down
       margin-bottom: 0
 
   &.m-collapsed, &.m-sm
@@ -383,7 +383,7 @@
         width: $w_logo_tablet
         height: $h_logo_tablet
 
-      +phone-down
+      +tablet-down
         margin-bottom: 0
   //&.m-sm
     .logo
@@ -393,7 +393,7 @@
 
 .header__burger
   display: none
-  +phone-down
+  +tablet-down
     display: block
     position: relative
     width: 40px
