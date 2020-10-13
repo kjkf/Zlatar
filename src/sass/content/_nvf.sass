@@ -6,14 +6,17 @@
   +laptop-album-down
     display: none
 .content-nvf
+  +laptop-down
+    padding-top: 5px
+    padding-bottom: 10px
   +laptop-album-down
     align-self: flex-start!important
-    width: calc(100% - #{$w_nav})!important
-    margin-left: calc(#{$w_nav})!important
+    width: calc(100% - #{$w_nav_tablet})!important
+    margin-left: calc(#{$w_nav_tablet})!important
     //background-color: yellow
   +tablet-device-height
     margin-left: calc(#{$w_nav_tablet})!important
-    width: calc(100% - #{$w_nav_tablet})
+    width: calc(100% - #{$w_nav_tablet})!important
     //background-color: green
   +tablet-down
     margin-left: 0px!important
@@ -32,12 +35,12 @@
       max-width: 230px
   .content-item--dark
     +laptop-album-down
-      min-height: 90%
+      min-height: 95%
       padding: 8px
     +tablet-device-height
       padding: 5px
     +height_820
-      min-height: 99%
+      min-height: 98%
     +tablet-down
       min-height: 95%!important
   .content-in
@@ -53,6 +56,9 @@
       font-size: 14px
       margin-bottom: 5px
   .content-item__in
+    +laptop-down
+      border-top-right-radius: 5px
+      border-bottom-right-radius: 5px
     +laptop-album-down
       padding: 8px
     +tablet-device-height
@@ -68,8 +74,15 @@
         font-size: 10px
   .scrolled
     overflow-y: hidden
-    +tablet-down
+    &::-webkit-scrollbar
+      background-color: rgba(255, 255, 255, 0.3)
+      width: 10px
+    &::-webkit-scrollbar-thumb
+      background-color: rgba(255, 255, 255, 0.6)
+    +laptop-down
       overflow-y: scroll
+    // +tablet-down
+    //   overflow-y: scroll
   .pagination
     +tablet-down
       margin-top: -50px
