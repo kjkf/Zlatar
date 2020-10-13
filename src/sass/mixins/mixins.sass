@@ -91,7 +91,7 @@ $height_820: 820px
 	@media screen and (max-width: $laptop-width)
 		@content
 =tablet-down
-	@media screen and (max-width: $tablet-width)
+	@media screen and (max-width: $tablet-width), screen and (max-width: $phone-landscape-height) and (max-height: $phone-width), screen and (max-height: $phone-width)
 		@content
 =phone-down
 	@media screen and (max-width: $phone-width), screen and (max-width: $phone-landscape-height) and (max-height: $phone-width), screen and (max-height: $phone-width)
