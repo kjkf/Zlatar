@@ -450,3 +450,14 @@
 .content__header
   +desktop-device-height
     margin-bottom: 30px
+
+.left-side.m-sm
+  +tablet-device-height
+    width: calc(#{$w_nav_tablet} + 20px)
+    border-radius: 0px 100px 30px 0px
+  .nav
+    +tablet-device-height
+      padding-right: 0px
+  .banner
+    +tablet-device-height
+      display: none
