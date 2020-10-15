@@ -59,6 +59,9 @@ $height_820: 820px
 	@media screen and (max-height: $height_820)
 		@content
 
+=height_min_820
+	@media screen and (min-height: $height_820)
+		@content
 
 =desktop
 	@media screen and (min-width: calc(#{$desktop-width} + 1px))
@@ -229,5 +232,3 @@ $min-height_menu_menu: 970px
 =retina
 	@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5), only screen and (-o-min-device-pixel-ratio : 1.5)
 		@content
-
-
