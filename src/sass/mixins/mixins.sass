@@ -111,7 +111,9 @@ $height_820: 820px
 =phone-height-down
   @media screen and (max-height: $phone-width)
     @content
-
+=phone-height
+	@media screen and (min-height: calc(#{$phone-width} + 1px))
+		@content
 
 
 $min-height_menu_menu: 970px
