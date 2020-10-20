@@ -44,10 +44,12 @@
       margin-bottom: 30px
     +media-w1024_h1220
       max-width: 250px
+    +media-w1024_h830
+      max-width: 440px
     +media-w1024_h600
       margin-bottom: 20px
     +tablet-down
-      max-width: 250px
+      max-width: 440px
 
   .info__descr
     width: 55%
@@ -125,6 +127,7 @@
     .info-wrapper
       +tablet-down
         display: flex
+        flex-direction: column
         min-height: 195px
       +phone-landscape-down
         display: flex
@@ -216,7 +219,7 @@
     +height_820
       max-height: 220px
     +laptop-down
-      max-height: 100px
+      max-height: 300px //100px
   .tabs__item
     padding: 2px 4px
 
