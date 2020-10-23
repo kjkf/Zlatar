@@ -149,7 +149,7 @@ $(function() {
         maxHeightHandlerForMediaQueries();
     }
 
-    maxWidthHandlerForMediaQueries();
+    //maxWidthHandlerForMediaQueries();
     maxWidth850Handler();
 
 
@@ -158,7 +158,7 @@ $(function() {
             maxHeightHandlerForMediaQueries();
         });
         maxWidth1366.addEventListener("change", () => {
-            maxWidthHandlerForMediaQueries();
+            //maxWidthHandlerForMediaQueries();
         });
         maxWidth850.addEventListener("change", () => {
             maxWidth850Handler();
@@ -169,7 +169,7 @@ $(function() {
                 maxHeightHandlerForMediaQueries();
             });
             maxWidth1366.addListener((e) => {
-                maxWidthHandlerForMediaQueries();
+                //maxWidthHandlerForMediaQueries();
             });
             maxWidth850.addListener((e) => {
                 maxWidth850Handler();

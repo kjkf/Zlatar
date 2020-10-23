@@ -101,6 +101,12 @@
   +tablet-down
     flex-direction: column
 
+.content.content-maf.m-sm,
+.content.m-sm.content-nvf
+  +laptop-album-down
+    width: calc(100% - #{$w_nav})!important
+    margin-left: calc(#{$w_nav})!important
+
 
 @media screen and (max-height: 825px)
   .content-products
@@ -137,7 +143,10 @@
     .content-item__descr
       align-items: center
 
-  .content-maf
+  .content-maf.m-sm
+    +laptop-album
+      width: calc(100% - #{$w_nav})
+      margin-left: calc(#{$w_nav})!important
     .content-item__img
       display: none
     .content-item
