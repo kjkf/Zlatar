@@ -15,6 +15,7 @@ const svgo = require('gulp-svgo');
 const svgSprite=require('gulp-svg-sprite');
 const gulpif = require('gulp-if');
 const rename = require('gulp-rename');
+const sharp = require('sharp'); // плагин для обработки изображений
 
 const env = process.env.NODE_ENV;
 
@@ -56,8 +57,62 @@ task('copy:fonts', () => {
       .pipe(reload({ stream: true }));
 });
 
-task('copy:images', () => {
-  return src('src/images/content/**/*.*')
+function prepareImages() {
+    const fs = require('fs');
+    const directory300x140 = 'src/images/content/desk_300x140';
+    const directory300x200 = 'src/images/content/desk_300x200';
+    const directory440x210 = 'src/images/content/desk_440x210';
+
+    fs.readdirSync(directory300x140).forEach(file => {
+        runSharp(directory300x140, file, 300, 140);
+        runSharp(directory300x140, file, 216, 100);
+        /*const fileNameAsArray = file.split('.');
+        const fileName = fileNameAsArray[0];
+        const fileExt = fileNameAsArray[1];
+        console.log(fileName, fileExt);
+        sharp(`${directory}/${file}`)
+            .resize(200, 100) // width, height
+            .toFile(`${output}/${fileName}-small.${fileExt}`);
+
+        sharp(`${directory}/${file}`)
+            .resize(500, 400) // width, height
+            .toFile(`${output}/${fileName}-tablet.${fileExt}`);*/
+    });
+
+    fs.readdirSync(directory300x200).forEach(file => {
+        runSharp(directory300x200, file, 300, 200);
+        runSharp(directory300x200, file, 216, 144);
+        runSharp(directory300x200, file, 180, 120);
+    });
+
+
+    fs.readdirSync(directory300x200).forEach(file => {
+        runSharp(directory300x200, file, 440, 210);
+        runSharp(directory300x200, file, 330, 160);
+    });
+
+};
+
+function runSharp(directory, file, width, height) {
+    const output = 'src/images/content';
+
+    const fileNameAsArray = file.split('.');
+    const fileName = fileNameAsArray[0];
+    const fileExt = fileNameAsArray[1];
+    console.log(fileName, fileExt);
+    sharp(`${directory}/${file}`)
+        .resize(width, height) // width, height
+        .toFile(`${output}/${fileName}-${width}x${height}.${fileExt}`);
+}
+task('copy:images', async () => {
+  try {
+      const prepare = await prepareImages();
+  } catch(err) {
+    console.log(err); // TypeError: failed to fetch
+  }
+
+  //prepare.then();
+  return src('src/images/content/*.*')
       .pipe(dest('dist/public/images/content'))
       .pipe(reload({ stream: true }));
 });
@@ -154,6 +209,7 @@ task('watch', () => {
     watch('./src/*.ico', series("copy:favicon"));
     watch('./src/css/*.css', series("copy:css"));
     watch('./src/fonts/**/*.*', series("copy:fonts"));
+    //watch('./src/images/content/**/*.*', series("prepare:images"));
     watch('./src/images/content/**/*.*', series("copy:images"));
     watch('./src/images/icons/*.*', series("copy:icons"));
     watch('./src/images/icons/sprite/*.svg', series("icons"));
