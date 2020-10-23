@@ -66,17 +66,6 @@ function prepareImages() {
     fs.readdirSync(directory300x140).forEach(file => {
         runSharp(directory300x140, file, 300, 140);
         runSharp(directory300x140, file, 216, 100);
-        /*const fileNameAsArray = file.split('.');
-        const fileName = fileNameAsArray[0];
-        const fileExt = fileNameAsArray[1];
-        console.log(fileName, fileExt);
-        sharp(`${directory}/${file}`)
-            .resize(200, 100) // width, height
-            .toFile(`${output}/${fileName}-small.${fileExt}`);
-
-        sharp(`${directory}/${file}`)
-            .resize(500, 400) // width, height
-            .toFile(`${output}/${fileName}-tablet.${fileExt}`);*/
     });
 
     fs.readdirSync(directory300x200).forEach(file => {
