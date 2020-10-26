@@ -106,6 +106,9 @@
   +laptop-album-down
     width: calc(100% - #{$w_nav})!important
     margin-left: calc(#{$w_nav})!important
+    +phone-down
+      width: 100% !important
+      margin-left: 0 !important
 
 
 @media screen and (max-height: 825px)
@@ -153,5 +156,9 @@
       max-width: 240px
       max-height: 30px
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+      width: 70%
+      margin-bottom: 15px
+      +phone-landscape-down
+        margin-right: 20px
       h3
         font-size: 12px
