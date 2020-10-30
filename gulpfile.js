@@ -57,6 +57,7 @@ task('copy:fonts', () => {
       .pipe(reload({ stream: true }));
 });
 
+/*
 function prepareImages() {
     const fs = require('fs');
     const directory300x140 = 'src/images/content/desk_300x140';
@@ -81,6 +82,7 @@ function prepareImages() {
     });
 
 };
+*/
 
 function runSharp(directory, file, width, height) {
     const output = 'src/images/content';
@@ -94,13 +96,12 @@ function runSharp(directory, file, width, height) {
         .toFile(`${output}/${fileName}-${width}x${height}.${fileExt}`);
 }
 task('copy:images', async () => {
-  try {
+  /*try {
       const prepare = await prepareImages();
   } catch(err) {
     console.log(err); // TypeError: failed to fetch
-  }
+  }*/
 
-  //prepare.then();
   return src('src/images/content/*.*')
       .pipe(dest('dist/public/images/content'))
       .pipe(reload({ stream: true }));
