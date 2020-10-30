@@ -40,6 +40,7 @@
       //$w_content_in_about_tablet
     // +height_820
     //   padding: 10px
+
     +max-height
       width: 50%
       left: 41%
@@ -53,6 +54,8 @@
       left: 3%
       border:  0.5px solid $bg_menu
       height: calc(100vh - 120px)
+    +phone-landscape-down
+      height: calc(100vh - 70px)
 
     .content__center
       flex-grow: unset
@@ -71,6 +74,9 @@
         +max-height
           margin-bottom: 3px
           //background-color: none
+        +phone-down
+          font-size: 11px
+          margin-bottom: 0px
 
     &:after, &:before
       content: ""
@@ -95,7 +101,9 @@
       border-bottom: 0.5px solid $bg_menu
 
 
-
+  .title-main
+    +phone-down
+      padding: 5px 0px
   .content__footer
     justify-content: center
     text-align: center
