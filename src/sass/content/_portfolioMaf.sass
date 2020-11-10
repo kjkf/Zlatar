@@ -10,7 +10,7 @@
     +laptop-device-down
       padding-right: 3px
 
-.img-row
+//.img-row
   display: flex
   justify-content: space-around
   +laptop-album-down
@@ -19,53 +19,43 @@
   +phone_min-down
     justify-content: space-between
 
-.img-wrap
-  margin-right: 10px
+.img-row
+  display: grid
+  grid-template-columns: 2fr 2fr 1fr 1fr
+  grid-template-rows: minmax(286px, auto)
+  grid-gap: 10px
+  margin: 15px 0px
+
   +laptop-album-down
-    width: 195px
-    height: 240px
-    margin-right: 0px
-  +laptop-device-down
-    width: 148px
-    height: 182px
+    grid-template-columns: 2fr 1fr
+    grid-template-rows: repeat(2, minmax(auto, 240px))
+    grid-gap: 5px
+
+  +laptop-down
+    margin: 5px 0px
+
   +phone_min-down
-    width: 146px
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: repeat(3, minmax(auto, 180px))
+
+
+.img-wrap
+  height: 100%
   &:first-child
     +laptop-album-down
-      order: 0
+      order: -2
+    +phone_min-down
+      grid-column: span 2
+
   &:nth-child(2)
-    +laptop-album-down
-      order: 2
     +phone_min-down
-      order: 3
-  &:nth-child(3)
-    +laptop-album-down
-      order: 3
-    +phone_min-down
-      order: 2
-  &:last-child
-    margin-right: 0px
-    +laptop-album-down
       order: 1
+      grid-column: span 2
+
+  &:last-child
+    +laptop-album-down
+      order: -1
   img
     width: 100%
-    height: auto
-
-.img-bg
-  +laptop-album-down
-    width: 400px
-    height: 240px
-    margin-bottom: 5px
-    margin-right: 5px
-  +laptop-device-down
-    width: 300px
-    height: 182px
-  +media-w600
-    width: 100%
-    height: auto
-  +tablet-down
-    width: 300px
-    height: 182px
-  +phone_min-down
-    width: 100%
-    margin-right: 0px
+    height: 100%
+    object-fit: cover
