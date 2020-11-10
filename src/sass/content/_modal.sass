@@ -113,7 +113,10 @@ input.field-err + span.error-text
   .modal-content
     padding: 0 55px
     .block-calculate.disable
-      color: rgba(255,255,255,.4)
+      .field-label, .field-span
+        color: rgba(255,255,255,.4)
+      .field
+        border: 1px solid rgba(58, 58, 58, 0.5)
     hr
       height: .3px
       width: 100%
@@ -132,6 +135,12 @@ input.field-err + span.error-text
         margin-right: 10px
         text-align: right
       .field
+        border: 1px solid transparent
         font-size: 18px
         padding: 10px
         height: calc(18px + 10px*2)
+      .field-span
+        display: inline-block
+        font-size: 18px
+        color: #ffffff
+        margin-left: 6px
