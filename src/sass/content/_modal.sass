@@ -104,3 +104,34 @@ span.error-text
 
 input.field-err + span.error-text
   display: inline-block
+
+.modal-calculate
+  max-width: 640px
+  .modal-title
+    text-transform: none
+    line-height: 1.23
+  .modal-content
+    padding: 0 55px
+    .block-calculate.disable
+      color: rgba(255,255,255,.4)
+    hr
+      height: .3px
+      width: 100%
+      background-color: $bg_dark
+      border: 0 none
+      margin: 15px 0
+      opacity: .3
+    .field-group
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: 0 30px
+      .field-label
+        min-width: 120px
+        font-size: 18px
+        margin-right: 10px
+        text-align: right
+      .field
+        font-size: 18px
+        padding: 10px
+        height: calc(18px + 10px*2)

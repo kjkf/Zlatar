@@ -88,7 +88,7 @@
                           <p>   Строительство и дизайн (изготовление экстерьерных и интерьерных изделий, фигурные детали из натурального и искусственного камня)</p>
                           <p>   Наружная реклама (изготовление объемных букв, выступающих фасадов, вывесок, табличек, указателей)  </p>
 
-                          <button type="button" name="button" class="btn btn-offer"> Рассчитать стоимость </button>
+                          <button type="button" name="button" class="btn btn-offer show-modal"> Рассчитать стоимость </button>
 
                       </div>
                   </div>
@@ -109,30 +109,32 @@
     </footer>
 
         <!-- модальное окно -->
-        <div class="modal modal-order">
+        <div class="modal modal-calculate">
             <div class="modal__in">
                 <form action="">
-                    <h2 class="title modal-title">Заявка на звонок</h2>
+                    <h2 class="title modal-title">Введите номер телефона и получите доступ к калькулятору</h2>
                     <div class="modal-content">
-                        <div class="field-group">
-                            <label class="field-label">Ваше имя:</label>
-                            <input type="text" class="field">
+                        <div class="field-block">
+                            <div class="field-group">
+                                <label class="field-label">Ваше имя:</label>
+                                <input type="text" class="field">
+                            </div>
+                            <div class="field-group">
+                                <label class="field-label">Ваш номер:</label>
+                                <input type="text" class="field">
+                            </div>
                         </div>
-                        <div class="field-group">
-                            <label class="field-label">Ваш e-mail:</label>
-                            <input type="email" class="field">
+                        <hr>
+                        <div class="field-block block-calculate">
+                            <div class="field-group">
+                                <label class="field-label">Материал:</label>
+                                <textarea class="field" cols="5" rows="5"></textarea>
+                            </div>
                         </div>
-                        <div class="field-group">
-                            <label class="field-label">Номер Вашего телефона:</label>
-                            <input type="text" class="field">
-                        </div>
-                        <div class="field-group">
-                            <label class="field-label">Сообщение:</label>
-                            <textarea class="field" cols="5" rows="5"></textarea>
-                        </div>
+
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn hide-modal">Отправить</button>
+                        <a href="#" class="link ic-back link--footer">Назад</a>
                     </div>
                 </form>
             </div>
