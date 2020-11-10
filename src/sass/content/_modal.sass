@@ -117,6 +117,9 @@ input.field-err + span.error-text
         color: rgba(255,255,255,.4)
       .field
         border: 1px solid rgba(58, 58, 58, 0.5)
+      .input-wrapper
+        &:after
+          border-top-color: rgba(58, 58, 58, 0.5)
     hr
       height: .3px
       width: 100%
@@ -139,8 +142,22 @@ input.field-err + span.error-text
         font-size: 18px
         padding: 10px
         height: calc(18px + 10px*2)
+        border-radius: 5px
       .field-span
         display: inline-block
         font-size: 18px
         color: #ffffff
         margin-left: 6px
+
+.input-wrapper
+  position: relative
+  display: block
+  width: 100%
+  &::after
+    content: ''
+    display: inline-block
+    position: absolute /* Абсолютное позиционирование */
+    right: 5px
+    top: calc(50% - 5px) /* Положение треугольника */
+    border: 10px solid transparent
+    border-top-color: rgba(58, 58, 58, 1)
