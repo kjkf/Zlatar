@@ -29,11 +29,13 @@
       width: 100%
 
   .content-wrap
-    //background-color: aqua
+    height: 100%
+    background-color: aqua
     display: grid
     grid-template-columns: 1fr 1fr
     //grid-template-rows: repeat(2, calc(50% - 40px))
-    grid-template-rows: minmax(280px, auto)
+    //grid-template-rows: minmax(280px, auto)
+    grid-template-rows: 1fr 1fr
     grid-gap: 50px
 
     +laptop-album-down
@@ -42,15 +44,18 @@
     +laptop-down
       grid-gap: 15px
 
+    +media-h1030
+      grid-gap: 5px
+
     +phone-down
-      grid-template-rows: minmax(25vh, auto)
+      //grid-template-rows: minmax(25vh, auto)
       grid-gap: 5px
 
     +phone_min-down
       grid-template-columns: 1fr
       grid-template-rows: repeat(3, minmax(100px, auto))
 
-    //& > div, & > ul
+    & > div, & > ul
       background-color: #fc5b1f
       border: 1px solid black
 
@@ -293,6 +298,7 @@
 
 
 .contacts-img
+  overflow: hidden
   +laptop-down
     grid-column: span 2
   +phone-down
