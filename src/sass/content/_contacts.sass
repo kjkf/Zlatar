@@ -1,4 +1,5 @@
 .content-contacts
+  //overflow-y: scroll
   +tablet-down
     width: 100%
 
@@ -20,18 +21,6 @@
         width: $w_contacts_ic_phone
         height: $w_contacts_ic_phone
 
-  .content-in
-    //width: 89.5%
-    //background-color: green
-    //+laptop-album-down
-      width: 79.3%
-    //+laptop-down
-      width: 88.3%
-    //+tablet-down
-      width: 100%
-    //+tablet-down
-      width: 100%
-
   &.content.m-collapsed
     //width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
     +laptop-album-down
@@ -39,7 +28,33 @@
     +tablet-down
       width: 100%
 
-.contacts__t
+  .content-wrap
+    //background-color: aqua
+    display: grid
+    grid-template-columns: 1fr 1fr
+    //grid-template-rows: repeat(2, calc(50% - 40px))
+    grid-template-rows: minmax(280px, auto)
+    grid-gap: 50px
+
+    +laptop-album-down
+      grid-gap: 20px
+
+    +laptop-down
+      grid-gap: 15px
+
+    +phone-down
+      grid-template-rows: minmax(25vh, auto)
+      grid-gap: 5px
+
+    +phone_min-down
+      grid-template-columns: 1fr
+      grid-template-rows: repeat(3, minmax(100px, auto))
+
+    //& > div, & > ul
+      background-color: #fc5b1f
+      border: 1px solid black
+
+//.contacts__t
   position: relative
   display: flex
   justify-content: flex-end
@@ -86,7 +101,7 @@
     height: auto
 
 
-.contacts__b
+//.contacts__b
   //margin-left: 685px
   display: flex
   justify-content: flex-end
@@ -126,16 +141,21 @@
     position: static
     justify-content: center
 
+.address-list
+  +phone-down
+    order: -1
+    grid-row: span 2
+  +phone_min-down
+    grid-row: unset
+
 .address
-  width: 48.3%
-  //background-color: #FC5B1F
+  //width: 48.3%
   font-size: 20px
-  //margin-left: 685px
   +laptop-album-down
-    width: 53.9%
+    //width: 53.9%
     font-size: 18px
   +laptop-down
-    width: 40%
+    //width: 40%
     font-size: 16px
   //+tablet-album-device-down
     width: 60%
@@ -143,8 +163,8 @@
     font-size: 14px
   +media-w950_h1200
     font-size: 12px
-    width: 100%
-    margin-bottom: 5px
+    //width: 100%
+    //margin-bottom: 5px
   +tablet-down
     font-size: 12px
   +phone-height-down
@@ -154,8 +174,8 @@
   +media-w1240_h569
     font-size: 12px
   +phone_min-down
-    width: 100%
-    margin-bottom: 5px
+    //width: 100%
+    //margin-bottom: 5px
 
   .title
     color: $col_main
@@ -220,8 +240,15 @@
         //+tablet-album-device-down
           margin-left: 5px
 
-
 .map-wrap
+  grid-row: span 2
+
+  +laptop-down
+    grid-row: span 1
+    height: 100%
+    object-fit: cover
+
+//.map-wrap
   position: absolute
   top: 0
   left: 0
@@ -266,32 +293,40 @@
 
 
 .contacts-img
-  width: 48.3%
-  height: 100%
+  +laptop-down
+    grid-column: span 2
+  +phone-down
+    grid-column: span 1
+  +phone_min-down
+    height: 100%
+    width: 100%
+    text-align: center
+  +phone_min-height-down
+    height: 90px
+
   img
     width: 100%
     height: 100%
-    //+laptop-album-down
-      height: auto
-  +laptop-album-down
-    //width: 100%
+    object-fit: cover
+    +phone_min-down
+      height: 100%
+      width: auto
+  //+laptop-album-down
     width: 43.8%
-  +media-w1024_h1024
+  //+media-w1024_h1024
     width: 58%
-  //+tablet-album-device-down
+  //+media-w950_h1200
     width: 48%
-  +media-w950_h1200
-    width: 48%
-  +tablet-down
+  //+tablet-down
     width: 37%
     overflow: hidden
-  +phone-height-down
+  //+phone-height-down
     width: 37%
     overflow: hidden
-  +media-w1240_h569
+  //+media-w1240_h569
     width: 37%
     overflow: hidden
-  +phone_min-down
+  //+phone_min-down
     width: 68%
 
 .phone-wrap
@@ -301,7 +336,7 @@
     margin-bottom: 5px
 
 
-.content-wrap
+//.content-wrap
   +media-w950_h1200
     position: relative
   +tablet-down
