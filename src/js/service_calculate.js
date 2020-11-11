@@ -2,6 +2,8 @@
 const servicesInfo = document.querySelector('.content-servicesi');
 let PRICE = 0;
 let LENGTH = 0;
+let ENTER = 0;
+let THICKNESS = 0;
 if (servicesInfo) {
     disableCalculateBlock();
     calculateBlockFieldsHandlers();
@@ -32,8 +34,13 @@ function calculateBlockFieldsHandlers() {
     });
 
     const lengthField = document.getElementById('length');
-    lengthField.addEventListener('blur', e => {
+    lengthField.addEventListener('change', e => {
         LENGTH = lengthField.value;
+        calculateCost();
+    });
+
+    const enterInput = document.getElementById('enter');
+    enterInput.addEventListener('change', e => {
         calculateCost();
     });
 }
@@ -1586,7 +1593,7 @@ function prepareMaterialsData() {
             ]
         }
     ];
-    const serviceId = 17;
+    const serviceId = 18;
     let service = data.filter(current => {
         return current.serviceId === serviceId;
     });
@@ -1606,15 +1613,23 @@ function prepareMaterialsData() {
         ulMaterials.insertAdjacentElement('beforeEnd', li);
         li.addEventListener('click', e => {
             ulMaterials.style.display = "none";
-            console.log(typeof material.price);
+            const currentLiValue = materialField.value;
+            //console.log(currentLiValue, material.name);
+            if (currentLiValue !== material.name) {
+                thicknessField.value = '';
+                THICKNESS = 0;
+            }
+            materialField.value = material.name;
+
             if (typeof material.price === 'object') {
-                materialField.value = material.name;
                 preparePriceData(material.price);
             } else {
                 thicknessField.setAttribute('disabled', true);
                 enterInput.setAttribute('disabled', true);
+                THICKNESS = 1;
                 PRICE = material.price;
             }
+            calculateCost();
         });
     });
 }
@@ -1622,7 +1637,6 @@ function prepareMaterialsData() {
 function preparePriceData(data) {
     const ulThickness = document.querySelector('.select-dropdown.thickness');
     const thicknessField = document.getElementById('thickness');
-    const enterInput = document.getElementById('enter');
 
     data.forEach(item => {
         const li = document.createElement('li');
@@ -1630,23 +1644,36 @@ function preparePriceData(data) {
         li.innerHTML = item.thickness;
         ulThickness.insertAdjacentElement('beforeEnd', li);
         li.addEventListener('click', e => {
-            console.log(item.price);
             PRICE = item.price;
-            enterInput.value = item.enter;
+            ENTER = item.enter;
             thicknessField.value = item.thickness;
             ulThickness.style.display = "none";
+            THICKNESS = item.thickness;
+
+            calculateCost();
         });
     });
 }
 
 function calculateCost() {
-    if (!PRICE && !LENGTH) return;
     const resultSpan = document.querySelector('.result');
-    if (typeof PRICE === 'object') {
-        const len = LENGTH < 101 ? 100 : LENGTH >= 101 && LENGTH <= 500 ? 500 : 3000;
-        PRICE = PRICE['until_'+len];
+    //console.log(`PRICE=${PRICE}; LENGTH=${LENGTH}; THICKNESS=${THICKNESS}`);
+    if (!PRICE || PRICE === 0 || !LENGTH || LENGTH ===0 || !THICKNESS || THICKNESS === 0) {
+        resultSpan.innerHTML = "";
+        return;
     }
 
-    const cost = PRICE*LENGTH;
-    resultSpan.innerHTML = `cost=${cost}; PRICE=${PRICE}; LENGTH=${LENGTH}`;
+    const enterInput = document.getElementById('enter');
+    let price = PRICE;
+    if (typeof PRICE === 'object') {
+        const len = LENGTH < 101 ? 100 : LENGTH >= 101 && LENGTH <= 500 ? 500 : 3000;
+        price = PRICE['until_'+len];
+    }
+
+    let enter = enterInput.checked ? ENTER : 0;
+
+    const cost = (price + enter)*LENGTH;
+    //console.log(enterInput.checked);
+    //resultSpan.innerHTML = `cost=${cost}; PRICE=${price}; LENGTH=${LENGTH}; ENTER=${enter}`;
+    resultSpan.innerHTML = `Стоимость: ${cost}`;
 }
