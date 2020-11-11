@@ -114,34 +114,45 @@
                 <form action="">
                     <h2 class="title modal-title">Введите номер телефона и получите доступ к калькулятору</h2>
                     <div class="modal-content">
-                        <div class="field-block">
+                        <div class="block-info">
                             <div class="field-group">
                                 <label class="field-label">Ваше имя:</label>
-                                <input type="text" class="field">
+                                <input type="text" id="name" class="field">
                             </div>
                             <div class="field-group">
                                 <label class="field-label">Ваш номер:</label>
-                                <input type="text" class="field">
+                                <input type="text" id="phone" class="field">
                             </div>
                         </div>
                         <hr>
-                        <div class="field-block block-calculate disable">
+                        <div class="block-calculate disable">
                             <div class="field-group">
-                                <label class="field-label">Материал:</label>
-                                <span class="input-wrapper"><input type="text" class="field select"></span>
+                                <label for="material" class="field-label">Материал:</label>
+                                <div class="select-wrapper">
+                                    <input type="text" id="material" class="field" disabled />
+                                    <ul class="select-dropdown materials scrolled">
+                                    </ul>
+                                </div>
                             </div>
                             <div class="field-group">
-                                <label class="field-label">Толщина:</label>
-                                <span class="input-wrapper"><input type="text" class="field select"></span><span class="field-span">мм.</span>
+                                <label for="thickness" class="field-label">Толщина:</label>
+                                <div class="select-wrapper">
+                                    <input type="text" id="thickness" class="field select" disabled />
+                                    <ul class="select-dropdown thickness scrolled">
+                                    </ul>
+                                </div>
+                                <span class="field-span">мм.</span>
                             </div>
                             <div class="field-group">
-                                <label class="field-label">Кол-во:</label>
-                                <input type="text" class="field"><span class="field-span">м.</span>
-                                <label class="field-label">Вход:</label>
-                                <input type="text" class="field">
+                                <label for="length" class="field-label">Кол-во:</label>
+                                <input type="number" min="0" class="field" id="length"  disabled /><span class="field-span">м.</span>
+                                <label for="enter" class="field-label">Вход:</label>
+                                <input type="checkbox" id="enter"  class="field" disabled />
                             </div>
                         </div>
-
+                    </div>
+                    <div class="modal-result">
+                        <span class="result"></span>
                     </div>
                     <div class="modal-footer">
                         <a href="#" class="link ic-back link--footer">Назад</a>
