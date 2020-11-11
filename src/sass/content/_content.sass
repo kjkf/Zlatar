@@ -7,6 +7,10 @@
   +laptop-album-down
     padding-left: $p_content_laptop
     padding-right: $p_content_laptop
+    //margin-left: 25%
+  +laptop-down
+    padding-left: $p_content_laptop
+    padding-right: $p_content_laptop
     margin-left: 25%
   +tablet-down
     padding-left: $p_content_tablet
@@ -51,14 +55,17 @@
 
   &.m-sm
     margin-left: $w_left_side_m_sm
+    width: calc(100% - #{$w_left_side_m_sm})
     +tablet-down
       margin-left: 0
     +media-w768_h768
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
+      width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
     +phone-height-down
       margin-left: 0px
     +phone-down
       margin-left: 0
+      width: 100%
   &-in
     display: flex
     flex-direction: column
