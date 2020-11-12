@@ -11,6 +11,8 @@
       paddings_h = getPaddingsHeight(elem);
       margins_h = getMarginsHeight(elem);
       const sum = elem.clientHeight + paddings_h + margins_h;
+      console.log("elem.clientHeight = "+ elem.clientHeight);
+      console.log("elem.offsetHeight = "+ elem.offsetHeight);
       console.log("element_height = "+ sum);
       return sum;
     }else return 0;
