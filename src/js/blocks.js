@@ -11,6 +11,8 @@
       paddings_h = getPaddingsHeight(elem);
       margins_h = getMarginsHeight(elem);
       const sum = elem.clientHeight + paddings_h + margins_h;
+      console.log("elem.clientHeight = "+ elem.clientHeight);
+      console.log("elem.offsetHeight = "+ elem.offsetHeight);
       console.log("element_height = "+ sum);
       return sum;
     }else return 0;
@@ -203,7 +205,7 @@
     const windowWidth = window.innerWidth;
 
     if (windowHeight>568 || windowWidth>568){
-      alert("script started")
+      //alert("script started")
 
       var content_in = document.querySelector(".content-in");
       const content_in_h = content_in!=null? setHeight_Content_In(content_in) : 0;
