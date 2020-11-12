@@ -8,31 +8,28 @@
     var paddings_h = 0;
     var margins_h = 0;
     if (elem){
-      if (padding){
-        paddings_h = parseInt(getStyle(elem, 'padding-top')) + parseInt(getStyle(elem, 'padding-bottom'));
-        // console.log("paddings_h = "+ paddings_h);
-      }
-      if (margin){
-        margins_h = parseInt(getStyle(elem, 'margin-top')) + parseInt(getStyle(elem, 'margin-bottom'));
-        // console.log("margins_t = "+ parseInt(getStyle(elem, 'margin-top')) + " ; margins_b = "+ parseInt(getStyle(elem, 'margin-bottom')));
-        // console.log("margin.top = "+ elem.style.marginT);
-      }
+      paddings_h = getPaddingsHeight(elem);
+      margins_h = getMarginsHeight(elem);
       const sum = elem.clientHeight + paddings_h + margins_h;
-      // console.log("element_height = "+ sum);
+      console.log("element_height = "+ sum);
       return sum;
     }else return 0;
   }
   function getPaddingsHeight(elem){
     var paddings_h = 0;
     if (elem){
-      paddings_h = parseInt(getStyle(elem, 'padding-top')) + parseInt(getStyle(elem, 'padding-bottom'));
+      const padding_t = parseInt(getStyle(elem, 'padding-top'))
+      const padding_b = parseInt(getStyle(elem, 'padding-bottom'))
+      paddings_h = (isNaN(padding_t)?0:padding_t) + (isNaN(padding_b)?0:padding_b);
     }
     return paddings_h;
   }
   function getMarginsHeight(elem){
     var margins_h = 0;
     if (elem){
-      margins_h = parseInt(getStyle(elem, 'margin-top')) + parseInt(getStyle(elem, 'margin-bottom'));
+      const margin_t = parseInt(getStyle(elem, 'margin-top'));
+      const margin_b = parseInt(getStyle(elem, 'margin-bottom'))
+      margins_h = (isNaN(margin_t)? 0 : margin_t) + (isNaN(margin_b)? 0 : margin_b);
     }
     return margins_h;
   }
@@ -41,7 +38,10 @@
     var paragraphs_h = 0;
     if (paragraphs){
       for (var i=0; i<paragraphs.length; i++){
-        paragraphs_h += paragraphs[i].clientHeight + parseInt(getStyle(paragraphs[i], 'margin-top')) + parseInt(getStyle(paragraphs[i], 'margin-bottom'));
+        const p_mar_t = parseInt(getStyle(paragraphs[i], 'margin-top'));
+        const p_mar_b = parseInt(getStyle(paragraphs[i], 'margin-bottom'));
+        paragraphs_h += paragraphs[i].clientHeight + (isNaN(p_mar_t) ? 0 : p_mar_t) +
+                        (isNaN(p_mar_b) ? 0 : p_mar_b);
       }
     }
     return paragraphs_h;
@@ -50,6 +50,7 @@
   function setHeight_Content_In(content_in){
     //console.log("--вычислением высоты .content-in--");
     //вычисление высоты .content-in
+    console.log("content in 1");
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
     //........................................................................//
@@ -65,6 +66,7 @@
     //console.log("page_header_h = "+ page_header_h)
     //........................................................................//
     const page_footer = document.querySelector(".footer");
+    console.log("page footer ---------");
     var page_footer_h = page_footer!=null ? getElemHeight(page_footer, false, true) : 0;
     //console.log("page_footer = "+page_footer.clientHeight);
     //........................................................................//
@@ -87,12 +89,13 @@
     var content_in_h = windowHeight - sum;
     content_in.style.height = content_in_h + "px";
     console.log("content_in_h = "+content_in_h);
-    //console.log("-- -- -- -- --");
+    // //console.log("-- -- -- -- --");
     return content_in_h;
   }
 
   function setHeight_Content__Center(content__center, content_in_h){
     //console.log("--вычислением высоты .content__center--");
+    console.log("content center 2");
     const content__center_margins = getMarginsHeight(content__center);
     //........................................................................//
     const content__header = document.querySelector(".content__header");
@@ -108,10 +111,10 @@
               content__footer_h +
               content__breadcrumbs_h +
               content__center_margins;
-    console.log("content__header_h = "+ content__header_h  + "; content__footer_h = " +
-                content__footer_h + "; content__breadcrumbs_h = " + content__breadcrumbs_h +
-                "; content__center_margins = " + content__center_margins);
-    console.log("sum = " + sum);
+     console.log("content__header_h = "+ content__header_h  + "; content__footer_h = " +
+                 content__footer_h + "; content__breadcrumbs_h = " + content__breadcrumbs_h +
+                 "; content__center_margins = " + content__center_margins);
+     console.log("sum = " + sum);
 
     var content__center_h = content_in_h - sum;
     content__center.style.height = content__center_h + "px";
@@ -122,6 +125,7 @@
 
   function setHeight_Content_Wrap(content__center_h){
     //вычисление высоты .content-wrap
+    console.log("content wrap 3");
     var content_wrap = document.querySelector(".content-wrap");
     const content_wrap_margins = getMarginsHeight(content_wrap);
     const paragraphs_h = getParagraphsHeight();
@@ -139,6 +143,7 @@
   function setHeight_Content_About(content_about){
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
+    console.log("content about 4");
     var content_in = document.querySelector(".content-in");
     //........................................................................//
     //вычислить высоту содержимого .content-in
@@ -198,6 +203,7 @@
     const windowWidth = window.innerWidth;
 
     if (windowHeight>568 || windowWidth>568){
+      alert("script started")
 
       var content_in = document.querySelector(".content-in");
       const content_in_h = content_in!=null? setHeight_Content_In(content_in) : 0;
