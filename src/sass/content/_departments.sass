@@ -1,0 +1,121 @@
+.content-depart
+  .compblock-wrap
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    width: 100%
+
+
+  .compblock, .compblock-sub
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    color: white
+    width: 100%
+
+  .compblock
+    width: 33%
+    border-radius: 0px 20px 0px 20px
+    //width: 100%
+
+    .title
+      display: inline-block
+      color: white
+      padding: 10px 10px 10px 10px
+      position: relative
+      //background-color: #c4c4c4
+      width: content
+      cursor: pointer
+    .opened
+      display: inline-block
+      &::after
+        position: absolute
+        content: ""
+        width: 0px
+        height: 0px
+        border-top: 8px solid transparent
+        border-right: 8px solid transparent
+        border-bottom: 8px solid white
+        border-left: 8px solid transparent
+        bottom: 15px
+        right: -20px
+    .collapsed
+      display: inline-block
+      &::after
+        position: absolute
+        content: ""
+        width: 0px
+        height: 0px
+        border-top: 8px solid white
+        border-right: 8px solid transparent
+        border-bottom: 8px solid transparent
+        border-left: 8px solid transparent
+        bottom: 8px
+        right: -20px
+
+  .compblock-sub.activity
+    background-color: $col_acsent
+    border-radius: 0 20px 0 0
+    .compblock-sub__descr
+      //padding: 10px
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      width: 100%
+      list-style: none
+      p
+        padding: 10px
+        display: inline-block
+        width: 100%
+    .compblock-sub__list
+      display: inline-block
+      background-color: $bg_dark
+      width: 100%
+      padding: 10px 0
+      font-size: 18px
+      line-height: 22px
+      li
+        padding-left: 47px
+        margin-bottom: 10px
+        position: relative
+        list-style: none
+        &::before
+          position: absolute
+          content: ""
+          width: 0px
+          height: 0px
+          border-top: 7px solid white
+          border-right: 7px solid white
+          border-bottom: 7px solid white
+          border-left: 7px solid white
+          transform: rotate(-45deg)
+          bottom: 5px
+          left: 14px
+
+  .compblock-sub.management
+    background-color: $col_acsent
+    border-radius: 0 0 0 20px
+    .compblock-sub__descr
+      background-color: $bg_dark
+      display: none
+      flex-direction: row
+      justify-content: flex-start
+      align-items: flex-start
+      width: 100%
+      padding: 10px
+      border-radius: 0px 0px 0px 20px
+      img
+        width: 200px
+        height: 233px
+        background-color: E5E5E5
+        margin-right: 10px
+        border-radius: 20px
+    .compblock-sub__name
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+      height: auto
+    //.title.m-collapsed
