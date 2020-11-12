@@ -11,3 +11,4 @@ package-lock.json
 *.xml
 .DS_Store
 src/assets/scriptFromHost.js
+scriptFromHost.js

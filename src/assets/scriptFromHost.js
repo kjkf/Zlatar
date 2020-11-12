@@ -13216,8 +13216,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         //console.log("== prepareModals ==");
         const servicesInfo = document.querySelector('.content-servicesi');
         var body = document.body;
-        var modal = servicesInfo ? document.querySelector('.modal.modal-calculate') : document.querySelector('.modal.modal-order');
         var show_modal = document.querySelector('.show-modal');
+        var modal = show_modal.classList.contains('btn-offer') ? document.querySelector('.modal.modal-calculate') : document.querySelector('.modal.modal-order');
         var hide_modal = document.querySelector('.hide-modal'); //при клике на кнопку "show-modal", показать модальное окно
         var form = modal.querySelector('form');
         var inputs = form.querySelectorAll('.field');
