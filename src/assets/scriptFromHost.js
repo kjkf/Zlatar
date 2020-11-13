@@ -11581,7 +11581,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     function prepareMaterialsData() {
         const siteDirField = document.getElementById('site_dir');
         const filePath = siteDirField.value + "/public/assets/servicePrice.json";
-
+        let service;
         fetch(filePath)
             .then(response => {
                 return response.json();
@@ -11589,7 +11589,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             .then(data => {
                 const serviceIdField = document.getElementById('service_id');
                 const serviceId = serviceIdField.value;
-                let service;
+//console.log('serviceId = ', serviceId);
                 let promise = new Promise((resolve, reject) => {
                     service = data.filter(current => {
                         return current.serviceId === parseInt(serviceId);
@@ -11602,7 +11602,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                     const ulMaterials = document.querySelector('.select-dropdown.materials');
                     const thicknessField = document.getElementById('thickness');
                     const enterInput = document.getElementById('enter');
-
+//console.log('service = ', service );
                     if (ulMaterials.children && ulMaterials.children.length > 0) return; // если в ul уже есть li, то добавлять больше не надо
                     const materialField = document.getElementById('material');
                     service.materials.forEach(material => {
@@ -11632,7 +11632,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                         });
                     });
                 });
-    });
+            });
 
     }
 
@@ -11796,7 +11796,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             }
         });
 
-}
+    }
 
     function prepareBurgerMenu() {
         var burger = document.querySelector('.header__burger');
