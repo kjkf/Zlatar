@@ -13,6 +13,9 @@
       align-items: flex-end
 
   .content-wrap
+    grid-template-columns: repeat(2, minmax(100px, 420px))
+    grid-template-rows: repeat(1, minmax(100px, auto))
+  //.content-wrap
     display: flex
     justify-content: space-between
     height: 100%
@@ -49,21 +52,23 @@
 
   .content__center p
     margin-bottom: 10px
-    +tablet-down
+    +phone-down
+      margin-bottom: 7px
+    //+tablet-down
       margin-bottom: 15px
-    +tablet-album-device-down
+    //+tablet-album-device-down
       margin-bottom: 15px
-    +media-w944_h1000
+    //+media-w944_h1000
       margin-bottom: 5px
       font-size: 10px
-    +tablet-device-height
+    //+tablet-device-height
       margin-bottom: 5px
       font-size: 10px
-    +tablet-down
+    //+tablet-down
       margin-bottom: 5px
 
 
-  .content-item--productCat
+  //.content-item--productCat
     height: 53%
     +laptop-down
       width: 49%
