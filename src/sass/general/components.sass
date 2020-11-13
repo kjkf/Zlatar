@@ -89,7 +89,7 @@
     font-family: $font_MontAlt_Medium
     color: #FFFFFF
 
-.content-item:not(.content-item--catalog):not(.content-item--dark)
+.content-item:not(.content-item--catalog):not(.content-item--dark):not(.content-item--productCat)
   +tablet-down
     max-height: 35px
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -97,6 +97,8 @@
 .content-item.content-item--productCat
   +tablet-down
     max-height: 60px
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
 
 .content-item--catalog
   //width: 450px
