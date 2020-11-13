@@ -109,11 +109,20 @@ input.field-err + span.error-text
 
 .modal-calculate
   max-width: 640px
+  left: 50%
+  +tablet-down
+    left: 10%
+  +phone-down
+    top: 5%
+    max-width: 98%
+    left: 1%
   .modal-title
     text-transform: none
     line-height: 1.23
   .modal-content
     padding: 0 55px
+    +phone-down
+      padding: 0 1%
     .block-calculate.disable
       .field-label, .field-span
         color: rgba(255,255,255,.4)
@@ -142,11 +151,18 @@ input.field-err + span.error-text
       justify-content: space-between
       align-items: center
       padding: 0 30px
+      +phone-down
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+        padding: 0
       .field-label
         min-width: 120px
         font-size: 18px
         margin-right: 10px
         text-align: right
+        +phone-down
+          text-align: left
         &.field-label--small
           min-width: 89px
       .field
