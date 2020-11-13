@@ -124,7 +124,7 @@
       margin: auto 0px 15px
       padding-right: 5px
 
-.content .content-wrap
+.content:not(.content-portfolio-maf) .content-wrap
   height: 100%
   //background-color: aqua
   display: grid
@@ -137,12 +137,16 @@
     height: auto
   +tablet-device-height
     grid-template-rows: repeat(3, minmax(35px, auto))
+
   +phone_min-down
     height: auto
-    grid-template-columns: 1fr
-    grid-template-rows: auto
+    grid-template-columns: 1fr !important
+    grid-template-rows: auto !important
 
-.content:not(.content-catalog):not(.content-contacts)
+.content:not(.content-catalog):not(.content-contacts):not(.content-portfolio-maf)
   .content-wrap
     +tablet-down
       height: auto!important
+      padding: 0 13%
+    +phone-down
+      padding: 0 7%

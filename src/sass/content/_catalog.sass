@@ -15,6 +15,8 @@
   .content-wrap
     grid-template-columns: repeat(3, minmax(100px, 420px))
     grid-template-rows: repeat(2, minmax(100px, auto))
+    +tablet-down
+      grid-template-rows: repeat(1, minmax(100px, auto))
   //.content-wrap
     display: flex
     flex-wrap: wrap
@@ -110,5 +112,5 @@
     +tablet-down
       margin: 10px 0
 
-  .pagination
+  //.pagination
     width: 100%
