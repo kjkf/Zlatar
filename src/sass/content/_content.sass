@@ -58,7 +58,11 @@
     width: calc(100% - #{$w_left_side_m_sm})
     +tablet-down
       margin-left: 0
-    +media-w768_h768
+      width: 100%
+    +tablet-device-height
+      margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
+      width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
+    //+media-w768_h768
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
       width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
     +phone-height-down
@@ -82,8 +86,8 @@
       height: calc(100vh - 50px)
 
   &__center
-    flex-grow: 1
-    justify-content: flex-start
+    //flex-grow: 1
+    //justify-content: flex-start
     margin-bottom: 20px
     +tablet-down
       margin-bottom: 0px
@@ -91,28 +95,18 @@
       text-align: justify
       //margin-bottom: 20px
 
-  &__center.items
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    justify-content: space-between
-    align-items: flex-start
-    height: 85%
-    //height: 100%
-    //max-height: calc(100vh - 350px)
-    //background-color: green
-    +desktop-device-height
+  &__center.items, .content-wrap
+    //display: flex
+    //flex-direction: row
+    //flex-wrap: wrap
+    //justify-content: space-between
+    //align-items: flex-start
+    //height: 85%
+
+    //+desktop-device-height
       flex-grow: unset
       height: auto
-      //height: auto
-    //+tablet-album-device-down
-      //max-height: calc(100vh - 295px)
-    //   min-height: calc(100vh - 295px)
-    // +tablet-down
-    //   min-height: calc(100vh - 295px)
-    //   max-height: 100%
-      //calc(100vh - 150px)
-    +tablet-device-height
+    //+tablet-device-height
       max-height: 100%
 
   &__footer
@@ -129,3 +123,26 @@
       z-index: 2
       margin: auto 0px 15px
       padding-right: 5px
+
+.content .content-wrap
+  height: 100%
+  //background-color: aqua
+  display: grid
+  grid-template-columns: repeat(2, minmax(100px, 420px))
+  grid-template-rows: repeat(3, minmax(100px, auto))
+  grid-gap: 15px
+  justify-items: center
+  justify-content: space-between
+  //+tablet-down
+    height: auto
+  +tablet-device-height
+    grid-template-rows: repeat(3, minmax(35px, auto))
+  +phone_min-down
+    height: auto
+    grid-template-columns: 1fr
+    grid-template-rows: auto
+
+.content:not(.content-catalog):not(.content-contacts)
+  .content-wrap
+    +tablet-down
+      height: auto!important

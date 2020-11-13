@@ -1,11 +1,11 @@
 .content-catalog
-  +tablet-down
+  //+tablet-down
     align-self: flex-start!important
     padding-left: 0!important
-  +height_820
+  //+height_820
     align-self: flex-start!important
     padding-left: 0!important
-  .content__center.items
+  //.content__center.items
     +tablet-down
       justify-content: center
       height: calc(100% - 90px)
@@ -13,6 +13,9 @@
     +phone-height-down
       overflow-y: scroll
   .content-wrap
+    grid-template-columns: repeat(3, minmax(100px, 420px))
+    grid-template-rows: repeat(2, minmax(100px, auto))
+  //.content-wrap
     display: flex
     flex-wrap: wrap
     justify-content: space-between
@@ -26,23 +29,23 @@
       justify-content: flex-start
       align-items: center
   .content-item--catalog
-    max-width: 400px
-    width: 33%
-    max-height: 260px
-    min-height: 30px
-    +laptop-album-down
+    //max-width: 400px
+    //width: 33%
+    //max-height: 260px
+    //min-height: 30px
+    //+laptop-album-down
       height: 32%
       max-width: 310px
       max-height: 180px
       margin-bottom: 10px
-    +laptop-down
+    //+laptop-down
       height: 30%
       width: 48%
-    +tablet-album-device-down
+    //+tablet-album-device-down
       max-width: 226px
       max-height: 155px
       height: 40%
-    +tablet-down
+    //+tablet-down
       max-width: 226px
       max-height: 155px
       height: 38%
@@ -52,14 +55,14 @@
       height: 70%
       max-width: 310px
       max-height: 210px!important
-    +height_820
+    //+height_820
       height: 45%
       max-height: 45%
       min-height: 100px
       width: 31%
       min-width: 165px
       max-width: 300px
-    +phone-down
+    //+phone-down
       width: 100%
   .content-item__img
     +tablet-down
@@ -84,7 +87,7 @@
       justify-content: space-evenly
       font-size: 14px
       line-height: 17px
-    +tablet-down
+    +phone-down
       font-size: 11px
       line-height: 1.2
       padding: 5px

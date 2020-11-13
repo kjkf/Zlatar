@@ -28,15 +28,17 @@
     +tablet-down
       width: 100%
 
+.content-contacts.content
   .content-wrap
     height: 100%
-    background-color: aqua
+    //background-color: aqua
     display: grid
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: repeat(2, 1fr)
     //grid-template-rows: repeat(2, calc(50% - 40px))
     //grid-template-rows: minmax(280px, auto)
-    grid-template-rows: 1fr 1fr
+    grid-template-rows: repeat(2, 1fr)
     grid-gap: 50px
+    justify-items: stretch
 
     +laptop-album-down
       grid-gap: 20px
@@ -53,9 +55,9 @@
 
     +phone_min-down
       grid-template-columns: 1fr
-      grid-template-rows: repeat(3, minmax(100px, auto))
+      grid-template-rows: repeat(3, minmax(110px, auto))
 
-    & > div, & > ul
+    //& > div, & > ul
       background-color: #fc5b1f
       border: 1px solid black
 
@@ -247,6 +249,7 @@
 
 .map-wrap
   grid-row: span 2
+  width: 100%
 
   +laptop-down
     grid-row: span 1

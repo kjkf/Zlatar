@@ -3,38 +3,34 @@
   background: $col_acsent
   border-radius: $rad_content_item
   padding: $p_content_item
-  max-width: 420px
-  width: 50%
-  height: 30%
-  min-width: 226px
-  min-height: 30px
+  //max-width: 420px
+  height: 100%
+  width: 100%
+  //width: 50%
+  //height: 30%
+  //min-width: 226px
+  //min-height: 30px
   //max-height: 233px
-  +laptop-album-down
+  //+laptop-album-down
     max-height: 210px
     width: 48%
     min-width: 180px
-  +laptop-down
+  //+laptop-down
     min-width: 175px
-  +tablet-down
+  //+tablet-down
     width: 47%
     max-height: 155px
     max-width: 165px
-  +tablet-device-height
+  //+tablet-device-height
     width: 47%
     max-height: 155px
     max-width: 165px
-  +tablet-album-device-down
+  //+tablet-album-device-down
     max-height: 155px
-  //+media-h825
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-  +tablet-down
-    max-width: 240px
-    max-height: 30px
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-  +desktop-device-height
-    //height: auto
+
+  //+desktop-device-height
     margin-bottom: 20px
-  +phone-down
+  //+phone-down
     margin-bottom: 15px
   h3
     +laptop-album-down
@@ -93,12 +89,20 @@
     font-family: $font_MontAlt_Medium
     color: #FFFFFF
 
+.content-item:not(.content-item--catalog)
+  +tablet-down
+    max-height: 35px
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+.content-item.content-item--productCat
+  +tablet-down
+    max-height: 60px
+
 .content-item--catalog
-  //.content-item--managment
-  width: 450px
-  height: 300px
-  min-height: 300px
-  +tablet-device-height
+  //width: 450px
+  //height: 300px
+  //min-height: 300px
+  //+tablet-device-height
     //background-color: green
     height: 48%
     max-width: 26%
@@ -156,19 +160,19 @@
       margin-bottom: 15px
 
 .content-item--productCat
-  width: 49%
-  max-width: 450px
-  max-height: 313px
-  height: 42%
+  //width: 49%
+  //max-width: 450px
+  //max-height: 313px
+  //height: 42%
   position: relative
 
-  +tablet-down
+  //+tablet-down
     height: auto
     width: auto
   &:hover
-      .content-item-hover
-          visibility: visible
-          opacity: 1
+    .content-item-hover
+      visibility: visible
+      opacity: 1
 
   .content-item__descr
     padding-left: 9%
