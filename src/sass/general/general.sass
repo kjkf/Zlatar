@@ -49,6 +49,8 @@ h2
   font-size: $fontSize_h2
   line-height: $lineHeight_h2
   font-weight: normal
+  +media-w1024_h1024
+    line-height: 1.2
   +tablet-down
     font-size: $fontSize_h2_tablet
     line-height: $lineHeight_h2_tablet
@@ -218,7 +220,7 @@ h5
       size: contain
       position: center
       repeat: no-repeat
-    +media-h680
+    //+media-h680
       width: 20px
       height: 20px
 
@@ -329,13 +331,12 @@ ol.breadcrumbs
     line-height: 1.2
   +tablet-down
     font-size: 14px
-  +tablet-down
+  +phone-down
     font-size: 10px
     margin-bottom: 5px
 
 
 .wrap
-  display: block
   margin: 0 auto
   width: 90%
   height: 90%
