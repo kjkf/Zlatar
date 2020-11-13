@@ -8,7 +8,7 @@
       +laptop-down
         width: $w_contacts_ic_laptop
         height: $w_contacts_ic_laptop
-      +media-w950_h1200
+      //+media-w950_h1200
         width: $w_contacts_ic_phone
         height: $w_contacts_ic_phone
       +tablet-down
@@ -17,7 +17,7 @@
       +phone-height-down
         width: $w_contacts_ic_phone
         height: $w_contacts_ic_phone
-      +media-w1240_h569
+      //+media-w1240_h569
         width: $w_contacts_ic_phone
         height: $w_contacts_ic_phone
 
@@ -46,10 +46,7 @@
     +laptop-down
       grid-gap: 15px
 
-    +media-h1030
-      grid-gap: 5px
-
-    +phone-down
+    +tablet-down
       //grid-template-rows: minmax(25vh, auto)
       grid-gap: 5px
 
@@ -168,7 +165,7 @@
     width: 60%
   +tablet-down
     font-size: 14px
-  +media-w950_h1200
+  //+media-w950_h1200
     font-size: 12px
     //width: 100%
     //margin-bottom: 5px
@@ -176,9 +173,9 @@
     font-size: 12px
   +phone-height-down
     font-size: 12px
-  +media-h680
+  //+media-h680
     font-size: 15px
-  +media-w1240_h569
+  //+media-w1240_h569
     font-size: 12px
   +phone_min-down
     //width: 100%
@@ -191,13 +188,13 @@
       font-size: 20px
     +tablet-down
       font-size: 16px
-    +media-w950_h1200
+    //+media-w950_h1200
       font-size: 12px
     +tablet-down
       font-size: 12px
     +phone-height-down
       font-size: 12px
-    +media-w1240_h569
+    //+media-w1240_h569
       font-size: 12px
   &-list
     list-style: none
@@ -214,11 +211,11 @@
         margin-bottom: 10px
       +tablet-down
         margin-bottom: 10px
-      +media-w950_h1200
+      //+media-w950_h1200
         margin-bottom: 5px
         flex-wrap: nowrap
         padding-left: calc(5px + #{$w_contacts_ic_phone})
-      +media-h900
+      +media-h825
         margin-bottom: 3px
       +tablet-down
         margin-bottom: 5px
@@ -228,7 +225,7 @@
         margin-bottom: 5px
         flex-wrap: wrap
         padding-left: calc(5px + #{$w_contacts_ic_phone})
-      +media-w1240_h569
+      //+media-w1240_h569
         margin-bottom: 5px
         flex-wrap: wrap
         padding-left: calc(5px + #{$w_contacts_ic_phone})
@@ -252,6 +249,11 @@
   width: 100%
 
   +laptop-down
+    grid-row: span 1
+    height: 100%
+    object-fit: cover
+
+  +laptop_mob
     grid-row: span 1
     height: 100%
     object-fit: cover
