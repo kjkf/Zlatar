@@ -1594,6 +1594,7 @@ function prepareMaterialsData() {
         }
     ];
     const serviceId = 18;
+    console.log("serviceId = ", serviceId);
     let service = data.filter(current => {
         return current.serviceId === serviceId;
     });
