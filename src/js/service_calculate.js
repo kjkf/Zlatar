@@ -1594,45 +1594,57 @@ function prepareMaterialsData() {
         }
     ];
     const serviceId = 18;
-    console.log("serviceId = ", serviceId);
-    let service = data.filter(current => {
-        return current.serviceId === serviceId;
+
+    let service;
+    console.log("before promise");
+    let promise = new Promise((resolve, reject) => {
+        service = data.filter(current => {
+            return current.serviceId === parseInt(serviceId);
+        });
+        resolve();
     });
-    if (!service) return false;
-    service = service[0];
-    const ulMaterials = document.querySelector('.select-dropdown.materials');
-    const thicknessField = document.getElementById('thickness');
-    const enterInput = document.getElementById('enter');
+    console.log("before promise then");
+    promise.then(() => {
+        console.log("promise finished");
+        if (!service) return false;
+        service = service[0];
+        const ulMaterials = document.querySelector('.select-dropdown.materials');
+        const thicknessField = document.getElementById('thickness');
+        const enterInput = document.getElementById('enter');
 
-    if (ulMaterials.children && ulMaterials.children.length > 0) return; // если в ul уже есть li, то добавлять больше не надо
-    const materialField = document.getElementById('material');
-    service.materials.forEach(material => {
-        const li = document.createElement('li');
-        li.className = 'select-item';
-        li.id = `id${material.id}`;
-        li.innerHTML = material.name;
-        ulMaterials.insertAdjacentElement('beforeEnd', li);
-        li.addEventListener('click', e => {
-            ulMaterials.style.display = "none";
-            const currentLiValue = materialField.value;
-            //console.log(currentLiValue, material.name);
-            if (currentLiValue !== material.name) {
-                thicknessField.value = '';
-                THICKNESS = 0;
-            }
-            materialField.value = material.name;
+        if (ulMaterials.children && ulMaterials.children.length > 0) return; // если в ul уже есть li, то добавлять больше не надо
+        const materialField = document.getElementById('material');
+        service.materials.forEach(material => {
+            const li = document.createElement('li');
+            li.className = 'select-item';
+            li.id = `id${material.id}`;
+            li.innerHTML = material.name;
+            ulMaterials.insertAdjacentElement('beforeEnd', li);
+            li.addEventListener('click', e => {
+                ulMaterials.style.display = "none";
+                const currentLiValue = materialField.value;
+                //console.log(currentLiValue, material.name);
+                if (currentLiValue !== material.name) {
+                    thicknessField.value = '';
+                    THICKNESS = 0;
+                }
+                materialField.value = material.name;
 
-            if (typeof material.price === 'object') {
-                preparePriceData(material.price);
-            } else {
-                thicknessField.setAttribute('disabled', true);
-                enterInput.setAttribute('disabled', true);
-                THICKNESS = 1;
-                PRICE = material.price;
-            }
-            calculateCost();
+                if (typeof material.price === 'object') {
+                    preparePriceData(material.price);
+                } else {
+                    thicknessField.setAttribute('disabled', true);
+                    enterInput.setAttribute('disabled', true);
+                    THICKNESS = 1;
+                    PRICE = material.price;
+                }
+                calculateCost();
+            });
         });
     });
+
+    console.log("after promise");
+
 }
 
 function preparePriceData(data) {
