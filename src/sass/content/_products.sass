@@ -1,61 +1,12 @@
 .content-products
   .content__center.items
-    //max-height: calc(100vh - 375px)
-    //justify-content: space-evenly
-
-    //background: aqua
-    // +laptop-down
-    //   //background: green
-    // //+laptop-landscape-down
-    //   background: lightgreen
-    // +tablet-down
-    //   //background: yellow
-    //+phone_down
-      //background: blue
-      align-items: flex-start
-    // +phone-landscape-down
-    //   //background: coral
-
-    //.content-wrap
-      display: flex
-      flex-direction: row
-      flex-wrap: wrap
-      justify-content: space-evenly
-      align-items: flex-start
-
-
     .content-item--productCat
-      //+laptop-album-down
-        max-height: 286px
-      //+laptop-device-down
-        max-height: 220px
-        margin-bottom: 20px
-      //+laptop-down
-        height: 23%
-        max-height: 23%
-      //+tablet-album-device-down
-        margin-bottom: 10px
-      //+laptop-down
-        width: 100%
-      //+tablet-down
-        max-width: 285px
-        max-height: 175px
-        margin-bottom: 5px
-      //+tablet-down
-        max-height: 60px
-        margin-bottom: 15px
-        max-width: 240px
-
       .content-item__descr
         +tablet-down
           padding: 5px
         .title
           +tablet-down
             font-size: 14px
-          // +tablet-device-height
-          //   font-size: 14px
-          // +tablet-album-device-down
-          //   font-size: 14px
 
   .content-item-hover
     +laptop-device-down
@@ -76,15 +27,6 @@
       margin-bottom: 2%
 
 
-
-  .content__footer
-    //+laptop-album-down
-      align-items: flex-end
-    //+tablet-down
-      //margin-top: 5px
-      //margin-bottom: 15px
-      margin: 5px 5px 15px 0
-
 .cat-row
   display: flex
   justify-content: center
@@ -94,60 +36,3 @@
   +tablet-down
     flex-direction: column
 
-// .content.content-maf.m-sm,
-// .content.m-sm.content-nvf
-//   +laptop-album-down
-//     width: calc(100% - #{$w_nav})!important
-//     margin-left: calc(#{$w_nav})!important
-//   +tablet-down
-//     width: 100% !important
-//     margin-left: 0px !important
-
-
-//@media screen and (max-height: 825px)
-  .content-products
-    .content__center
-      //justify-content: center
-    //.content-item
-      height: 50px
-      //width: 230px
-      margin: 0 5px
-      border-radius: 10px
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-    .title
-      font-size: 19px
-    .content-item__in
-      justify-content: center
-    //.content-item__img
-      display: none
-    .content-item__descr
-      align-items: center
-
-//@media screen and (max-width: 665px)
-  .content-products
-    .content__center
-      //justify-content: center
-    //.content-item
-      height: 50px
-      //width: 230px
-      border-radius: 10px
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-    .content-item__in
-      justify-content: center
-    .content-item__img
-      display: none
-    .content-item__descr
-      align-items: center
-
-  // .content-maf.m-sm
-  //   +laptop-album
-  //     width: calc(100% - #{$w_nav})
-  //     margin-left: calc(#{$w_nav})!important
-  //   .content-item__img
-  //     display: none
-  //   .content-item
-  //     max-width: 240px
-  //     max-height: 30px
-  //     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-  //     h3
-  //       font-size: 12px

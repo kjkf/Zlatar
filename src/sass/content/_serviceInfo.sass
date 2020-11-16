@@ -1,22 +1,9 @@
 .content-servicesi
-  // +laptop-album-down
-  //   margin-left: 45%
-  // +laptop-down
-  //   align-self: flex-start!important
-  //   width: calc(100% - #{$w_nav})
-  //   margin-left: calc(#{$w_nav})!important
-  // +tablet-down
-  //   margin-left: 0!important
-  //   align-self: unset!important
-  //   width: 100%
-  
   .content-in
     +laptop-album-down
       padding-left: 20px
     +tablet-down
       padding-left: 0
-  //.breadcrumbs
-    margin-bottom: 10px
   .content-item__in
     padding: 15px
     p
@@ -26,7 +13,6 @@
       +laptop-album-down
         font-size: 16px
         margin-bottom: 10px
-        //background-color: yellow
       +laptop-down
         font-size: 13px
         margin-bottom: 5px
@@ -34,31 +20,14 @@
         font-size: 12px
       +tablet-device-height
         margin-bottom: 0!important
-      // +tablet-down
-      //   font-size: 10px
     .title
       +tablet-down
         margin-bottom: 5px
-  // .content-item--dark .content-item__in
-  //   +tablet-device-height
-  //     overflow-y: scroll
-
-  //.scrolled
-    overflow-y: scroll
-    &::-webkit-scrollbar
-      background-color: rgba(255, 255, 255, 0.3)
-      width: 10px
-    &::-webkit-scrollbar-thumb
-      background-color: rgba(255, 255, 255, 0.6)
-    // +laptop-down
-    //   overflow-y: scroll
 
   .btn-offer
     height: 60px
-    //width: 40%
     width: 350px
     border-radius: 10px
-    //border-radius: 20px
     background-color: #FC5B1F
     align-self: center
     font-family: $font_MontAlt_SemiBold
