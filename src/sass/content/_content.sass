@@ -124,7 +124,7 @@
       margin: auto 0px 15px
       padding-right: 5px
 
-.content:not(.content-portfolio-maf) .content-wrap
+.content:not(.content-portfolio-maf):not(.content-contacts) .content-wrap
   height: 100%
   //background-color: aqua
   display: grid
@@ -143,10 +143,23 @@
     grid-template-columns: 1fr !important
     grid-template-rows: auto !important
 
-.content:not(.content-catalog):not(.content-contacts):not(.content-portfolio-maf)
+.content:not(.content-contacts):not(.content-portfolio-maf)
   .content-wrap
     +tablet-down
       height: auto!important
       padding: 0 13%
     +phone-down
       padding: 0 7%
+
+.content.content-catalog
+  .content-wrap
+    grid-template-columns: repeat(2, minmax(100px, 420px))
+    grid-template-rows: repeat(2, minmax(100px, 300px))
+    justify-content: center
+    +tablet-down
+      grid-template-rows: repeat(1, minmax(100px, auto))
+
+.content.content-portfolio
+  .content-wrap
+    grid-template-columns: repeat(2, minmax(100px, 420px))
+    grid-template-rows: repeat(1, minmax(100px, auto))
