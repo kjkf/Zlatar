@@ -186,9 +186,25 @@ input.field-err + span.error-text
         bottom: -20px
         left: 33%
 
+.modal-content .block-calculate
+  .field-group.colsInRow
+    .field-label
+      +phone-down
+        min-width: 75px
+    .field
+      +phone-down
+        max-width: 75px
+        
+    +phone-down
+      flex-direction: row
+      align-items: center
+      justify-content: flex-start
+
+
+
 .select-wrapper
   position: relative
-  display: inline-block
+  display: flex
   width: 100%
   &::after
     content: ''
@@ -198,6 +214,11 @@ input.field-err + span.error-text
     top: calc(50% - 5px) /* Положение треугольника */
     border: 10px solid transparent
     border-top-color: rgba(58, 58, 58, 1)
+
+.select-wrapper.select-wrapper--small
+  &:after
+    right: 50px
+  #thickness + label
 
 .select-dropdown
   display: none
@@ -239,6 +260,8 @@ input[type=checkbox].field + label:after
   position: relative
   left: 14px
   border-radius: 5px
+  +phone-down
+    top: 5px
 
 input[type=checkbox]:checked + label:after
   color: $bg_dark
