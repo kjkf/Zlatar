@@ -97,19 +97,22 @@
 .content:not(.content-portfolio-maf):not(.content-contacts) .content-wrap
   height: 100%
   display: grid
-  grid-template-columns: repeat(2, minmax(100px, 420px))
-  grid-template-rows: repeat(3, minmax(100px, auto))
   grid-gap: 15px
   justify-items: center
   justify-content: space-between
-
-  +tablet-device-height
-    grid-template-rows: repeat(3, minmax(35px, auto))
 
   +phone_min-down
     height: auto
     grid-template-columns: 1fr !important
     grid-template-rows: auto !important
+
+.content:not(.content-catalog):not(.content-contacts):not(.content-portfolio) .content-wrap
+  grid-template-columns: repeat(2, minmax(100px, 420px))
+  grid-template-rows: repeat(3, minmax(100px, auto))
+
+  +tablet-device-height
+    grid-template-rows: repeat(3, minmax(35px, auto))
+
 
 .content:not(.content-contacts):not(.content-portfolio-maf)
   .content-wrap
@@ -121,8 +124,8 @@
 
 .content.content-catalog
   .content-wrap
-    grid-template-columns: repeat(2, minmax(100px, 420px))
-    grid-template-rows: repeat(2, minmax(100px, 300px))
+    grid-template-columns: repeat(3, minmax(auto, 420px))
+    grid-template-rows: repeat(2, minmax(auto, 300px))
     justify-content: center
     +tablet-down
       grid-template-rows: repeat(1, minmax(100px, auto))
