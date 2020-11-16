@@ -11,8 +11,10 @@
       paddings_h = getPaddingsHeight(elem);
       margins_h = getMarginsHeight(elem);
       const sum = elem.clientHeight + paddings_h + margins_h;
+
       console.log("elem.clientHeight = "+ elem.clientHeight);
-      console.log("elem.offsetHeight = "+ elem.offsetHeight);
+      console.log("elem.paddings_h = " + paddings_h);
+      console.log("elem.margins_h = " + margins_h);
       console.log("element_height = "+ sum);
       return sum;
     }else return 0;
@@ -31,12 +33,15 @@
     if (elem){
       const margin_t = parseInt(getStyle(elem, 'margin-top'));
       const margin_b = parseInt(getStyle(elem, 'margin-bottom'))
+      console.log("margin_t = "+ margin_t);
+      console.log("margin_b = "+ margin_b);
       margins_h = (isNaN(margin_t)? 0 : margin_t) + (isNaN(margin_b)? 0 : margin_b);
     }
     return margins_h;
   }
   function getParagraphsHeight(){
-    var paragraphs = document.getElementsByTagName("p");
+    var content__center = document.querySelector(".content__center");
+    var paragraphs = content__center.getElementsByTagName("p");
     var paragraphs_h = 0;
     if (paragraphs){
       for (var i=0; i<paragraphs.length; i++){
@@ -97,13 +102,14 @@
 
   function setHeight_Content__Center(content__center, content_in_h){
     //console.log("--вычислением высоты .content__center--");
-    console.log("content center 2");
+    console.log("----------------- content center 2 ----------------");
     const content__center_margins = getMarginsHeight(content__center);
     //........................................................................//
     const content__header = document.querySelector(".content__header");
     var content__header_h = getElemHeight(content__header, false, true);
     //........................................................................//
     const content__footer = document.querySelector(".content__footer");
+    console.log("~~~content__footer_h~~~")
     var content__footer_h = getElemHeight(content__footer, false, true);
     //........................................................................//
     const content__breadcrumbs = document.querySelector(".content__breadcrumbs");
@@ -113,8 +119,9 @@
               content__footer_h +
               content__breadcrumbs_h +
               content__center_margins;
-     console.log("content__header_h = "+ content__header_h  + "; content__footer_h = " +
-                 content__footer_h + "; content__breadcrumbs_h = " + content__breadcrumbs_h +
+     console.log("content__header_h = "+ content__header_h + '\n' +
+                  "; content__footer_h = " + content__footer_h + '\n' +
+                  "; content__breadcrumbs_h = " + content__breadcrumbs_h + '\n' +
                  "; content__center_margins = " + content__center_margins);
      console.log("sum = " + sum);
 
@@ -127,18 +134,21 @@
 
   function setHeight_Content_Wrap(content__center_h){
     //вычисление высоты .content-wrap
-    console.log("content wrap 3");
+    console.log(" --------------------------------- content wrap 3 ---------------------------------");
     var content_wrap = document.querySelector(".content-wrap");
     const content_wrap_margins = getMarginsHeight(content_wrap);
+    console.log("~~~~ paragraphs_h ~~~~~");
     const paragraphs_h = getParagraphsHeight();
 
     const pagination = document.querySelector('.pagination');
     let pagination_h = getElemHeight(pagination, false, false);
-
+    console.log("paragraphs_h = " + paragraphs_h + '\n' +
+                "pagination_h = " + pagination_h + '\n' +
+                "content_wrap_margins = " + content_wrap_margins);
     const sum =  paragraphs_h + pagination_h + content_wrap_margins;
     const content_wrap_h = content__center_h  - sum;
-    // var content_wrap_h = content__center_h - paragraphs_h - pagination_h - parseInt(content_wrap_mt) - parseInt(content_wrap_mb);
-    // //content_wrap.style.backgroundColor = "grey";
+    console.log("content_wrap_h = " + content_wrap_h);
+    content_wrap.style.backgroundColor = "grey";
     content_wrap.style.height = content_wrap_h + "px";
   }
 

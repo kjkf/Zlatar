@@ -11,6 +11,7 @@
     +laptop-down
       grid-template-columns: none!important
       grid-template-rows: repeat(3, 1fr)!important
+      overflow-y: scroll
 
   .compblock, .compblock-sub
     display: flex
@@ -26,9 +27,9 @@
     +laptop-down
       width: 80%
       justify-self: center
-    &:nth-child(2), &:last-child
-      +laptop-down
-        display: none
+    // &:nth-child(2), &:last-child
+    //   +laptop-down
+    //     display: none
 
     .comblock-logo
       width: 100%
