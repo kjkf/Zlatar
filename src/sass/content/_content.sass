@@ -1,13 +1,10 @@
 .content
   flex-grow: 1
-  //padding: $pt_content $pr_content $pb_content $pl_content
   padding: $pt_content 0 $pb_content 20px
   margin-left: $w_left_side_m_sm
-  //background-color: grey
   +laptop-album-down
     padding-left: $p_content_laptop
     padding-right: $p_content_laptop
-    //margin-left: 25%
   +laptop-down
     padding-left: $p_content_laptop
     padding-right: $p_content_laptop
@@ -17,8 +14,6 @@
     padding-right: $p_content_tablet
     padding-top: $pt_content_tablet
   +tablet-device-height
-    //padding-left: $p_content_tablet
-    //padding-right: $p_content_tablet
     padding-top: $pt_content_tablet
   +tablet-album-device-down
     padding-left: $p_content_tablet
@@ -32,7 +27,6 @@
     background: #ffffff
     border-radius: 10px
 
-    //background: lightgreen
   &.m-collapsed
     margin-left: calc(#{$w_nav} + #{$p_container_laptop})
     align-self: center
@@ -62,9 +56,6 @@
     +tablet-device-height
       margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
       width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
-    //+media-w768_h768
-      margin-left: calc(#{$w_nav_tablet} + #{$p_container_tablet})
-      width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
     +phone-height-down
       margin-left: 0px
     +phone-down
@@ -79,35 +70,16 @@
     +tablet-album-device-down
       height: calc(100vh - 180px)
     +tablet-down
-      //height: calc(100vh - 195px)
-    +tablet-down
       height: calc(100vh - 80px)
     +phone-landscape-down
       height: calc(100vh - 50px)
 
   &__center
-    //flex-grow: 1
-    //justify-content: flex-start
     margin-bottom: 20px
     +tablet-down
       margin-bottom: 0px
     p
       text-align: justify
-      //margin-bottom: 20px
-
-  &__center.items, .content-wrap
-    //display: flex
-    //flex-direction: row
-    //flex-wrap: wrap
-    //justify-content: space-between
-    //align-items: flex-start
-    //height: 85%
-
-    //+desktop-device-height
-      flex-grow: unset
-      height: auto
-    //+tablet-device-height
-      max-height: 100%
 
   &__footer
     display: flex
@@ -115,9 +87,7 @@
     align-items: center
     margin-top: auto
     z-index: 10
-    // +laptop-album-down
-    //   justify-content: center
-    //   flex-direction: column
+
     +tablet-down
       position: relative
       z-index: 2
@@ -126,22 +96,23 @@
 
 .content:not(.content-portfolio-maf):not(.content-contacts) .content-wrap
   height: 100%
-  //background-color: aqua
   display: grid
-  grid-template-columns: repeat(2, minmax(100px, 420px))
-  grid-template-rows: repeat(3, minmax(100px, auto))
   grid-gap: 15px
   justify-items: center
   justify-content: space-between
-  //+tablet-down
-    height: auto
-  +tablet-device-height
-    grid-template-rows: repeat(3, minmax(35px, auto))
 
   +phone_min-down
     height: auto
     grid-template-columns: 1fr !important
     grid-template-rows: auto !important
+
+.content:not(.content-catalog):not(.content-contacts):not(.content-portfolio) .content-wrap
+  grid-template-columns: repeat(2, minmax(100px, 420px))
+  grid-template-rows: repeat(3, minmax(100px, auto))
+
+  +tablet-device-height
+    grid-template-rows: repeat(3, minmax(35px, auto))
+
 
 .content:not(.content-contacts):not(.content-portfolio-maf)
   .content-wrap
@@ -153,8 +124,8 @@
 
 .content.content-catalog
   .content-wrap
-    grid-template-columns: repeat(2, minmax(100px, 420px))
-    grid-template-rows: repeat(2, minmax(100px, 300px))
+    grid-template-columns: repeat(3, minmax(auto, 420px))
+    grid-template-rows: repeat(2, minmax(auto, 300px))
     justify-content: center
     +tablet-down
       grid-template-rows: repeat(1, minmax(100px, auto))

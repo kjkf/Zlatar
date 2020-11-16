@@ -1,94 +1,16 @@
 .content-services
-  // +laptop-album-down
-  //   //background-color: yellow
-  //   align-self: flex-start!important
-  //   width: calc(100% - #{$w_nav})
-  //   margin-left: calc(#{$w_nav})!important
-  // +laptop-down
-  //   padding-left: 0
-  // +tablet-down
-  //   padding: 0px 5px
-  //.content__center
-    +tablet-down
-      justify-content: center!important
-    //.content-item
-      +tablet-down
-        margin: 5px 5px
-  //.content-item--dark
-    margin: 0
   .content-item
     border-top-left-radius: 0px
     border-bottom-right-radius: 0px
     +tablet-down
       border-top-left-radius: 20px
       border-bottom-right-radius: 20px
+    &__in
+      border-top-left-radius: 0px
+      border-bottom-right-radius: 0px
     &__img
       border-top-left-radius: 0px
       border-bottom-right-radius: 0px
       +tablet-down
         border-top-left-radius: 20px
         border-bottom-right-radius: 20px
-
-//.nvf--content
-  //.content-wrap
-    +tablet-down
-      flex-direction: column
-      justify-content: flex-start
-      align-items: center
-  .title
-    +tablet-down
-      font-size: 16px
-
-//.maf--content
-  .breadcrumbs
-    +laptop-device-down
-      margin-left: 0
-
-//@media screen and (max-height: 825px)
-  .content-services, .nvf--content, .maf--content
-    //.content__center
-      justify-content: center
-    //.content-item
-      height: 50px
-      width: 230px
-      margin: 0 5px
-      border-radius: 10px
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-      //padding: 3px
-    .title
-      font-size: 16px
-    .content-item__in
-      justify-content: center
-    .content-item__img
-      display: none
-    .content-item__descr
-      align-items: center
-  .nvf--content
-    //.content-item
-      width: 300px
-    .title
-      font-size: 16px
-
-
-//@media screen and (max-width: 665px)
-  .content-services, .nvf--content, .maf--content
-    //.content__center
-      justify-content: center
-    //.content-item
-      height: 40px
-      width: 240px
-      border-radius: 10px
-      //margin-bottom: 10px
-      padding: 3px
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-    .title
-      font-size: 16px
-    .content-item__in
-      justify-content: center
-    .content-item__img
-      display: none
-    .content-item__descr
-      align-items: center
-  .nvf--content
-    .title
-      font-size: 15px

@@ -1,5 +1,4 @@
 .content-contacts
-  //overflow-y: scroll
   +tablet-down
     width: 100%
 
@@ -8,21 +7,14 @@
       +laptop-down
         width: $w_contacts_ic_laptop
         height: $w_contacts_ic_laptop
-      //+media-w950_h1200
-        width: $w_contacts_ic_phone
-        height: $w_contacts_ic_phone
       +tablet-down
         width: $w_contacts_ic_phone
         height: $w_contacts_ic_phone
       +phone-height-down
         width: $w_contacts_ic_phone
         height: $w_contacts_ic_phone
-      //+media-w1240_h569
-        width: $w_contacts_ic_phone
-        height: $w_contacts_ic_phone
 
   &.content.m-collapsed
-    //width: calc(100% - #{$w_nav_tablet} - #{$p_container_tablet})
     +laptop-album-down
       align-self: flex-start
     +tablet-down
@@ -31,11 +23,8 @@
 .content-contacts.content
   .content-wrap
     height: 100%
-    //background-color: aqua
     display: grid
     grid-template-columns: repeat(2, 1fr)
-    //grid-template-rows: repeat(2, calc(50% - 40px))
-    //grid-template-rows: minmax(280px, auto)
     grid-template-rows: repeat(2, 1fr)
     grid-gap: 50px
     justify-items: stretch
@@ -47,103 +36,11 @@
       grid-gap: 15px
 
     +tablet-down
-      //grid-template-rows: minmax(25vh, auto)
       grid-gap: 5px
 
     +phone_min-down
       grid-template-columns: 1fr
       grid-template-rows: repeat(3, minmax(110px, auto))
-
-    //& > div, & > ul
-      background-color: #fc5b1f
-      border: 1px solid black
-
-//.contacts__t
-  position: relative
-  display: flex
-  justify-content: flex-end
-  margin-bottom: 50px
-  //height: 768px
-  +laptop-album-down //1366
-    margin-bottom: 15px
-  +max-height //970
-    //margin-bottom: 0px
-  +laptop-down //1024
-    margin-bottom: 35px
-  +media-w1024_h1024 //1024 1024
-    margin-bottom: 5px
-  //+tablet-album-device-down // 1024 768
-    margin-bottom: 5px
-  +tablet-landscape-down //768 1024
-    //height: 265px
-    margin-bottom: 15px
-  +media-w950_h1200 // 568
-    flex-direction: column
-    margin-bottom: 0px
-    height: auto
-  +tablet-down // 568
-    justify-content: flex-start
-    height: calc(#{$h_contacts__b_mob} + 5px)
-    margin-bottom: 0px
-  +media-w1366_h820
-    margin-bottom: 0px
-  +height_820
-    margin-bottom: 10px
-  +media-w950_h820
-    margin-bottom: 0px
-  +phone-height-down // h 568
-    justify-content: flex-start
-    height: calc(#{$h_contacts__b_mob} + 5px)
-    margin-bottom: 0px
-  +media-w1240_h569 //1240 569
-    justify-content: flex-start
-    height: calc(#{$h_contacts__b_mob} + 5px)
-    margin-bottom: 0px
-  +phone_min-down //320
-    flex-direction: column
-    margin-bottom: 5px
-    height: auto
-
-
-//.contacts__b
-  //margin-left: 685px
-  display: flex
-  justify-content: flex-end
-  height: 50%
-
-  +laptop-album-down
-    justify-content: flex-start
-    height: 38%
-
-  +laptop-device-down
-    //height: 50%
-  +media-w1024_h1024
-    height: 35%
-  +media-w950_h1200
-    height: 118px
-    position: static
-    justify-content: flex-end
-  +tablet-down
-    position: absolute
-    right: 0
-    top: 0
-    height: $h_contacts__b_mob
-    justify-content: flex-end
-  +phone-height-down
-    position: absolute
-    right: 0
-    bottom: 0
-    height: $h_contacts__b_mob
-    justify-content: flex-end
-  +media-w1240_h569
-    position: absolute
-    right: 0
-    bottom: 0
-    height: $h_contacts__b_mob
-    justify-content: flex-end
-  +phone_min-down
-    position: static
-    justify-content: center
 
 .address-list
   +phone-down
@@ -153,33 +50,19 @@
     grid-row: unset
 
 .address
-  //width: 48.3%
   font-size: 20px
   +laptop-album-down
-    //width: 53.9%
     font-size: 18px
   +laptop-down
-    //width: 40%
     font-size: 16px
-  //+tablet-album-device-down
-    width: 60%
+
   +tablet-down
     font-size: 14px
-  //+media-w950_h1200
-    font-size: 12px
-    //width: 100%
-    //margin-bottom: 5px
+
   +tablet-down
     font-size: 12px
   +phone-height-down
     font-size: 12px
-  //+media-h680
-    font-size: 15px
-  //+media-w1240_h569
-    font-size: 12px
-  +phone_min-down
-    //width: 100%
-    //margin-bottom: 5px
 
   .title
     color: $col_main
@@ -188,14 +71,12 @@
       font-size: 20px
     +tablet-down
       font-size: 16px
-    //+media-w950_h1200
-      font-size: 12px
+
     +tablet-down
       font-size: 12px
     +phone-height-down
       font-size: 12px
-    //+media-w1240_h569
-      font-size: 12px
+
   &-list
     list-style: none
     &__item
@@ -206,15 +87,10 @@
       +laptop-down
         flex-wrap: wrap
         padding-left: calc(5px + #{$w_contacts_ic_laptop})
-      //+tablet-album-device-down
-        flex-wrap: nowrap
-        margin-bottom: 10px
+
       +tablet-down
         margin-bottom: 10px
-      //+media-w950_h1200
-        margin-bottom: 5px
-        flex-wrap: nowrap
-        padding-left: calc(5px + #{$w_contacts_ic_phone})
+
       +media-h825
         margin-bottom: 3px
       +tablet-down
@@ -225,10 +101,7 @@
         margin-bottom: 5px
         flex-wrap: wrap
         padding-left: calc(5px + #{$w_contacts_ic_phone})
-      //+media-w1240_h569
-        margin-bottom: 5px
-        flex-wrap: wrap
-        padding-left: calc(5px + #{$w_contacts_ic_phone})
+
       +phone_min-down
         flex-wrap: nowrap
 
@@ -241,8 +114,6 @@
         margin-left: 15px
         +laptop-down
           margin-left: 0px
-        //+tablet-album-device-down
-          margin-left: 5px
 
 .map-wrap
   grid-row: span 2
@@ -257,50 +128,6 @@
     grid-row: span 1
     height: 100%
     object-fit: cover
-
-//.map-wrap
-  position: absolute
-  top: 0
-  left: 0
-  width: 48.3%
-  //background-color: blue
-  //height: 745px
-  height: calc(100vh - 390px)
-  +laptop-album-down
-    //height: 325px
-    width: 43.8%
-    height: 100%
-  +laptop-down
-    width: 58%
-    //height: 100%
-  //+tablet-album-device-down
-    width: 37%
-  +media-w950_h1200
-    position: absolute
-    height: 118px!important
-    width: 50%
-    top: 100%
-    left: 0px
-  +tablet-down
-    right: 0
-    left: unset
-    top: 100%
-    width: 37%
-    height: $h_map-wrap_mob!important
-  +phone-height-down
-    right: 0
-    left: unset
-    height: $h_map-wrap_mob!important
-  +media-w1240_h569
-    right: 0
-    left: unset
-    height: $h_map-wrap_mob!important
-  +phone_min-down
-    position: static
-    height: 118px!important
-    width: 100%
-    order: 1
-
 
 .contacts-img
   overflow: hidden
@@ -322,23 +149,6 @@
     +phone_min-down
       height: 100%
       width: auto
-  //+laptop-album-down
-    width: 43.8%
-  //+media-w1024_h1024
-    width: 58%
-  //+media-w950_h1200
-    width: 48%
-  //+tablet-down
-    width: 37%
-    overflow: hidden
-  //+phone-height-down
-    width: 37%
-    overflow: hidden
-  //+media-w1240_h569
-    width: 37%
-    overflow: hidden
-  //+phone_min-down
-    width: 68%
 
 .phone-wrap
   display: flex
@@ -346,14 +156,4 @@
   .phone
     margin-bottom: 5px
 
-
-//.content-wrap
-  +media-w950_h1200
-    position: relative
-  +tablet-down
-    position: relative
-  +phone-height-down
-    position: relative
-  +media-w1240_h569
-    position: relative
 
