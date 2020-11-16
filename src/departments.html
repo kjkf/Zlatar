@@ -80,8 +80,8 @@
                           <div class="comblock-logo">
                             <img src="../public/images/content/ZR_Logo_DevComp.svg" alt="Логотип производственной компании ЗЛАТАРЬ">
                           </div>
-                          <div class="compblock-sub activity">
-                            <h5 class="title opened">Деятельность</h5>
+                          <div class="compblock-sub activity opened">
+                            <h5 class="title">Деятельность</h5>
                             <div class="compblock-sub__descr">
                               <p>
                                 проектирование моделей и производство изделий посредством:
@@ -96,8 +96,8 @@
                               </ul>
                             </div>
                           </div>
-                          <div class="compblock-sub management">
-                            <h5 class="title collapsed">Директор</h5>
+                          <div class="compblock-sub management collapsed">
+                            <h5 class="title">Директор</h5>
                             <div class="compblock-sub__descr">
                               <img src="" alt="">
                               <div class="compblock-sub__name">
@@ -112,8 +112,8 @@
                           <div class="comblock-logo">
                             <img src="../public/images/content/ZR_Logo_DevComp.svg" alt="Логотип производственной компании ЗЛАТАРЬ">
                           </div>
-                          <div class="compblock-sub activity">
-                            <h5 class="title opened">Деятельность</h5>
+                          <div class="compblock-sub activity opened">
+                            <h5 class="title">Деятельность</h5>
                             <div class="compblock-sub__descr">
                               <p>
                                 проектирование моделей и производство изделий посредством:
@@ -128,8 +128,8 @@
                               </ul>
                             </div>
                           </div>
-                          <div class="compblock-sub management">
-                            <h5 class="title collapsed">Директор</h5>
+                          <div class="compblock-sub management collapsed">
+                            <h5 class="title">Директор</h5>
                             <div class="compblock-sub__descr">
                               <img src="" alt="">
                               <div class="compblock-sub__name">
@@ -144,8 +144,8 @@
                           <div class="comblock-logo">
                             <img src="../public/images/content/ZR_Logo_DevComp.svg" alt="Логотип производственной компании ЗЛАТАРЬ">
                           </div>
-                          <div class="compblock-sub activity">
-                            <h5 class="title opened">Деятельность</h5>
+                          <div class="compblock-sub activity opened">
+                            <h5 class="title">Деятельность</h5>
                             <div class="compblock-sub__descr">
                               <p>
                                 проектирование моделей и производство изделий посредством:
@@ -160,8 +160,8 @@
                               </ul>
                             </div>
                           </div>
-                          <div class="compblock-sub management">
-                            <h5 class="title collapsed">Директор</h5>
+                          <div class="compblock-sub management collapsed">
+                            <h5 class="title">Директор</h5>
                             <div class="compblock-sub__descr">
                               <img src="" alt="">
                               <div class="compblock-sub__name">
@@ -171,7 +171,7 @@
                             </div>
                           </div>
                         </div>
-                      <!-- </div> -->
+
 
                     </div>
                 </div>
@@ -195,55 +195,56 @@ function otherBlockOpen(block, other_subblock_name){
   const main_parent = block.closest(".compblock")
   const other_subblock = main_parent.querySelector(".compblock-sub."+other_subblock_name);
   const other_subblock_descr = other_subblock.querySelector(".compblock-sub__descr")
-  other_subblock_descr.style.display = "flex";
 
-  const other_title = other_subblock.querySelector(".title ");
-  other_title.setAttribute("class", "title opened");
+  const attrs = other_subblock.getAttribute("class").replace("collapsed", "opened");
+  other_subblock.setAttribute("class", attrs)
+
 }
 function otherBlockCollapse(block, other_subblock_name){
   const main_parent = block.closest(".compblock")
   const other_subblock = main_parent.querySelector(".compblock-sub."+other_subblock_name);
   const other_subblock_descr = other_subblock.querySelector(".compblock-sub__descr")
-  other_subblock_descr.style.display = "none";
 
-  const other_title = other_subblock.querySelector(".title ");
-  other_title.setAttribute("class", "title collapsed");
+  const attrs = other_subblock.getAttribute("class").replace("opened", "collapsed");
+  other_subblock.setAttribute("class", attrs)
 }
-function collapseBlock(parent_name, block_name, title){
-  const  block = title.closest(parent_name)
-  const colapsedBlock = block.querySelector(block_name);
+function collapseBlock(block ){
+  const colapsedBlock = block.querySelector(".compblock-sub__descr");
+  var attrs = block.getAttribute("class").replace("opened", "collapsed");
 
-  colapsedBlock.style.display="none";
-  title.setAttribute("class", "title collapsed");
 
   if(block.getAttribute("class").includes("activity")){
     otherBlockOpen(block, "management");
   }else if (block.getAttribute("class").includes("management")) {
     otherBlockOpen(block, "activity");
   }
+  //alert("attrs = "+ attrs);
+  block.setAttribute("class", attrs)
 };
-function showBlock(parent_name, block_name, title){
-  const  block = title.closest(parent_name)
-  const colapsedBlock = block.querySelector(block_name);
-  colapsedBlock.style.display="flex";
-  title.setAttribute("class", "title opened");
+function showBlock(block){
+  const colapsedBlock = block.querySelector(".compblock-sub__descr");
+  var attrs = block.getAttribute("class").replace("collapsed", "opened");
 
   if(block.getAttribute("class").includes("activity")){
     otherBlockCollapse(block, "management");
   }else if (block.getAttribute("class").includes("management")) {
     otherBlockCollapse(block, "activity");
   }
+  //alert("attrs = "+ attrs);
+  block.setAttribute("class", attrs)
 };
+
 const title = document.querySelectorAll(".title");
 
 if(title){
   title.forEach(item => {
     item.addEventListener('click', event => {
 
-      if(item.getAttribute("class").includes("opened")){
-        collapseBlock(".compblock-sub", ".compblock-sub__descr", item);
-      }else if (item.getAttribute("class").includes("title collapsed")){
-        showBlock(".compblock-sub", ".compblock-sub__descr", item);
+      const  block = item.closest(".compblock-sub")
+      if(block.getAttribute("class").includes("opened")){
+        collapseBlock(block);
+      }else if (block.getAttribute("class").includes("collapsed")){
+        showBlock(block);
       }
     });
   });

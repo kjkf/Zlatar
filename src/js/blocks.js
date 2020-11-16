@@ -8,14 +8,14 @@
     var paddings_h = 0;
     var margins_h = 0;
     if (elem){
-      paddings_h = getPaddingsHeight(elem);
-      margins_h = getMarginsHeight(elem);
+      if (padding) paddings_h = getPaddingsHeight(elem);
+      if (margin) margins_h = getMarginsHeight(elem);
       const sum = elem.clientHeight + paddings_h + margins_h;
 
-      console.log("elem.clientHeight = "+ elem.clientHeight);
-      console.log("elem.paddings_h = " + paddings_h);
-      console.log("elem.margins_h = " + margins_h);
-      console.log("element_height = "+ sum);
+      // console.log("elem.clientHeight = "+ elem.clientHeight);
+      // console.log("elem.paddings_h = " + paddings_h);
+      // console.log("elem.margins_h = " + margins_h);
+      // console.log("element_height = "+ sum);
       return sum;
     }else return 0;
   }
@@ -40,17 +40,23 @@
     return margins_h;
   }
   function getParagraphsHeight(){
-    var content__center = document.querySelector(".content__center");
-    var paragraphs = content__center.getElementsByTagName("p");
+    const paragraphs_ci = document.querySelectorAll(".content-item__in>p");
+    const paragraphs_cc = document.querySelectorAll(".content__center>p");
+
     var paragraphs_h = 0;
-    if (paragraphs){
-      for (var i=0; i<paragraphs.length; i++){
-        const p_mar_t = parseInt(getStyle(paragraphs[i], 'margin-top'));
-        const p_mar_b = parseInt(getStyle(paragraphs[i], 'margin-bottom'));
-        paragraphs_h += paragraphs[i].clientHeight + (isNaN(p_mar_t) ? 0 : p_mar_t) +
-                        (isNaN(p_mar_b) ? 0 : p_mar_b);
+    var paragraphs_ci_h = 0;
+    var paragraphs_cc_h = 0;
+    if (paragraphs_ci && paragraphs_ci.length>0){
+      console.log("paragraphs_ci inside");
+      for (var i=0; i<paragraphs_ci.length; i++){
+        paragraphs_ci_h += getElemHeight(paragraphs_ci[i], false, true)
+      }
+    }else if (paragraphs_cc && paragraphs_cc.length>0){
+      for (var i=0; i<paragraphs_cc.length; i++){
+        paragraphs_cc_h += getElemHeight(paragraphs_cc[i], false, true)
       }
     }
+    paragraphs_h = paragraphs_ci_h + paragraphs_cc_h;
     return paragraphs_h;
   }
 
@@ -111,44 +117,52 @@
     const content__footer = document.querySelector(".content__footer");
     console.log("~~~content__footer_h~~~")
     var content__footer_h = getElemHeight(content__footer, false, true);
+    content__footer_h = content__footer_h>30 ? 30 : content__footer_h;
     //........................................................................//
-    const content__breadcrumbs = document.querySelector(".content__breadcrumbs");
-    var content__breadcrumbs_h = getElemHeight(content__breadcrumbs, false, true);
+    const breadcrumbs = document.querySelector(".breadcrumbs");
+    var breadcrumbs_h = getElemHeight(breadcrumbs, false, true);
     //........................................................................//
     var sum = content__header_h +
               content__footer_h +
-              content__breadcrumbs_h +
+              //breadcrumbs_h +
               content__center_margins;
      console.log("content__header_h = "+ content__header_h + '\n' +
                   "; content__footer_h = " + content__footer_h + '\n' +
-                  "; content__breadcrumbs_h = " + content__breadcrumbs_h + '\n' +
+                  "; breadcrumbs_h = " + breadcrumbs_h + '\n' +
                  "; content__center_margins = " + content__center_margins);
      console.log("sum = " + sum);
 
     var content__center_h = content_in_h - sum;
     content__center.style.height = content__center_h + "px";
     console.log("content__center_h = "+content__center_h);
+    //content__center.style.backgroundColor = "blue";
     //console.log("-- -- -- -- --");
     return content__center_h;
   }
 
   function setHeight_Content_Wrap(content__center_h){
     //вычисление высоты .content-wrap
-    console.log(" --------------------------------- content wrap 3 ---------------------------------");
+    console.log(" ----------------- content wrap 3 -----------------");
     var content_wrap = document.querySelector(".content-wrap");
     const content_wrap_margins = getMarginsHeight(content_wrap);
-    console.log("~~~~ paragraphs_h ~~~~~");
     const paragraphs_h = getParagraphsHeight();
 
     const pagination = document.querySelector('.pagination');
     let pagination_h = getElemHeight(pagination, false, false);
+
+
+    const breadcrumbs = document.querySelector(".breadcrumbs");
+    var breadcrumbs_h = getElemHeight(breadcrumbs, false, true);
+
     console.log("paragraphs_h = " + paragraphs_h + '\n' +
                 "pagination_h = " + pagination_h + '\n' +
-                "content_wrap_margins = " + content_wrap_margins);
-    const sum =  paragraphs_h + pagination_h + content_wrap_margins;
+                "content_wrap_margins = " + content_wrap_margins + '\n' +
+                "breadcrumbs_h = "+ breadcrumbs_h);
+
+    const sum =  paragraphs_h + pagination_h + content_wrap_margins + breadcrumbs_h;
     const content_wrap_h = content__center_h  - sum;
-    console.log("content_wrap_h = " + content_wrap_h);
-    content_wrap.style.backgroundColor = "grey";
+    // console.log("content_wrap_h = " + content_wrap_h);
+    // content_wrap.style.backgroundColor = "grey";
     content_wrap.style.height = content_wrap_h + "px";
   }
 
