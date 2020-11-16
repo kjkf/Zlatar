@@ -1,10 +1,16 @@
 .content-depart
-  .compblock-wrap
-    display: flex
-    flex-direction: row
-    flex-wrap: wrap
-    width: 100%
-
+  padding-left: 0
+  .content-wrap
+    grid-column-gap: 15px!important
+    grid-template-columns: 31% 31% 31%!important
+    align-items: flex-start!important
+    grid-template-rows: none!important
+    +laptop-album-down
+      grid-template-columns: 32% 32% 32%!important
+      grid-column-gap: 5px!important
+    +laptop-down
+      grid-template-columns: none!important
+      grid-template-rows: repeat(3, 1fr)!important
 
   .compblock, .compblock-sub
     display: flex
@@ -15,16 +21,26 @@
     width: 100%
 
   .compblock
-    width: 33%
+    width: 100%
     border-radius: 0px 20px 0px 20px
-    //width: 100%
+    +laptop-down
+      width: 80%
+      justify-self: center
+    &:nth-child(2), &:last-child
+      +laptop-down
+        display: none
 
+    .comblock-logo
+      width: 100%
+      justify-content: center
+      img
+        width: 100%
+        height: auto
     .title
       display: inline-block
       color: white
       padding: 10px 10px 10px 10px
       position: relative
-      //background-color: #c4c4c4
       width: content
       cursor: pointer
     .opened
@@ -58,13 +74,14 @@
     background-color: $col_acsent
     border-radius: 0 20px 0 0
     .compblock-sub__descr
-      //padding: 10px
       display: flex
       flex-direction: column
       justify-content: center
       align-items: center
       width: 100%
       list-style: none
+      font-size: 18px
+      line-height: 22px
       p
         padding: 10px
         display: inline-block
@@ -93,6 +110,8 @@
           transform: rotate(-45deg)
           bottom: 5px
           left: 14px
+        +laptop-album-down
+          margin-bottom: 5px
 
   .compblock-sub.management
     background-color: $col_acsent
@@ -106,9 +125,11 @@
       width: 100%
       padding: 10px
       border-radius: 0px 0px 0px 20px
+      font-size: 18px
+      line-height: 22px
       img
-        width: 200px
-        height: 233px
+        width: 100%
+        height: auto
         background-color: E5E5E5
         margin-right: 10px
         border-radius: 20px
@@ -118,4 +139,3 @@
       justify-content: flex-start
       align-items: flex-start
       height: auto
-    //.title.m-collapsed

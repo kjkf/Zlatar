@@ -75,7 +75,7 @@
                     <a href="#" class="breadcrumbs">О нас / Группа компаний</a>
                     <div class="content-wrap">
 
-                      <div class="compblock-wrap">
+                      <!-- <div class="compblock-wrap"> -->
                         <div class="compblock">
                           <div class="comblock-logo">
                             <img src="../public/images/content/ZR_Logo_DevComp.svg" alt="Логотип производственной компании ЗЛАТАРЬ">
@@ -139,7 +139,7 @@
                             </div>
                           </div>
                         </div>
-                      
+
                         <div class="compblock">
                           <div class="comblock-logo">
                             <img src="../public/images/content/ZR_Logo_DevComp.svg" alt="Логотип производственной компании ЗЛАТАРЬ">
@@ -171,7 +171,7 @@
                             </div>
                           </div>
                         </div>
-                      </div>
+                      <!-- </div> -->
 
                     </div>
                 </div>
@@ -191,18 +191,48 @@
     </div>
 </div>
 <script type="text/javascript">
-console.log("paraparapam");
+function otherBlockOpen(block, other_subblock_name){
+  const main_parent = block.closest(".compblock")
+  const other_subblock = main_parent.querySelector(".compblock-sub."+other_subblock_name);
+  const other_subblock_descr = other_subblock.querySelector(".compblock-sub__descr")
+  other_subblock_descr.style.display = "flex";
+
+  const other_title = other_subblock.querySelector(".title ");
+  other_title.setAttribute("class", "title opened");
+}
+function otherBlockCollapse(block, other_subblock_name){
+  const main_parent = block.closest(".compblock")
+  const other_subblock = main_parent.querySelector(".compblock-sub."+other_subblock_name);
+  const other_subblock_descr = other_subblock.querySelector(".compblock-sub__descr")
+  other_subblock_descr.style.display = "none";
+
+  const other_title = other_subblock.querySelector(".title ");
+  other_title.setAttribute("class", "title collapsed");
+}
 function collapseBlock(parent_name, block_name, title){
   const  block = title.closest(parent_name)
   const colapsedBlock = block.querySelector(block_name);
+
   colapsedBlock.style.display="none";
-  title.setAttribute("class", "title activity-collapsed");
+  title.setAttribute("class", "title collapsed");
+
+  if(block.getAttribute("class").includes("activity")){
+    otherBlockOpen(block, "management");
+  }else if (block.getAttribute("class").includes("management")) {
+    otherBlockOpen(block, "activity");
+  }
 };
 function showBlock(parent_name, block_name, title){
   const  block = title.closest(parent_name)
   const colapsedBlock = block.querySelector(block_name);
   colapsedBlock.style.display="flex";
-  title.setAttribute("class", "title activity-opened");
+  title.setAttribute("class", "title opened");
+
+  if(block.getAttribute("class").includes("activity")){
+    otherBlockCollapse(block, "management");
+  }else if (block.getAttribute("class").includes("management")) {
+    otherBlockCollapse(block, "activity");
+  }
 };
 const title = document.querySelectorAll(".title");
 
@@ -210,9 +240,9 @@ if(title){
   title.forEach(item => {
     item.addEventListener('click', event => {
 
-      if(item.getAttribute("class").includes("activity-opened")){
+      if(item.getAttribute("class").includes("opened")){
         collapseBlock(".compblock-sub", ".compblock-sub__descr", item);
-      }else if (item.getAttribute("class").includes("title activity-collapsed")){
+      }else if (item.getAttribute("class").includes("title collapsed")){
         showBlock(".compblock-sub", ".compblock-sub__descr", item);
       }
     });
