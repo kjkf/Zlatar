@@ -192,18 +192,18 @@
 </div>
 <script type="text/javascript">
 function otherBlockOpen(block, other_subblock_name){
-  const main_parent = block.closest(".compblock")
+  const main_parent = block.closest(".compblock";
   const other_subblock = main_parent.querySelector(".compblock-sub."+other_subblock_name);
-  const other_subblock_descr = other_subblock.querySelector(".compblock-sub__descr")
+  const other_subblock_descr = other_subblock.querySelector(".compblock-sub__descr");
 
   const attrs = other_subblock.getAttribute("class").replace("collapsed", "opened");
   other_subblock.setAttribute("class", attrs)
 
 }
 function otherBlockCollapse(block, other_subblock_name){
-  const main_parent = block.closest(".compblock")
+  const main_parent = block.closest(".compblock");
   const other_subblock = main_parent.querySelector(".compblock-sub."+other_subblock_name);
-  const other_subblock_descr = other_subblock.querySelector(".compblock-sub__descr")
+  const other_subblock_descr = other_subblock.querySelector(".compblock-sub__descr");
 
   const attrs = other_subblock.getAttribute("class").replace("opened", "collapsed");
   other_subblock.setAttribute("class", attrs)
@@ -240,7 +240,7 @@ if(title){
   title.forEach(item => {
     item.addEventListener('click', event => {
 
-      const  block = item.closest(".compblock-sub")
+      const  block = item.closest(".compblock-sub");
       if(block.getAttribute("class").includes("opened")){
         collapseBlock(block);
       }else if (block.getAttribute("class").includes("collapsed")){

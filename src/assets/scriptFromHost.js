@@ -11299,12 +11299,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         var paddings_h = 0;
         var margins_h = 0;
         if (elem){
-            paddings_h = getPaddingsHeight(elem);
-            margins_h = getMarginsHeight(elem);
+            if (padding) paddings_h = getPaddingsHeight(elem);
+            if (margin) margins_h = getMarginsHeight(elem);
             const sum = elem.clientHeight + paddings_h + margins_h;
-            console.log("elem.clientHeight = "+ elem.clientHeight);
-            console.log("elem.offsetHeight = "+ elem.offsetHeight);
-            console.log("element_height = "+ sum);
+
+            // console.log("elem.clientHeight = "+ elem.clientHeight);
+            // console.log("elem.paddings_h = " + paddings_h);
+            // console.log("elem.margins_h = " + margins_h);
+            // console.log("element_height = "+ sum);
             return sum;
         }else return 0;
     }
@@ -11322,21 +11324,30 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         if (elem){
             const margin_t = parseInt(getStyle(elem, 'margin-top'));
             const margin_b = parseInt(getStyle(elem, 'margin-bottom'))
+            console.log("margin_t = "+ margin_t);
+            console.log("margin_b = "+ margin_b);
             margins_h = (isNaN(margin_t)? 0 : margin_t) + (isNaN(margin_b)? 0 : margin_b);
         }
         return margins_h;
     }
     function getParagraphsHeight(){
-        var paragraphs = document.getElementsByTagName("p");
+        const paragraphs_ci = document.querySelectorAll(".content-item__in>p");
+        const paragraphs_cc = document.querySelectorAll(".content__center>p");
+
         var paragraphs_h = 0;
-        if (paragraphs){
-            for (var i=0; i<paragraphs.length; i++){
-                const p_mar_t = parseInt(getStyle(paragraphs[i], 'margin-top'));
-                const p_mar_b = parseInt(getStyle(paragraphs[i], 'margin-bottom'));
-                paragraphs_h += paragraphs[i].clientHeight + (isNaN(p_mar_t) ? 0 : p_mar_t) +
-                    (isNaN(p_mar_b) ? 0 : p_mar_b);
+        var paragraphs_ci_h = 0;
+        var paragraphs_cc_h = 0;
+        if (paragraphs_ci && paragraphs_ci.length>0){
+            console.log("paragraphs_ci inside");
+            for (var i=0; i<paragraphs_ci.length; i++){
+                paragraphs_ci_h += getElemHeight(paragraphs_ci[i], false, true)
+            }
+        }else if (paragraphs_cc && paragraphs_cc.length>0){
+            for (var i=0; i<paragraphs_cc.length; i++){
+                paragraphs_cc_h += getElemHeight(paragraphs_cc[i], false, true)
             }
         }
+        paragraphs_h = paragraphs_ci_h + paragraphs_cc_h;
         return paragraphs_h;
     }
 
@@ -11388,37 +11399,41 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     function setHeight_Content__Center(content__center, content_in_h){
         //console.log("--вычислением высоты .content__center--");
-        console.log("content center 2");
+        console.log("----------------- content center 2 ----------------");
         const content__center_margins = getMarginsHeight(content__center);
         //........................................................................//
         const content__header = document.querySelector(".content__header");
         var content__header_h = getElemHeight(content__header, false, true);
         //........................................................................//
         const content__footer = document.querySelector(".content__footer");
+        console.log("~~~content__footer_h~~~")
         var content__footer_h = getElemHeight(content__footer, false, true);
+        content__footer_h = content__footer_h>30 ? 30 : content__footer_h;
         //........................................................................//
-        const content__breadcrumbs = document.querySelector(".content__breadcrumbs");
-        var content__breadcrumbs_h = getElemHeight(content__breadcrumbs, false, true);
+        const breadcrumbs = document.querySelector(".breadcrumbs");
+        var breadcrumbs_h = getElemHeight(breadcrumbs, false, true);
         //........................................................................//
         var sum = content__header_h +
             content__footer_h +
-            content__breadcrumbs_h +
+            //breadcrumbs_h +
             content__center_margins;
-        console.log("content__header_h = "+ content__header_h  + "; content__footer_h = " +
-            content__footer_h + "; content__breadcrumbs_h = " + content__breadcrumbs_h +
+        console.log("content__header_h = "+ content__header_h + '\n' +
+            "; content__footer_h = " + content__footer_h + '\n' +
+            "; breadcrumbs_h = " + breadcrumbs_h + '\n' +
             "; content__center_margins = " + content__center_margins);
         console.log("sum = " + sum);
 
         var content__center_h = content_in_h - sum;
         content__center.style.height = content__center_h + "px";
         console.log("content__center_h = "+content__center_h);
+        //content__center.style.backgroundColor = "blue";
         //console.log("-- -- -- -- --");
         return content__center_h;
     }
 
     function setHeight_Content_Wrap(content__center_h){
         //вычисление высоты .content-wrap
-        console.log("content wrap 3");
+        console.log(" ----------------- content wrap 3 -----------------");
         var content_wrap = document.querySelector(".content-wrap");
         const content_wrap_margins = getMarginsHeight(content_wrap);
         const paragraphs_h = getParagraphsHeight();
@@ -11426,10 +11441,19 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         const pagination = document.querySelector('.pagination');
         let pagination_h = getElemHeight(pagination, false, false);
 
-        const sum =  paragraphs_h + pagination_h + content_wrap_margins;
+
+        const breadcrumbs = document.querySelector(".breadcrumbs");
+        var breadcrumbs_h = getElemHeight(breadcrumbs, false, true);
+
+        console.log("paragraphs_h = " + paragraphs_h + '\n' +
+            "pagination_h = " + pagination_h + '\n' +
+            "content_wrap_margins = " + content_wrap_margins + '\n' +
+            "breadcrumbs_h = "+ breadcrumbs_h);
+
+        const sum =  paragraphs_h + pagination_h + content_wrap_margins + breadcrumbs_h;
         const content_wrap_h = content__center_h  - sum;
-        // var content_wrap_h = content__center_h - paragraphs_h - pagination_h - parseInt(content_wrap_mt) - parseInt(content_wrap_mb);
-        // //content_wrap.style.backgroundColor = "grey";
+        // console.log("content_wrap_h = " + content_wrap_h);
+        // content_wrap.style.backgroundColor = "grey";
         content_wrap.style.height = content_wrap_h + "px";
     }
 
@@ -11515,6 +11539,70 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     setTimeout(calculateBlocksHeight, 500);
     //calculateBlocksHeight();
     window.addEventListener("resize", calculateBlocksHeight);
+})();
+
+(function () {
+    function otherBlockOpen(block, other_subblock_name){
+        const main_parent = block.closest(".compblock");
+        const other_subblock = main_parent.querySelector(".compblock-sub."+other_subblock_name);
+        const other_subblock_descr = other_subblock.querySelector(".compblock-sub__descr");
+
+        const attrs = other_subblock.getAttribute("class").replace("collapsed", "opened");
+        other_subblock.setAttribute("class", attrs)
+
+    }
+    function otherBlockCollapse(block, other_subblock_name){
+        const main_parent = block.closest(".compblock");
+        const other_subblock = main_parent.querySelector(".compblock-sub."+other_subblock_name);
+        const other_subblock_descr = other_subblock.querySelector(".compblock-sub__descr");
+
+        const attrs = other_subblock.getAttribute("class").replace("opened", "collapsed");
+        other_subblock.setAttribute("class", attrs)
+    }
+    function collapseBlock(block ){
+        const colapsedBlock = block.querySelector(".compblock-sub__descr");
+        var attrs = block.getAttribute("class").replace("opened", "collapsed");
+
+
+        if(block.getAttribute("class").includes("activity")){
+            otherBlockOpen(block, "management");
+        }else if (block.getAttribute("class").includes("management")) {
+            otherBlockOpen(block, "activity");
+        }
+        //alert("attrs = "+ attrs);
+        block.setAttribute("class", attrs)
+    };
+    function showBlock(block){
+        const colapsedBlock = block.querySelector(".compblock-sub__descr");
+        var attrs = block.getAttribute("class").replace("collapsed", "opened");
+
+        if(block.getAttribute("class").includes("activity")){
+            otherBlockCollapse(block, "management");
+        }else if (block.getAttribute("class").includes("management")) {
+            otherBlockCollapse(block, "activity");
+        }
+        //alert("attrs = "+ attrs);
+        block.setAttribute("class", attrs)
+    };
+
+    setTimeout(() => {
+        const title = document.querySelectorAll(".compblock .title");
+
+        if(title){
+            title.forEach(item => {
+                item.addEventListener('click', event => {
+
+                    const  block = item.closest(".compblock-sub");
+                    if(block.getAttribute("class").includes("opened")){
+                        collapseBlock(block);
+                    }else if (block.getAttribute("class").includes("collapsed")){
+                        showBlock(block);
+                    }
+                });
+            });
+        }
+    }, 500);
+
 })();
 
 (function () {
@@ -11687,10 +11775,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     function validatePhone(email) {
         var re = /^(\+)?(\(\d{2,3}\) ?\d|\d)(([ \-]?\d)|( ?\(\d{2,3}\) ?)){5,12}\d$/;
+        console.log(re.test(String(email).toLowerCase()));
         return re.test(String(email).toLowerCase());
     }
 
     function isValidField(field) {
+        console.log(field);
         var isValid = true;
         if (!field || !field.value) {
             isValid = false;
@@ -11705,7 +11795,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         } else {
             field.classList.remove('field-err');
         }
-
+        console.log('isValid = ', isValid);
         return isValid;
 
     }
@@ -11726,13 +11816,12 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
     function prepareModals() {
         //console.log("== prepareModals ==");
-        const servicesInfo = document.querySelector('.content-servicesi');
         var body = document.body;
         var show_modal = document.querySelector('.show-modal');
         var modal = document.querySelector('.modal.modal-order');
         var form = modal.querySelector('form');
         var inputs = form.querySelectorAll('.field');
-        var hide_modal = document.querySelector('.hide-modal'); //при клике на кнопку "show-modal", показать модальное окно
+        var hide_modal = modal.querySelector('.hide-modal'); //при клике на кнопку "show-modal", показать модальное окно
 
         if (show_modal) {
             show_modal.addEventListener('click', function (e) {
@@ -11861,7 +11950,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                         input.onkeydown = function(e) {
                             var key = e.key;
                             return (key >= '0' && key <= '9') || key == '+' || key == '(' || key == ')' || key == '-' ||
-                                key == 'ArrowLeft' || key == 'ArrowRight' || key == 'Delete' || key == 'Backspace';
+                                key == 'ArrowLeft' || key == 'ArrowRight' || key == 'Delete' || key == 'Backspace' || key == ' ';
                         }
 
                     }
@@ -11883,7 +11972,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
             var modal = document.querySelector('.modal.modal-calculate');
             var form = modal.querySelector('form');
             var inputs = form.querySelectorAll('.field.validate');
-            var hide_modal = document.querySelector('.hide-modal'); //при клике на кнопку "show-modal", показать модальное окно
+            var hide_modal = modal.querySelector('.hide-modal'); //при клике на кнопку "show-modal", показать модальное окно
 
             if (modalBtn) {
                 modalBtn.addEventListener('click', function (e) {
@@ -11896,10 +11985,11 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
             if (hide_modal) {
                 hide_modal.addEventListener('click', function (e) {
+                    console.log('hide_modal CLICK');
                     e.stopPropagation();
-                    if (modal.classList.contains('modal-catalog-phone')) return false;
-                    var isValide = isFormValid(inputs);
 
+                    var isValide = isFormValid(inputs);
+                    console.log('isValide = ' + isValide);
                     if (isValide) {
                         form.classList.remove('form-err');
                         var submitInput = modal.querySelector('input.submit-btn');
@@ -11907,7 +11997,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                         modal.classList.remove('active');
                         body.classList.remove("modal-bg");
                     } else {
-                        form.classList.add('form-err');
+                        modal.classList.remove('active');
+                        body.classList.remove("modal-bg");
                     }
                 });
             } //скрыть модальное окно при клике вне блока модального окна
@@ -11935,7 +12026,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
             document.addEventListener('click', function (e) {
                 if (!modal) return;
-                if (modal.classList.contains('modal-catalog-phone')) return false;
+
                 var target = e.target;
                 var its_modal = target == modal || modal.contains(target);
                 var its_btnSend = target == hide_modal;
@@ -11951,7 +12042,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
                         modal.classList.remove('active');
                         body.classList.remove("modal-bg");
                     } else {
-                        form.classList.add('form-err');
+                        modal.classList.remove('active');
+                        body.classList.remove("modal-bg");
                     }
                 }
             });
