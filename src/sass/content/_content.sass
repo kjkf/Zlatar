@@ -124,13 +124,15 @@
 
 .content.content-catalog
   .content-wrap
-    //grid-template-columns: repeat(3, minmax(auto, 420px))
-    //grid-template-rows: repeat(2, minmax(auto, 300px))
-    grid-template-columns: repeat(3, 1fr)
-    grid-template-rows: repeat(2, 1fr)
+    grid-template-columns: repeat(3, minmax(auto, 420px))
+    grid-template-rows: repeat(2, minmax(auto, 300px))
+    //grid-template-columns: repeat(3, 1fr)
+    //grid-template-rows: repeat(2, 1fr)
     justify-content: center
     +tablet-down
       grid-template-rows: repeat(1, minmax(100px, auto))
+    +media-h900
+      grid-template-rows: repeat(2, minmax(auto, 50%))
 
 .content.content-portfolio
   .content-wrap
