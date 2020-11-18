@@ -1,12 +1,11 @@
 .content-depart
   padding-left: 0
   .content-wrap
-    grid-column-gap: 15px!important
-    grid-template-columns: 31% 31% 31%!important
-    align-items: flex-start!important
-    grid-template-rows: none!important
+    //grid-column-gap: 15px!important
+    grid-template-columns: repeat(3, 1fr)
+    align-items: flex-start
+    //grid-template-rows: none!important
     +laptop-album-down
-      grid-template-columns: 32% 32% 32%!important
       grid-column-gap: 5px!important
     +laptop-down
       display: flex!important
@@ -74,6 +73,8 @@
           border-left: 8px solid transparent
           bottom: 15px
           right: -20px
+          +laptop-down
+            right: -8%
       .compblock-sub__descr
         display: flex
     .management.opened
@@ -92,6 +93,8 @@
           border-left: 8px solid transparent
           bottom: 8px
           right: -20px
+          +laptop-down
+            right: -8%
       .compblock-sub__descr
         display: none
 
@@ -133,8 +136,13 @@
         margin-bottom: 10px
         position: relative
         list-style: none
+        word-break: break-word
         +tablet-down
           padding-left: 35px
+        +laptop-album-down
+          margin-bottom: 5px
+        +height_820
+          margin-bottom: 5px
         &::before
           position: absolute
           content: ""
@@ -157,11 +165,6 @@
             border-right: 5px solid white
             border-bottom: 5px solid white
             border-left: 5px solid white
-        +laptop-album-down
-          margin-bottom: 5px
-        +height_820
-          margin-bottom: 5px
-
   .compblock-sub.management
     width: 100%
     background-color: $col_acsent
@@ -188,9 +191,10 @@
         //width: 45%
         width: 100%
         height: 200px
-        background-color: E5E5E5
+        background-color: #E5E5E5
         margin-right: 10px
         border-radius: 20px
+        object-fit: cover
         +laptop-down
           height: auto
         +phone-down
