@@ -1,5 +1,8 @@
 .content-depart
   padding-left: 0
+  .content__center
+    +phone-down
+      height: calc(100% - 120px)!important
   .content-wrap
     //grid-column-gap: 15px!important
     grid-template-columns: repeat(3, 1fr)
@@ -16,7 +19,9 @@
       // grid-template-columns: none!important
       // grid-template-rows: 45% 20% 20%!important
       // //repeat(3, 1fr)!important
-      overflow-y: scroll
+      overflow-y: auto
+    +phone-down
+      max-height: 99%
 
   .compblock, .compblock-sub
     display: flex
