@@ -1,4 +1,5 @@
 .content-about
+  background-color: yellow
   +tablet-down
     justify-content: center
     align-items: center
@@ -33,8 +34,8 @@
       left: 48%
     +tablet-down
       width: 45%
-      left: auto!important
-      //width: $w_content_in_about_tablet
+      left: auto
+
     +tablet-device-height
       width: 41%
       padding: 20px 15px
@@ -45,12 +46,10 @@
     //   padding: 10px
     +max-height
       width: 50%
-      left: 41%
-      //50%
+      max-width: 50%
+      left: 41.7%
       padding: 10px
-      //margin-top: 200px
       min-height: 57%
-      //padding: 30px 20px
     +tablet-down
       min-width: 95%
       margin-top: 55px
