@@ -132,12 +132,11 @@
     //grid-template-columns: repeat(3, 1fr)
     //grid-template-rows: repeat(2, 1fr)
     justify-content: center
-    +tablet-down
-      grid-template-rows: repeat(1, minmax(100px, auto))
     +media-h1215
       grid-template-rows: repeat(2, minmax(auto, 50%))
-    //+media-h900
-      grid-template-rows: repeat(2, minmax(auto, 50%))
+    +tablet-down
+      grid-template-rows: repeat(1, minmax(100px, auto))
+      grid-template-columns: repeat(2, minmax(auto, 420px))
 
 .content.content-portfolio
   .content-wrap
