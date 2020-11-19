@@ -11518,7 +11518,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     function calculateBlocksHeight(){
         const windowHeight = window.innerHeight;
         const windowWidth = window.innerWidth;
-
+        console.log("windowWidth = " + windowWidth, "windowHeight = " + windowHeight);
         if (windowHeight>568 || windowWidth>568){
             //alert("script started")
 
