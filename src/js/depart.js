@@ -90,7 +90,7 @@
     }
   }
   const title = document.querySelectorAll(".title");
-  const content_depart = document.querySelector("content-depart");
+  const content_depart = document.querySelector(".content-depart");
   const windowWidth = window.innerWidth;
   if(content_depart && title){
     title.forEach(item => {
