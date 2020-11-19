@@ -2,10 +2,14 @@
 .content-item
   background: $col_acsent
   border-radius: $rad_content_item
+  border-top-left-radius: 0px
+  border-bottom-right-radius: 0px
   padding: $p_content_item
   height: 100%
   width: 100%
-
+  +tablet-down
+    border-top-left-radius: 20px
+    border-bottom-right-radius: 20px
   h3
     +laptop-album-down
       font-size: 18px
@@ -19,18 +23,24 @@
     flex-direction: column
     height: 100%
     border-radius: $rad_content_item
+    border-top-left-radius: 0px
+    border-bottom-right-radius: 0px
     overflow: hidden
     +tablet-down
       justify-content: center
   &__img
     overflow: hidden
     border-radius: $rad_content_item
+    border-top-left-radius: 0px
+    border-bottom-right-radius: 0px
     height: 100%
     width: 100%
 
     +laptop-album-down
       height: 140px
     +tablet-down
+      border-top-left-radius: 20px
+      border-bottom-right-radius: 20px
       height: 155px
     +tablet-down
       display: none
