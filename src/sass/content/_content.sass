@@ -27,6 +27,7 @@
     background: #ffffff
     border-radius: 10px
 
+
   &.m-collapsed
     margin-left: calc(#{$w_nav} + #{$p_container_laptop})
     align-self: center
@@ -80,6 +81,8 @@
       margin-bottom: 0px
     p
       text-align: justify
+    +phone-down
+      height: calc(100% - 95px)
 
   &__footer
     display: flex

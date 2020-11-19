@@ -1,13 +1,13 @@
 .content-depart
   padding-left: 0
+  +phone-down
+    padding: 0 5px
   .content__center
     +phone-down
       height: calc(100% - 120px)!important
   .content-wrap
-    //grid-column-gap: 15px!important
     grid-template-columns: repeat(3, 1fr)
     align-items: flex-start
-    //grid-template-rows: none!important
     +laptop-album-down
       grid-column-gap: 5px!important
     +laptop-down
@@ -15,10 +15,6 @@
       flex-direction: column!important
       justify-content: flex-start!important
       align-items: center!important
-      // width: 100%
-      // grid-template-columns: none!important
-      // grid-template-rows: 45% 20% 20%!important
-      // //repeat(3, 1fr)!important
       overflow-y: auto
     +phone-down
       max-height: 99%
@@ -78,8 +74,8 @@
           border-left: 8px solid transparent
           bottom: 15px
           right: -20px
-          +laptop-down
-            right: -8%
+          +laptop-album-down
+            right: -8px
       .compblock-sub__descr
         display: flex
     .management.opened
@@ -98,8 +94,8 @@
           border-left: 8px solid transparent
           bottom: 8px
           right: -20px
-          +laptop-down
-            right: -8%
+          +laptop-album-down
+            right: -8px
       .compblock-sub__descr
         display: none
 
@@ -121,8 +117,7 @@
         padding: 10px
         display: inline-block
         width: 100%
-        //height: 90px
-        //min-height: content
+
     .compblock-sub__list
       display: inline-block
       background-color: $bg_dark
@@ -130,8 +125,6 @@
       padding: 10px 0
       font-size: 18px
       line-height: 22px
-      //height: 215px
-      //min-height: 215px
       +tablet-down
         font-size: 14px
       +height_820
@@ -187,17 +180,13 @@
       border-radius: 0px 0px 0px 20px
       font-size: 18px
       line-height: 22px
-      // height: 250px
-      // min-height: 250px
       +laptop-down
         height: auto
         min-height: auto
       img
-        //width: 45%
         width: 100%
         height: 200px
         background-color: #E5E5E5
-        //margin-right: 10px
         border-radius: 20px
         object-fit: cover
         +laptop-down
