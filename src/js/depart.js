@@ -90,8 +90,9 @@
     }
   }
   const title = document.querySelectorAll(".title");
+  const content_depart = document.querySelector("content-depart");
   const windowWidth = window.innerWidth;
-  if(title){
+  if(content_depart && title){
     title.forEach(item => {
       item.addEventListener('click', event => {
         //if screen width is 1024px then only one comblock can be
