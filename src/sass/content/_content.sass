@@ -97,55 +97,81 @@
       margin: auto 0px 15px
       padding-right: 5px
 
-.content:not(.content-portfolio-maf):not(.content-contacts) .content-wrap
-  height: 100%
-  display: grid
-  grid-gap: 15px
-  justify-items: center
-  justify-content: space-between
 
-  +phone_min-down
-    height: auto
-    grid-template-columns: 1fr !important
-    grid-template-rows: auto !important
 
-.content:not(.content-catalog):not(.content-contacts):not(.content-portfolio):not(.content-depart):not(.content-nvf) .content-wrap
-  grid-template-columns: repeat(2, minmax(100px, 420px))
-  grid-template-rows: repeat(3, minmax(100px, auto))
 
-  +tablet-device-height
-    grid-template-rows: repeat(3, minmax(35px, auto))
+.content
+  &.content-services, &.content-maf, &.content-nvf
+    .content-wrap
+      grid-template-columns: repeat(2, minmax(100px, 420px))
+      grid-template-rows: repeat(3, minmax(100px, 233px))
+      +laptop-album-down
+        grid-template-columns: repeat(2, minmax(100px, 310px))
+        grid-template-rows: repeat(3, minmax(100px, 210px))
+      +laptop-down
+        grid-template-columns: repeat(2, minmax(100px, 225px))
+        grid-template-rows: repeat(3, minmax(100px, 115px))
+      +tablet-device-height
+        grid-template-rows: repeat(3, minmax(35px, auto))
 
+.content
+  &.content-products
+    .content-wrap
+      grid-template-columns: repeat(2, minmax(100px, 440px))
+      grid-template-rows: repeat(3, minmax(100px, 313px))
+      +laptop-album-down
+        grid-template-columns: repeat(2, minmax(100px, 450px))
+        grid-template-rows: repeat(3, minmax(100px, 285px))
+      +laptop-down
+        grid-template-columns: repeat(2, minmax(100px, 340px))
+        grid-template-rows: repeat(3, minmax(100px, 215px))
+      +tablet-device-height
+        grid-template-rows: repeat(3, minmax(100px, 215px))
+.content
+  &.content-catalog
+    .content-wrap
+      grid-template-columns: repeat(3, minmax(auto, 450px))
+      grid-template-rows: repeat(2, minmax(auto, 300px))
+      justify-content: center
+      +laptop-album-down
+        grid-template-columns: repeat(3, minmax(auto, 310px))
+        grid-template-rows: repeat(2, minmax(auto, 210px))
+      +laptop-down
+        grid-template-columns: repeat(3, minmax(auto, 225px))
+        grid-template-rows: repeat(2, minmax(auto, 155px))
+      +media-h950
+        grid-template-rows: repeat(2, minmax(auto, 50%))
+      +tablet-down
+        grid-template-rows: repeat(1, minmax(100px, auto))
+        grid-template-columns: repeat(2, minmax(auto, 420px))
+
+.content
+  &.content-portfolio
+    .content-wrap
+      grid-template-columns: repeat(2, minmax(100px, 440px))
+      grid-template-rows: repeat(1, minmax(100px, 313px))
+      +laptop-album-down
+        grid-template-columns: repeat(2, minmax(100px, 450px))
+        grid-template-rows: repeat(1, minmax(100px, 285px))
+      +laptop-down
+        grid-template-columns: repeat(2, minmax(100px, 340px))
+        grid-template-rows: repeat(1, minmax(100px, 215px))
+      +tablet-device-height
+        grid-template-rows: repeat(1, minmax(100px, 215px))
 
 .content:not(.content-contacts):not(.content-portfolio-maf)
   .content-wrap
+    height: 100%
+    display: grid
+    grid-gap: 15px
+    justify-items: center
+    justify-content: space-between
     +tablet-down
       height: auto!important
       padding: 0 13%
     +phone-down
       padding: 0 7%
-
-.content.content-catalog
-  .content-wrap
-    grid-template-columns: repeat(3, minmax(auto, 420px))
-    grid-template-rows: repeat(2, minmax(auto, 300px))
-    //grid-template-columns: repeat(3, 1fr)
-    //grid-template-rows: repeat(2, 1fr)
-    justify-content: center
-    +media-h1215
-      grid-template-rows: repeat(2, minmax(auto, 50%))
-    +tablet-down
-      grid-template-rows: repeat(1, minmax(100px, auto))
-      grid-template-columns: repeat(2, minmax(auto, 420px))
-
-.content.content-portfolio
-  .content-wrap
-    grid-template-columns: repeat(2, minmax(100px, 420px))
-    grid-template-rows: repeat(1, minmax(100px, 313px))
-    +tablet-device-height
-      grid-template-rows: repeat(1, minmax(100px, 215px))
-
-.content.content-nvf
-  .content-wrap
-    grid-template-columns: repeat(2, minmax(100px, 420px))
-    grid-template-rows: repeat(3, minmax(100px, 235px))
+    +phone_min-down
+      height: auto
+      grid-template-columns: 1fr !important
+      grid-template-rows: auto !important
