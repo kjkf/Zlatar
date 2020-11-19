@@ -208,6 +208,7 @@ input.field-err + span.error-text
 .select-wrapper
   position: relative
   display: flex
+  align-items: center
   width: 100%
   &::after
     content: ''
@@ -240,6 +241,10 @@ input.field-err + span.error-text
     padding: 15px 10px
     &:hover
       background-color: rgba(173, 216, 230, 0.3)
+    +tablet-down
+      font-size: 18px
+    +phone-down
+      font-size: 16px
 
 
 input[type=checkbox].field, input[type=radio]
