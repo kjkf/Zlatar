@@ -106,7 +106,7 @@
     grid-template-columns: 1fr !important
     grid-template-rows: auto !important
 
-.content:not(.content-catalog):not(.content-contacts):not(.content-portfolio):not(.content-depart) .content-wrap
+.content:not(.content-catalog):not(.content-contacts):not(.content-portfolio):not(.content-depart):not(.content-nvf) .content-wrap
   grid-template-columns: repeat(2, minmax(100px, 420px))
   grid-template-rows: repeat(3, minmax(100px, auto))
 
@@ -142,3 +142,8 @@
     grid-template-rows: repeat(1, minmax(100px, 313px))
     +tablet-device-height
       grid-template-rows: repeat(1, minmax(100px, 215px))
+
+.content.content-nvf
+  .content-wrap
+    grid-template-columns: repeat(2, minmax(100px, 420px))
+    grid-template-rows: repeat(3, minmax(100px, 235px))
