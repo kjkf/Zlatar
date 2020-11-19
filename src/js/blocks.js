@@ -228,7 +228,7 @@
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
 
-    if (windowHeight>568 || windowWidth>568){
+    if (windowHeight>568 && windowWidth>568){
       //alert("script started")
 
       var content_in = document.querySelector(".content-in");
