@@ -16,6 +16,8 @@
       +phone-height-down
         width: $w_contacts_ic_phone
         height: $w_contacts_ic_phone
+      +phone-down
+        top: -2px
 
   &.content.m-collapsed
     +laptop-album-down
@@ -53,6 +55,7 @@
   +phone-down
     order: -1
     grid-row: span 2
+    font-size: 12px
   +phone_min-down
     grid-row: unset
   +media-w568_h569
@@ -110,13 +113,14 @@
         margin-bottom: 5px
         flex-wrap: wrap
         padding-left: calc(5px + #{$w_contacts_ic_phone})
-
+      +phone-down
+        margin-bottom: 8px
+        padding-left: calc(8px + #{$w_contacts_ic_phone})
       +phone_min-down
         flex-wrap: nowrap
 
       +media-w568_h569
         flex-wrap: nowrap
-
 
       &:last-child
         margin-bottom: 0px
@@ -126,6 +130,7 @@
         margin-left: 15px
         +laptop-down
           margin-left: 0px
+
 
 .map-wrap
   grid-row: span 2
@@ -173,5 +178,3 @@
   flex-direction: column
   .phone
     margin-bottom: 5px
-
-
