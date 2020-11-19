@@ -11,7 +11,6 @@
       if (padding) paddings_h = getPaddingsHeight(elem);
       if (margin) margins_h = getMarginsHeight(elem);
       const sum = elem.clientHeight + paddings_h + margins_h;
-
       // console.log("elem.clientHeight = "+ elem.clientHeight);
       // console.log("elem.paddings_h = " + paddings_h);
       // console.log("elem.margins_h = " + margins_h);
@@ -33,8 +32,8 @@
     if (elem){
       const margin_t = parseInt(getStyle(elem, 'margin-top'));
       const margin_b = parseInt(getStyle(elem, 'margin-bottom'))
-      console.log("margin_t = "+ margin_t);
-      console.log("margin_b = "+ margin_b);
+      // console.log("margin_t = "+ margin_t);
+      // console.log("margin_b = "+ margin_b);
       margins_h = (isNaN(margin_t)? 0 : margin_t) + (isNaN(margin_b)? 0 : margin_b);
     }
     return margins_h;
@@ -63,7 +62,7 @@
   function setHeight_Content_In(content_in){
     //console.log("--вычислением высоты .content-in--");
     //вычисление высоты .content-in
-    console.log("content in 1");
+    // console.log("content in 1");
     const windowHeight = window.innerHeight;
     const windowWidth = window.innerWidth;
     //........................................................................//
@@ -79,7 +78,7 @@
     //console.log("page_header_h = "+ page_header_h)
     //........................................................................//
     const page_footer = document.querySelector(".footer");
-    console.log("page footer ---------");
+    // console.log("page footer ---------");
     var page_footer_h = page_footer!=null ? getElemHeight(page_footer, false, true) : 0;
     //console.log("page_footer = "+page_footer.clientHeight);
     //........................................................................//
@@ -94,28 +93,28 @@
               leftSide_h + //высота хедера в мобильной версии
               page_header_h +
               page_footer_h;
-    console.log("container_h = " + container_h + "; content_h = " + content_h +
-                "; leftSide_h = " + leftSide_h + "; page_header_h = " + page_header_h +
-                "; page_footer_h = "+ page_footer_h);
-    console.log("sum = " + sum);
-    console.log("windowHeight = "+windowHeight);
+    // console.log("container_h = " + container_h + "; content_h = " + content_h +
+    //             "; leftSide_h = " + leftSide_h + "; page_header_h = " + page_header_h +
+    //             "; page_footer_h = "+ page_footer_h);
+    // console.log("sum = " + sum);
+    // console.log("windowHeight = "+windowHeight);
     var content_in_h = windowHeight - sum;
     content_in.style.height = content_in_h + "px";
-    console.log("content_in_h = "+content_in_h);
+    //console.log("content_in_h = "+content_in_h);
     // //console.log("-- -- -- -- --");
     return content_in_h;
   }
 
   function setHeight_Content__Center(content__center, content_in_h){
     //console.log("--вычислением высоты .content__center--");
-    console.log("----------------- content center 2 ----------------");
+    // console.log("----------------- content center 2 ----------------");
     const content__center_margins = getMarginsHeight(content__center);
     //........................................................................//
     const content__header = document.querySelector(".content__header");
     var content__header_h = getElemHeight(content__header, false, true);
     //........................................................................//
     const content__footer = document.querySelector(".content__footer");
-    console.log("~~~content__footer_h~~~")
+    // console.log("~~~content__footer_h~~~")
     var content__footer_h = getElemHeight(content__footer, false, true);
     content__footer_h = content__footer_h>30 ? 30 : content__footer_h;
     //........................................................................//
@@ -126,15 +125,15 @@
               content__footer_h +
               //breadcrumbs_h +
               content__center_margins;
-     console.log("content__header_h = "+ content__header_h + '\n' +
-                  "; content__footer_h = " + content__footer_h + '\n' +
-                  "; breadcrumbs_h = " + breadcrumbs_h + '\n' +
-                 "; content__center_margins = " + content__center_margins);
-     console.log("sum = " + sum);
+    // console.log("content__header_h = "+ content__header_h + '\n' +
+    //               "; content__footer_h = " + content__footer_h + '\n' +
+    //               "; breadcrumbs_h = " + breadcrumbs_h + '\n' +
+    //              "; content__center_margins = " + content__center_margins);
+    // console.log("sum = " + sum);
 
     var content__center_h = content_in_h - sum;
     content__center.style.height = content__center_h + "px";
-    console.log("content__center_h = "+content__center_h);
+    // console.log("content__center_h = "+content__center_h);
     //content__center.style.backgroundColor = "blue";
     //console.log("-- -- -- -- --");
     return content__center_h;
@@ -142,7 +141,7 @@
 
   function setHeight_Content_Wrap(content__center_h){
     //вычисление высоты .content-wrap
-    console.log(" ----------------- content wrap 3 -----------------");
+    // console.log(" ----------------- content wrap 3 -----------------");
     var content_wrap = document.querySelector(".content-wrap");
     const content_wrap_margins = getMarginsHeight(content_wrap);
     const paragraphs_h = getParagraphsHeight();
@@ -154,10 +153,10 @@
     const breadcrumbs = document.querySelector(".breadcrumbs");
     var breadcrumbs_h = getElemHeight(breadcrumbs, false, true);
 
-    console.log("paragraphs_h = " + paragraphs_h + '\n' +
-                "pagination_h = " + pagination_h + '\n' +
-                "content_wrap_margins = " + content_wrap_margins + '\n' +
-                "breadcrumbs_h = "+ breadcrumbs_h);
+    // console.log("paragraphs_h = " + paragraphs_h + '\n' +
+    //             "pagination_h = " + pagination_h + '\n' +
+    //             "content_wrap_margins = " + content_wrap_margins + '\n' +
+    //             "breadcrumbs_h = "+ breadcrumbs_h);
 
     const sum =  paragraphs_h + pagination_h + content_wrap_margins + breadcrumbs_h;
     const content_wrap_h = content__center_h  - sum;
@@ -214,13 +213,16 @@
     }
     //........................................................................//
     var content_in_h = windowHeight - left_side_rh;
-
-    if (content_in_h < content_in_h_fact){
-      content_in.style.height = content_in_h + "px";
-      content_in.style.minHeight = "initial";
-    }else {
-      content_in.style.height  = content_in_h_fact + "px";
-      content_in.style.minHeight = "initial";
+    if (windowHeight>768 && windowWidth>768){
+      if (content_in_h < content_in_h_fact){
+        content_in.style.height = content_in_h + "px";
+        //content_in.style.minHeight = "initial";
+      }else {
+        content_in.style.height = content_in_h_fact + "px";
+        //content_in.style.minHeight = "initial";
+      }
+    }else{
+      content_in.style.height = ""
     }
   }
 
