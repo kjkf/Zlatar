@@ -2,9 +2,9 @@
   //collapse other descr block, for example: if you click to collapse activity descr block then
   //management descr block will be opened
   function otherBlockOpen(block, other_subblock_name){
-    const main_parent = block.closest(".compblock")
+    const main_parent = block.closest(".compblock");
     const other_subblock = main_parent.querySelector(".compblock-sub."+other_subblock_name);
-    const other_subblock_descr = other_subblock.querySelector(".compblock-sub__descr")
+    const other_subblock_descr = other_subblock.querySelector(".compblock-sub__descr");
 
     const attrs = other_subblock.getAttribute("class").replace("collapsed", "opened");
     other_subblock.setAttribute("class", attrs)
@@ -96,7 +96,7 @@
       item.addEventListener('click', event => {
         //if screen width is 1024px then only one comblock can be
         //opened and other will be collapsed totally
-        const  block = item.closest(".compblock-sub")
+        const  block = item.closest(".compblock-sub");
         if (windowWidth <=1024){
           clickTitleEvent(block, item, true);
         }else{

@@ -109,9 +109,11 @@ input.field-err + span.error-text
 
 .modal-calculate
   max-width: 640px
-  left: 50%
+  left: calc(50% - 320px)
+  +laptop-album-down
+    //left: 35%
   +tablet-down
-    left: 10%
+    //left: 10%
   +phone-down
     top: 5%
     max-width: 98%
