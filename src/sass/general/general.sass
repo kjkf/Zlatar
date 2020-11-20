@@ -257,12 +257,18 @@ h5
     border: 2px solid $col_main
   &-err
     border: 3px solid #A50000
+  +phone-down
+    font-size: 16px
+    padding: 7px
+    height: calc(20px + 7px*2 + 4px)
 
 .field-label
   font-size: 20px
   line-height: 1.2
   font-weight: normal
   color: #FFFFFF
+  +phone-down
+    font-size: 16px
 
 .btn
   display: inline-block
@@ -286,6 +292,8 @@ h5
   &:hover
     text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25)
     box-shadow: none
+  +phone-down
+    font-size: 16px
 
 .ic-back
   svg

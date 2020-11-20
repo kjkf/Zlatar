@@ -19,11 +19,15 @@
     text-transform: uppercase
     color: #FFFFFF
     margin-bottom: 30px
+    +phone-down
+      margin-bottom: 15px
 
   &-content
     .field-group
       margin-bottom: 15px
       position: relative
+      +phone-down
+        margin-bottom: 10px
     .field-label
       display: inline-block
       margin-bottom: 5px
@@ -69,7 +73,7 @@
     max-width: $w_modal_order_phone
     width: 95%
     margin-left: calc(#{$w_modal_order_phone} / -2)
-    margin-top: calc(400px / -2)
+    margin-top: calc(550px / -2)
 
 .modal-catalog-phone
   min-width: $w_modal_order
