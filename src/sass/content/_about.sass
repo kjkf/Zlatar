@@ -43,12 +43,13 @@
       margin-top: 105px
 
     +max-height
-      width: 40%
-      max-width: 40%
-      left: 46.7%
+      width: 45%
+      max-width: 45%
+      left: 41.7%
       padding: 10px
-      height: 47%
-      min-height: 47%
+      height: 62%
+      min-height: 62%
+      // font-size: 0.9em
 
     +tablet-down
       min-width: 95%
@@ -56,8 +57,19 @@
       left: 3%
       border:  0.5px solid $bg_menu
       height: calc(100vh - 120px)
+
     +phone-landscape-down
+      height: 70%
+      max-height: calc(100vh - 50px)
+
+    +phone_min-height-down
       height: calc(100vh - 70px)
+
+    +phone_min-down
+      overflow-y: auto
+
+    // +phone-down
+    //   height: calc(100vh - 120px)
 
     .content__center
       flex-grow: unset
@@ -111,6 +123,8 @@
     text-align: center
     +desktop
       margin-top: 0px
+    // +phone-landscape-down
+    //   margin-top: 5px
 
   &.m-collapsed
     display: none
